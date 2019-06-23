@@ -53,7 +53,7 @@ const base = {
       test: /\.(sa|sc|c)ss$/,
       exclude: /node_modules/,
       use: [
-        (WP_ENV === 'development' ? MiniCssExtractPlugin.loader : 'style-loader'),
+        MiniCssExtractPlugin.loader,
         'css-loader',
         'sass-loader',
       ],
@@ -76,6 +76,10 @@ const base = {
         'rm -f web/app/themes/related-blog/build/assets/**/*.*',
       ],
     }),
+    new MiniCssExtractPlugin({
+      filename: '../styles/[name].css',
+      chunkFilename: '[id].css',
+    }),
   ],
 };
 
@@ -88,14 +92,11 @@ const development = {
     ...base.module,
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: '../styles/[name].css',
-      chunkFilename: '[id].css',
-    }),
     new webpack.LoaderOptionsPlugin({
       minimize: false,
       debug: true,
     }),
+    ...base.plugins,
   ],
 
 };
@@ -111,6 +112,7 @@ const production = {
       minimize: true,
       debug: false,
     }),
+    ...base.plugins,
   ],
 };
 
