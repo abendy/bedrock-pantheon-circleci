@@ -54,7 +54,12 @@ const base = {
       test: /\.(sa|sc|c)ss$/,
       exclude: /node_modules/,
       use: [
-        MiniCssExtractPlugin.loader,
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            hmr: process.env.NODE_ENV === 'development',
+          },
+        },
         'css-loader',
         'sass-loader',
       ],
