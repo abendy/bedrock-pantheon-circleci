@@ -1,2 +1,5 @@
-node_modules/
-web/app/themes/related-blog/build/
+node_modules/**/*.js
+web/app/plugins/**/*.js
+web/app/mu-plugins/**/*.js
+web/app/themes/related-blog/build/assets/scripts/**/*.js
+web/wp/**/*.js
