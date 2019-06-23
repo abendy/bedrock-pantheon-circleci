@@ -80,6 +80,10 @@ const base = {
       filename: '../styles/[name].css',
       chunkFilename: '[id].css',
     }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: process.env.WP_ENV === 'production' ? true : false,
+      debug: process.env.WP_ENV === 'production' ? false : true,
+    }),
   ],
 };
 
@@ -92,10 +96,6 @@ const development = {
     ...base.module,
   },
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      minimize: false,
-      debug: true,
-    }),
     ...base.plugins,
   ],
 
@@ -104,14 +104,11 @@ const development = {
 const production = {
   ...base,
   mode: 'production',
+  devtool: false,
   module: {
     ...base.module,
   },
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
-    }),
     ...base.plugins,
   ],
 };
