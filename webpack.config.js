@@ -3,17 +3,17 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const { NODE_ENV = 'development' } = process.env;
+const { WP_ENV = 'development' } = process.env;
 
 const base = {
   entry: {
     main: [
-      './src/scripts/main.js',
-      './src/styles/main.scss',
+      './web/app/themes/related-blog/src/scripts/main.js',
+      './web/app/themes/related-blog/src/styles/main.scss',
     ],
   },
   output: {
-    path: path.join(__dirname, 'build/assets/scripts/'),
+    path: path.join(__dirname, 'web/app/themes/related-blog/build/assets/scripts/'),
     filename: '[name].js',
   },
   module: {
@@ -23,7 +23,7 @@ const base = {
       exclude: /node_modules/,
       loader: 'eslint-loader',
       options: {
-        'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+        'no-debugger': process.env.WP_ENV === 'production' ? 2 : 0,
       },
     },
     {
@@ -38,10 +38,21 @@ const base = {
       },
     },
     {
+      test: /\.jsx$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      options: {
+        cacheDirectory: true,
+        presets: [
+          '@babel/preset-react',
+        ],
+      },
+    },
+    {
       test: /\.(sa|sc|c)ss$/,
       exclude: /node_modules/,
       use: [
-        (NODE_ENV === 'development' ? MiniCssExtractPlugin.loader : 'style-loader'),
+        (WP_ENV === 'development' ? MiniCssExtractPlugin.loader : 'style-loader'),
         'css-loader',
         'sass-loader',
       ],
@@ -97,4 +108,4 @@ const production = {
   ],
 };
 
-module.exports = (NODE_ENV === 'development' ? development : production);
+module.exports = (WP_ENV === 'development' ? development : production);

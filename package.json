@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "description": "Related Blog WordPress theme.",
   "scripts": {
-    "dev": "NODE_ENV=development webpack --mode=development",
-    "build": "NODE_ENV=production webpack --mode=production",
+    "dev": "WP_ENV=development webpack --mode=development",
+    "build": "WP_ENV=production webpack --mode=production",
+    "serve": "php -S 0.0.0.0:8000 -t web",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,7 +15,7 @@
     "url": "https://github.com/abendy/bedrock-pantheon-circleci"
   },
   "homepage": "https://blog.relatedrentals.com/",
-  "license": "",
+  "license": "UNLICENSED",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
