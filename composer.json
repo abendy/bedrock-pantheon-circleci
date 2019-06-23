@@ -1,18 +1,15 @@
 {
-  "name": "carlalexander/bedrock-pantheon-circleci",
+  "name": "related-blog",
   "type": "project",
-  "license": "MIT",
-  "description": "WordPress project template for using Bedrock with Pantheon and CircleCI",
+  "license": "UNLICENSED",
+  "description": "Related Blog.",
   "authors": [
     {
-      "name": "Carl Alexander",
-      "email": "contact@carlalexander.ca",
-      "homepage": "https://carlalexander.ca"
+      "name": "Allan Bendy",
+      "email": "allan.bendy@gmail.com"
     }
   ],
-  "keywords": [
-    "bedrock", "circleci", "composer", "pantheon", "wordpress", "wp"
-  ],
+  "keywords": [],
   "config": {
     "preferred-install": "dist"
   },
