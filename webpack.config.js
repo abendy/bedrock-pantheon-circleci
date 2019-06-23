@@ -3,6 +3,7 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackShellPlugin = require('webpack-shell-plugin');
+const WebpackNotifierPlugin = require('webpack-notifier');
 
 const { WP_ENV = 'development' } = process.env;
 
@@ -97,8 +98,8 @@ const development = {
   },
   plugins: [
     ...base.plugins,
+    new WebpackNotifierPlugin({ excludeWarnings: true }),
   ],
-
 };
 
 const production = {
