@@ -66,6 +66,7 @@ const development = {
   ...base,
   mode: 'development',
   watch: true,
+  devtool: 'source-map',
   module: {
     ...base.module,
   },
@@ -85,7 +86,6 @@ const development = {
 const production = {
   ...base,
   mode: 'production',
-  devtool: 'source-map',
   module: {
     ...base.module,
   },
