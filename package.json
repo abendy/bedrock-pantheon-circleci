@@ -7,6 +7,7 @@
     "build": "WP_ENV=production webpack --mode=production",
     "serve": "php -S 0.0.0.0:8000 -t web",
     "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -f web/app/themes/related-blog/build/assets/**/*.*",
   },
   "keywords": [],
   "author": "Allan Bendy <allan.bendy@gmail.com>",
@@ -34,7 +35,8 @@
     "sass-loader": "^7.1.0",
     "url-loader": "^2.0.0",
     "webpack": "^4.35.0",
-    "webpack-cli": "^3.3.4"
+    "webpack-cli": "^3.3.4",
+    "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4"

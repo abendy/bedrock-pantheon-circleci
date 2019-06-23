@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 const { WP_ENV = 'development' } = process.env;
 
@@ -70,6 +71,11 @@ const base = {
   },
   plugins: [
     new Dotenv(),
+    new WebpackShellPlugin({
+      onBuildStart: [
+        'rm -f web/app/themes/related-blog/build/assets/**/*.*',
+      ],
+    }),
   ],
 };
 
