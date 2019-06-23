@@ -20,3 +20,15 @@ web/.htaccess
 
 # WP-CLI
 wp-cli.local.yml
+
+# NPM
+node_modules
+
+# Databases
+database
+
+# Keys
+private
+
+# Yarn
+yarn-error.log
