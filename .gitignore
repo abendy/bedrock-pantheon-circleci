@@ -25,10 +25,10 @@ wp-cli.local.yml
 node_modules
 
 # Databases
-database
+/database
 
 # Keys
-private
+/private
 
 # Yarn
 yarn-error.log

@@ -8,6 +8,7 @@
     "serve": "php -S 0.0.0.0:8000 -t web",
     "test": "echo \"Error: no test specified\" && exit 1"
     "clean": "rm -f web/app/themes/related-blog/build/assets/**/*.*",
+    "upgrade": "composer update && yarn upgrade",
   },
   "author": "Allan Bendy <allan.bendy@gmail.com>",
   "repository": {
