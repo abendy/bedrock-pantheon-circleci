@@ -87,8 +87,8 @@ const base = {
       chunkFilename: '[id].css',
     }),
     new webpack.LoaderOptionsPlugin({
-      minimize: process.env.WP_ENV === 'production' ? true : false,
-      debug: process.env.WP_ENV === 'production' ? false : true,
+      minimize: process.env.WP_ENV === 'production',
+      debug: process.env.WP_ENV !== 'production',
     }),
   ],
 };
