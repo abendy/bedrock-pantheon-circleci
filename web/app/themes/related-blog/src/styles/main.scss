@@ -1,42 +1,43 @@
-// Make sure the charset is set appropriately
 @charset 'UTF-8';
 
-// ==========================================================================
-// $Reset
-// ==========================================================================
+// Libs
+@import 'normalize';
 
+// Utilities
+@import 'utilities/media-queries';
+@import 'utilities/fonts';
+@import 'utilities/functions';
+@import 'utilities/mixins';
 
-// ==========================================================================
-// $Libs
-// ==========================================================================
-
-
-// ==========================================================================
-// $Utilities
-// ==========================================================================
-@import 'utilities/index';
-
-// ==========================================================================
-// $Base
-// ==========================================================================
+// Base
+@import 'variables';
+@import 'colors';
+@import 'typography';
 @import 'base';
 
-// ==========================================================================
-// $Layout
-// ==========================================================================
+// Layout
+@import 'layout/layout';
+@import 'layout/sidebar';
 
+// Components
+// @import 'components/abstract';
+// @import 'components/block-quote';
+// @import 'components/breadcrumb';
+// @import 'components/button';
+// @import 'components/content';
+// @import 'components/form';
+// @import 'components/hero';
+// @import 'components/input';
+// @import 'components/internal-hero';
+// @import 'components/pagination';
+// @import 'components/plyr/variables';
+// @import 'components/plyr/mixins';
+// @import 'components/plyr/plyr';
+// @import 'components/popup';
+// @import 'components/search';
+// @import 'components/search-result';
+// @import 'components/social';
+// @import 'components/video';
 
-// ==========================================================================
-// $Components
-// ==========================================================================
-
-
-// ==========================================================================
-// $Fonts
-// ==========================================================================
-@import 'utilities/fonts';
-
-// ==========================================================================
-// $Shame
-// ==========================================================================
+// Shame
 @import 'shame';

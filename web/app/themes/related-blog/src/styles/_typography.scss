@@ -1,0 +1,249 @@
+// Typography
+
+// $base-font-size
+$base-font-size:            14;
+
+// $base-line-height
+$base-line-height:          1.5;
+
+// Font Stacks
+
+// $typefaces
+//
+// Configuration of webfonts imports.
+//
+// $typefaces - {map}
+// @family - {string}
+// @weight - {integer} or {keyword} i.e. 800, bold
+// @style - {keyword} i.e. normal, italic
+
+//$typefaces: (
+//  'FILENAME': (
+//    family: 'fontname',
+//    weight: 100,
+//    style: normal,
+//  ),
+//);
+
+// External fonts
+$external-fonts: (
+);
+
+// $font-custom
+// $font-custom: '';
+
+// $font-family-sans
+$font-family-sans:          'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+// $font-family-serif
+$font-family-serif:         'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+
+// $font-family-monospace
+$font-family-monospace:     'Inconsolata', 'Menlo', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier', monospace;
+
+// $font-family-default
+$font-family-default: $font-family-sans;
+
+// Styles
+
+html,
+body {
+  font-family: $font-family-default;
+  font-size: rem(20, $base-font-size);
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-default;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: rem(30);
+}
+
+a {
+  background: transparent;
+  color: $color-link;
+  font-family: $font-family-default;
+  text-decoration: none;
+  transition: color .2s;
+
+  &:visited {
+    color: $color-link-hover;
+  }
+
+  @include hover {
+    color: $color-link-hover;
+  }
+}
+
+p,
+li {
+    margin: 0 0 $line-height-body;
+
+    color: $color-text-body;
+
+    font-size: $font-size-body;
+    font-weight: $font-weight-medium;
+
+    line-height: $line-height-body;
+}
+
+span {
+    font-size: $font-size-body;
+    font-weight: $font-weight-medium;
+
+    line-height: $line-height-body;
+}
+
+.screen-reader-text {
+    position: absolute !important; // sass-lint:disable-line no-important
+
+    width: 1px;
+
+    height: 1px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+}
+
+// WordPress WYSIWYG Editor Styles
+.rte-field {
+    .hidden {
+        display: none;
+    }
+
+    h2 {
+        font-size: $font-size-h-level-2;
+        font-weight: $font-weight-bold;
+
+        line-height: $line-height-h-level-2;
+    }
+
+    a {
+        font-weight: $font-weight-bold;
+
+        text-decoration: underline;
+
+        &:hover {
+            color: $color-blue-1;
+        }
+    }
+
+    .entry-content {
+        img {
+            margin: 0 0 1.5em;
+        }
+    }
+
+    .alignleft,
+    img.alignleft {
+        margin-right: 1.5em;
+
+        float: left;
+    }
+
+    .alignright,
+    img.alignright {
+        margin-left: 1.5em;
+
+        float: right;
+    }
+
+    .aligncenter,
+    img.aligncenter {
+        display: block;
+
+        margin-right: auto;
+        margin-left: auto;
+
+        clear: both;
+    }
+
+    .alignnone,
+    img.alignnone {
+        display: inline;
+
+        float: none;
+    }
+
+    .wp-caption {
+        margin-bottom: 1.5em;
+
+        padding-top: 5px;
+
+        text-align: center;
+    }
+
+    .wp-caption img {
+        margin: 0;
+
+        padding: 0;
+
+        border: 0 none;
+    }
+
+    .wp-caption p.wp-caption-text {
+        margin: 0;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+    }
+
+    .wp-smiley {
+        max-height: 1em;
+
+        margin: 0 !important; // sass-lint:disable-line no-important
+    }
+
+    blockquote {
+        margin: 0;
+
+        p {
+            margin-bottom: 70px;
+
+            font-size: 25px;
+
+            line-height: 45px;
+
+            // sass-lint:disable-block nesting-depth
+            &::before,
+            &::after {
+                content: '"';
+            }
+        }
+    }
+
+    blockquote.left {
+        width: 33%;
+
+        margin-right: 20px;
+        margin-left: 0;
+
+        float: left;
+
+        text-align: right;
+    }
+
+    blockquote.right {
+        width: 33%;
+
+        margin-right: 0;
+        margin-left: 20px;
+
+        float: right;
+
+        text-align: left;
+    }
+}
