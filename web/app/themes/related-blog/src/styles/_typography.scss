@@ -50,7 +50,9 @@ html,
 body {
   font-family: $font-family-default;
   font-size: rem(20, $base-font-size);
+  -webkit-font-smoothing: antialiased;
   line-height: $base-line-height;
+  text-rendering: optimizeLegibility;
 }
 
 h1,
