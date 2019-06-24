@@ -57,7 +57,7 @@ const base = {
         {
           loader: MiniCssExtractPlugin.loader,
           options: {
-            hmr: process.env.NODE_ENV === 'development',
+            hmr: process.env.WP_ENV === 'development',
           },
         },
         'css-loader',
