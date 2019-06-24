@@ -1,6 +1,6 @@
 {
   "name": "related-blog-theme",
-  "version": "0.0.1",
+  "version": "2019.0.1",
   "description": "Related Blog WordPress theme.",
   "scripts": {
     "dev": "WP_ENV=development webpack --mode=development",
@@ -9,7 +9,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
     "clean": "rm -f web/app/themes/related-blog/build/assets/**/*.*",
   },
-  "keywords": [],
   "author": "Allan Bendy <allan.bendy@gmail.com>",
   "repository": {
     "type": "git",
