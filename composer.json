@@ -1,5 +1,5 @@
 {
-  "name": "related-blog",
+  "name": "related/related-blog",
   "type": "project",
   "license": "UNLICENSED",
   "description": "Related Blog.",
@@ -43,7 +43,10 @@
   "extra": {
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/plugins/{$name}/": [
+        "wpackagist-plugin/*",
+        "type:wordpress-plugin"
+      ],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
     "wordpress-install-dir": "web/wp"
