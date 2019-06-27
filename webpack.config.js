@@ -7,15 +7,17 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 
 const { WP_ENV = 'development' } = process.env;
 
+const THEME_DIR = 'web/app/themes/related-blog';
+
 const base = {
   entry: {
     main: [
-      './web/app/themes/related-blog/src/scripts/main.js',
-      './web/app/themes/related-blog/src/styles/main.scss',
+      `./${THEME_DIR}/src/scripts/main.js`,
+      `./${THEME_DIR}/src/styles/main.scss`,
     ],
   },
   output: {
-    path: path.join(__dirname, 'web/app/themes/related-blog/build/assets/scripts/'),
+    path: path.join(__dirname, `${THEME_DIR}/build/assets/scripts/`),
     filename: '[name].js',
   },
   module: {
@@ -84,7 +86,6 @@ const base = {
     }),
     new MiniCssExtractPlugin({
       filename: '../styles/[name].css',
-      chunkFilename: '[id].css',
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: process.env.WP_ENV === 'production',
