@@ -1,7 +1,8 @@
 @charset 'UTF-8';
 
 // Libs
-@import 'normalize';
+@import '~normalize-sass/normalize';
+@import '~bulma/bulma';
 
 // Utilities
 @import 'utilities/fonts';
