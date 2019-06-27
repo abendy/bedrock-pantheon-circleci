@@ -62,8 +62,8 @@ const base = {
             hmr: process.env.WP_ENV === 'development',
           },
         },
-        'css-loader',
-        'sass-loader',
+        'css-loader?sourceMap',
+        'sass-loader?sourceMap',
       ],
     },
     {
