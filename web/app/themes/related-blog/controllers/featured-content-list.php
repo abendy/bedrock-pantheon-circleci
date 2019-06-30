@@ -51,10 +51,6 @@ vc_map(
         'param_name'      => 'rltd_featured_content_list_container',
         'description'     => __( '', 'related-blog' ),
         'admin_label'     => false,
-        'dependency'      => array(
-          'element'         => 'rltd_featured_content_list_sort',
-          'value'           => array( 'Featured' ),
-        ),
         'params'          => array(
           array(
             'type'            => 'dropdown',
@@ -169,29 +165,31 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
     );
 
     // Loop over nested/multi-instance items
-    $container = !empty( $rltd_hero_container ) ? vc_param_group_parse_atts( $rltd_hero_container ) : array();
+    $container = !empty( $rltd_featured_content_list_container ) ? vc_param_group_parse_atts( $rltd_featured_content_list_container ) : array();
+
+    d($container);
 
     foreach ( $container as $post ) {
       // Get the permalink
-      $link = @$post['rltd_hero_item_external_link'] === 'yes' && !empty( $post['rltd_hero_item_link'] ) ? esc_url( $post['rltd_hero_item_link'] ) : @get_permalink( $post['rltd_hero_item_reference'] );
+      $link = @$post['rltd_featured_content_list_item_external_link'] === 'yes' && !empty( $post['rltd_featured_content_list_item_link'] ) ? esc_url( $post['rltd_featured_content_list_item_link'] ) : @get_permalink( $post['rltd_featured_content_list_item_reference'] );
 
       // Get the page title
-      $title = !empty( $post['rltd_hero_item_title'] ) ? $post['rltd_hero_item_title'] : ( !empty( $post['rltd_hero_item_reference'] ) ? @get_the_title( $post['rltd_hero_item_reference'] ) : '' );
+      $title = !empty( $post['rltd_featured_content_list_item_title'] ) ? $post['rltd_featured_content_list_item_title'] : ( !empty( $post['rltd_featured_content_list_item_reference'] ) ? @get_the_title( $post['rltd_featured_content_list_item_reference'] ) : '' );
 
       // Get the excerpt text
-      $text = !empty( $post['rltd_hero_item_text'] ) ? $post['rltd_hero_item_text'] : ( !empty( $post['rltd_hero_item_reference'] ) ? @get_the_excerpt( $post['rltd_hero_item_reference'] ) : '' );
+      $text = !empty( $post['rltd_featured_content_list_item_text'] ) ? $post['rltd_featured_content_list_item_text'] : ( !empty( $post['rltd_featured_content_list_item_reference'] ) ? @get_the_excerpt( $post['rltd_featured_content_list_item_reference'] ) : '' );
 
       // Get image
-      if ( !empty( $post['rltd_hero_item_image'] ) ) {
-        $image_id = $post['rltd_hero_item_image'];
+      if ( !empty( $post['rltd_featured_content_list_item_image'] ) ) {
+        $image_id = $post['rltd_featured_content_list_item_image'];
         $image = @wp_get_attachment_image_src( $image_id, 'full' )[0];
       } else {
         $args = array(
           'type' => 'image_advanced',
           'multiple' => true
         );
-        $hero_image_imgadv = rwmb_meta( 'hero_image_imgadv' , $args, $post['rltd_hero_item_reference'] );
-        $image = reset( $hero_image_imgadv )['full_url'];
+        $featured_content_list_image_imgadv = rwmb_meta( 'featured_content_list_image_imgadv' , $args, $post['rltd_featured_content_list_item_reference'] );
+        $image = reset( $featured_content_list_image_imgadv )['full_url'];
      }
 
       // Get image alt tag
