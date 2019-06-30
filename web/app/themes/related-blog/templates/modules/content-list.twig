@@ -1,5 +1,5 @@
 <section class="module content-list">
-  {% if title is defined and title %}
+  {% if title is defined and title is not empty %}
   <div class="content-list__top">
     <div class="container">
       <h2>{{ title }}</h2>
@@ -13,23 +13,23 @@
 
       {% for item in items %}
       <div class="content-list__item">
-        {% if item.image is defined and item.image %}
+        {% if item.image is defined and item.image is not empty %}
         <a href="{{ item.link }}"><img src="{{ item.image }}" alt="{{ item.image_alt|e }}"></a>
         {% endif %}
 
-        {% if item.datetime is defined and item.datetime %}
+        {% if item.datetime is defined and item.datetime is not empty %}
         <p class="content-list__item__datetime">{{ item.datetime }}</p>
         {% endif %}
 
-        {% if item.category is defined and item.category %}
+        {% if item.category is defined and item.category is not empty %}
         <p class="content-list__item__category">{{ item.category }}</p>
         {% endif %}
 
-        {% if item.title is defined and item.title %}
+        {% if item.title is defined and item.title is not empty %}
         <a href="{{ item.link }}"><h3 class="content-list__item__title">{{ item.title }}</h3></a>
         {% endif %}
 
-        {% if item.text is defined and item.text %}
+        {% if item.text is defined and item.text is not empty %}
         <p class="content-list__item__desc">{{ item.text }}</p>
         {% endif %}
       </div>
@@ -38,11 +38,13 @@
 		</div>
 	</div>
 
+  {% if pagination is defined and pagination is not empty %}
   <nav class="navigation pagination" role="navigation">
     <div class="nav-links">
     {{ pagination }}
     </div>
   </nav>
+  {% endif %}
 
   {% endif %}
 </section>
