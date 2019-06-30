@@ -1,0 +1,22 @@
+{% set first = items|first %}
+
+<section class="module hero"
+  data-name="hero"
+  data-type="hero">
+
+  {% if first.image is defined and first.image %}
+  <figure>
+    <a href="{{ first.link }}"><img src="{{ first.image }}" alt="{{ first.alt }}"></a>
+  </figure>
+  {% endif %}
+
+  <div class="internal-hero__content">
+    {% if first.title is defined and first.title %}
+    <a href="{{ first.link }}"><h1 class="hero__title">{{ first.title }}</h1></a>
+    {% endif %}
+
+    {% if first.text is defined and first.text %}
+    <p class="hero__desc">{{ first.text }}</p>
+    {% endif %}
+  </div>
+</section>
