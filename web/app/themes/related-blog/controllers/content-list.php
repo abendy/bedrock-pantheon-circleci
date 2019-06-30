@@ -31,7 +31,7 @@ vc_map(
         'value'           => array(
           __( '--', 'related-blog' ) => 'More',
           __( 'Latest', 'related-blog' ) => 'Latest',
-          // __( 'Popular', 'related-blog' ) => 'Popular',
+          __( 'Popular', 'related-blog' ) => 'Popular',
         ),
         'admin_label'     => false,
         'save_always'     => true,
@@ -160,16 +160,11 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
       'post_type' => $rltd_content_list_source,
     );
 
-    // if ( $rltd_content_list_sort === 'popular' ) {
-    //   $args['orderby']    = 'meta_value title';
-    //   $args['meta_key']   = '<SOME_STATISTICS_FIELD>';
-    //   $args['meta_query'] = array(
-    //     array(
-    //       'key' => '<SOME_STATISTICS_FIELD>',
-    //       'compare' => 'EXISTS',
-    //     )
-    //   );
-    // }
+    if ( $rltd_content_list_sort === 'popular' ) {
+      // https://wordpress.stackexchange.com/a/49350/126589
+      $args['orderby'] = 'meta_value_num';
+      $args['meta_key'] = 'post_views_count';
+    }
 
     // Filter by taxonomy
     if ( !empty( $rltd_content_list_taxonomies ) ) {
