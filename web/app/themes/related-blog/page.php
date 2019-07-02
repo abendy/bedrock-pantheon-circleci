@@ -8,6 +8,8 @@ $context['page'] = Timber::get_post();
 
 $context['is_front_page'] = is_front_page();
 
+$context['menu'] = new \Timber\Menu( 'main' );
+
 $templates = array( 'page-' . $context['page']->post_name . '.twig', 'page.twig' );
 // https://wordpress.stackexchange.com/a/239838/126589
 if ( is_front_page() ) {
