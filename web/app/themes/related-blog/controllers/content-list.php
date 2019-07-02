@@ -205,9 +205,6 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
 
     // Loop over query response
     foreach ( $post_data as $post ) {
-      // Get the post date
-      $datetime = get_the_date( 'm-d-Y', $post->ID );
-
       // Get the permalink
       $link = get_permalink( $post->ID );
 
@@ -228,7 +225,6 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
 
       // Build nested items array for rendering
       $items[] = array(
-        // 'datetime' => @$datetime,
         'link' => @$link,
         'title' => @$title,
         // 'text' => @$text,
@@ -237,7 +233,7 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
         // 'image_alt' => @$image_alt,
       );
 
-      $datetime = $link = $title = $text = $image = $image_alt = '';
+      $link = $title = $text = $image = $image_alt = $category = '';
     }
 
     // Parse the twig template with the shortcode's attributes and content.

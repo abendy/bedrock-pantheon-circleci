@@ -17,10 +17,6 @@
         <a href="{{ item.link }}"><img src="{{ item.image }}" alt="{{ item.image_alt|e }}"></a>
         {% endif %}
 
-        {% if item.datetime is defined and item.datetime is not empty %}
-        <p class="content-list__item__datetime">{{ item.datetime }}</p>
-        {% endif %}
-
         {% if item.category is defined and item.category is not empty %}
         <p class="content-list__item__category">{{ item.category }}</p>
         {% endif %}
