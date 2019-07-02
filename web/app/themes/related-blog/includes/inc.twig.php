@@ -1,18 +1,37 @@
 <?php
 
-// Set the location for the Twig tpls.
-if ( class_exists( 'Timber' ) ) {
-  Timber::$dirname = array( '../views/modules', '../views/page' );
+class RelatedTimberSite extends Timber\Site {
+	/** Add timber support. */
+	public function __construct() {
+		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
+		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
+		parent::__construct();
+	}
+
+	/** This is where you add some context
+	 *
+	 * @param string $context context['this'] Being the Twig's {{ this }}.
+	 */
+	public function add_to_context( $context ) {
+		$context['menu'] = new Timber\Menu();
+		$context['site'] = $this;
+		return $context;
+	}
+
+	/** This is where you can add your own functions to twig.
+	 *
+	 * @param string $twig get extension.
+	 */
+	public function add_to_twig( $twig ) {
+		return $twig;
+	}
 }
 
-use Timber\Timber;
+if ( class_exists( 'Timber' ) ) {
+  $timber = new \Timber\Timber();
 
-$context = Timber::get_context();
-// $context['page'] = Timber::get_post();
-$post = new TimberPost();
-$context['post'] = $post;
+  // Sets the directories (inside your theme) to find .twig files
+  Timber::$dirname = array( 'templates', 'templates/modules' );
 
-Timber::render(
-  array( '../views/page/page.default.twig' ),
-  $context
-);
+  new RelatedTimberSite();
+}
