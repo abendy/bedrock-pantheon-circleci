@@ -4,7 +4,7 @@
 function rltd_get_post_types( $output = 'objects', $friendly = null ) {
     $args = array(
         'public'   => true,
-        '_builtin' => false
+        '_builtin' => true
     );
     $output   = $output;
     $operator = 'and';
@@ -28,9 +28,6 @@ function rltd_get_post_types( $output = 'objects', $friendly = null ) {
 }
 
 // Shared function for filtering queries by taxonomy
-// Used on:
-// Content Aggregate
-// Dynamic News Row
 function rltd_tax_query( $args, $taxonomies ) {
     // Create array of all taxonony IDs
     $taxonomies = explode( ',', $taxonomies );
@@ -58,9 +55,6 @@ function rltd_tax_query( $args, $taxonomies ) {
 }
 
 // Grouping function
-// Used on:
-// Content Aggregate
-// Content
 function rltd_groupby_tax_clauses( $clauses, $wp_query ) {
     global $wpdb;
 
@@ -81,51 +75,4 @@ SQL;
     }
 
     return $clauses;
-}
-
-// Shared function for Category meta dropdown VC field
-function rltd_category_meta_values() {
-    // Get the theme name
-    // $theme_name = get_theme_name();
-
-    $shared_categories = array(
-        'About Us',
-        'Careers',
-        'Contact',
-        'Issue Areas',
-        'Stories',
-    );
-
-    $ckf_categories = array(
-        'Grants',
-        'News',
-        'Our Giving',
-    );
-
-    $cki_categories = array(
-        'Blog',
-        'Educational Programs',
-        'Events',
-        'News',
-    );
-
-    // Combine shared categories with site specific categories
-    // $categories = array_merge( $shared_categories, ${ $theme_name . '_categories' } );
-
-    // Sort alphabetically
-    asort( $categories );
-
-    // Add a None value to the beginning
-    array_unshift( $categories, '' );
-
-    $categoryList = [];
-
-    foreach ( $categories as $category ) {
-        $categoryList[] = array(
-            $category,
-            __( $category, 'related-blog' ),
-        );
-    }
-
-    return $categoryList;
 }
