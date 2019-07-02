@@ -1,10 +1,4 @@
 <?php
 
-get_header();
-
-// Twigify
-require_once __DIR__ . '/includes/inc.twig.php';
-
-get_sidebar();
-
-get_footer();
+$context = Timber::get_context();
+Timber::render( '404.twig', $context );
