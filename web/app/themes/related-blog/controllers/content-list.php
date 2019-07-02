@@ -29,7 +29,6 @@ vc_map(
         'param_name'      => 'rltd_content_list_sort',
         'description'     => __( '', 'related-blog' ),
         'value'           => array(
-          __( '--', 'related-blog' ) => 'More',
           __( 'Latest', 'related-blog' ) => 'Latest',
           __( 'Popular', 'related-blog' ) => 'Popular',
         ),
@@ -45,7 +44,7 @@ vc_map(
         'class'           => '',
         'heading'         => __( 'Title', 'related-blog' ),
         'param_name'      => 'rltd_content_list_title',
-        'value'           => 'More',
+        'value'           => 'Latest',
         'description'     => __( '', 'related-blog' ),
         'admin_label'     => false,
         'save_always'     => true,
@@ -74,8 +73,9 @@ vc_map(
         'admin_label'     => true,
         'save_always'     => true,
         'dependency'      => array(
-          'element'         => 'rltd_content_list_sort',
-          'value'           => array( 'More', 'Latest', 'Popular' ),
+          // 'element'         => 'rltd_content_list_sort',
+          // 'value'           => array( 'Latest', 'Popular' ),
+          'callback'        => 'rltd_content_list_source_template_callback',
         ),
       ),
       array(
@@ -90,8 +90,18 @@ vc_map(
         'save_always'     => true,
         'dependency'      => array(
           'element'         => 'rltd_content_list_sort',
-          'value'           => array( 'More', 'Latest', 'Popular' ),
+          'value'           => array( 'Latest', 'Popular' ),
         ),
+      ),
+      array(
+        'type'            => 'checkbox',
+        'holder'          => '',
+        'class'           => '',
+        // 'heading'         => __( '', 'related-blog' ),
+        'param_name'      => 'rltd_content_list_pagination',
+        'description'     => __( '', 'related-blog' ),
+        'value'           => array( __( 'Pagination', 'related-blog' ) => 'yes' ),
+        'admin_label'     => false,
       ),
       array(
         'type'            => 'autocomplete',
@@ -104,7 +114,7 @@ vc_map(
         'admin_label'     => true,
         'dependency'      => array(
           'element'         => 'rltd_content_list_sort',
-          'value'           => array( 'More', 'Latest', 'Popular' ),
+          'value'           => array( 'Latest', 'Popular' ),
         ),
         'settings'        => array(
           // Accept a single value
@@ -141,30 +151,23 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
           'rltd_content_list_title' => '',
           'rltd_content_list_source' => '',
           'rltd_content_list_limit' => '',
+          'rltd_content_list_pagination' => '',
           'rltd_content_list_taxonomies' => '',
         ),
         $atts
       )
     );
 
-    // Get posts per page value or fallback to 3
-    $posts_per_page = !empty( $rltd_content_list_limit ) ? $rltd_content_list_limit : '-1';
-
     // Set default args for posts query
     $args = array(
       'order' => 'DESC',
-      'orderby' => 'date',
+      'orderby' => ( $rltd_content_list_sort === 'popular' ? 'meta_value_num' : 'date' ),
       'public' => true,
-      'posts_per_page' => $posts_per_page,
+      'posts_per_page' => !empty( $rltd_content_list_limit ) ? $rltd_content_list_limit : '-1',
       'post_status' => 'publish',
       'post_type' => $rltd_content_list_source,
+      $args['meta_key'] =  $rltd_content_list_sort === 'popular' ? 'post_views_count' : null,
     );
-
-    if ( $rltd_content_list_sort === 'popular' ) {
-      // https://wordpress.stackexchange.com/a/49350/126589
-      $args['orderby'] = 'meta_value_num';
-      $args['meta_key'] = 'post_views_count';
-    }
 
     // Filter by taxonomy
     if ( !empty( $rltd_content_list_taxonomies ) ) {
@@ -174,7 +177,7 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
 
     // Get current page and append to custom query parameters array
     // https://wordpress.stackexchange.com/a/120408/126589
-    if ( $rltd_content_list_sort === 'More' ) {
+    if ( $rltd_content_list_pagination === 'yes' ) {
       $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
     }
 
@@ -186,7 +189,7 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
 
     // Custom query loop pagination
     // https://wordpress.stackexchange.com/a/254200/126589
-    if ( $rltd_content_list_sort === 'More' ) {
+    if ( $rltd_content_list_pagination === 'yes' ) {
       $pagination = paginate_links(
         array(
           'total'        => $query->max_num_pages,
@@ -214,23 +217,23 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
       // Get the excerpt text
       $text = get_the_excerpt( $post->ID );
 
-      // Get the category
-      $category = get_the_category( $post->ID )[0]->name;
-
-      // Get image source
-      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' )[0];
+      // Get image
+      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'rltd_thumbnail' )[0];
 
       // Get image alt tag
       $image_alt = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
+
+      // Get the category
+      $category = empty( $rltd_content_list_source ) ? @get_the_category( $post->ID )[0]->name : '';
 
       // Build nested items array for rendering
       $items[] = array(
         'link' => @$link,
         'title' => @$title,
-        // 'text' => @$text,
-        // 'category' => $category,
-        // 'image' => @$image,
-        // 'image_alt' => @$image_alt,
+        'text' => @$text,
+        'image' => @$image,
+        'image_alt' => @$image_alt,
+        'category' => @$category,
       );
 
       $link = $title = $text = $image = $image_alt = $category = '';

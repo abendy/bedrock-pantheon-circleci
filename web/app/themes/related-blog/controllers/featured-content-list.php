@@ -167,33 +167,25 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
     // Loop over nested/multi-instance items
     $container = !empty( $rltd_featured_content_list_container ) ? vc_param_group_parse_atts( $rltd_featured_content_list_container ) : array();
 
-    d($container);
-
     foreach ( $container as $post ) {
       // Get the permalink
-      $link = @$post['rltd_featured_content_list_item_external_link'] === 'yes' && !empty( $post['rltd_featured_content_list_item_link'] ) ? esc_url( $post['rltd_featured_content_list_item_link'] ) : @get_permalink( $post['rltd_featured_content_list_item_reference'] );
+      $link = $post['rltd_featured_content_list_item_external_link'] === 'yes' && !empty( $post['rltd_featured_content_list_item_link'] ) ? esc_url( $post['rltd_featured_content_list_item_link'] ) : get_permalink( $post['rltd_featured_content_list_item_reference'] );
 
       // Get the page title
-      $title = !empty( $post['rltd_featured_content_list_item_title'] ) ? $post['rltd_featured_content_list_item_title'] : ( !empty( $post['rltd_featured_content_list_item_reference'] ) ? @get_the_title( $post['rltd_featured_content_list_item_reference'] ) : '' );
+      $title = !empty( $post['rltd_featured_content_list_item_title'] ) ? $post['rltd_featured_content_list_item_title'] : ( !empty( $post['rltd_featured_content_list_item_reference'] ) ? get_the_title( $post['rltd_featured_content_list_item_reference'] ) : '' );
 
       // Get the excerpt text
-      $text = !empty( $post['rltd_featured_content_list_item_text'] ) ? $post['rltd_featured_content_list_item_text'] : ( !empty( $post['rltd_featured_content_list_item_reference'] ) ? @get_the_excerpt( $post['rltd_featured_content_list_item_reference'] ) : '' );
+      $text = !empty( $post['rltd_featured_content_list_item_text'] ) ? $post['rltd_featured_content_list_item_text'] : ( !empty( $post['rltd_featured_content_list_item_reference'] ) ? get_the_excerpt( $post['rltd_featured_content_list_item_reference'] ) : '' );
 
-      // Get image
-      if ( !empty( $post['rltd_featured_content_list_item_image'] ) ) {
-        $image_id = $post['rltd_featured_content_list_item_image'];
-        $image = @wp_get_attachment_image_src( $image_id, 'full' )[0];
-      } else {
-        $args = array(
-          'type' => 'image_advanced',
-          'multiple' => true
-        );
-        $featured_content_list_image_imgadv = rwmb_meta( 'featured_content_list_image_imgadv' , $args, $post['rltd_featured_content_list_item_reference'] );
-        $image = reset( $featured_content_list_image_imgadv )['full_url'];
-     }
+      // Get image source
+      $image_id = !empty( $post['rltd_featured_content_list_item_image'] ) ? $post['rltd_featured_content_list_item_image'] : get_post_thumbnail_id( $post['rltd_featured_content_list_item_reference'] );
+      $image = wp_get_attachment_image_src( $image_id, 'rltd_thumbnail' )[0];
 
       // Get image alt tag
-      $image_alt = @get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+      $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+
+      // Get the category
+      $category = !empty( $post['rltd_featured_content_list_item_reference'] ) ? @get_the_category( $post['rltd_featured_content_list_item_reference'] )[0]->name : '';
 
       // Build nested items array for rendering
       $items[] = array(
@@ -201,10 +193,11 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
         'title' => @$title,
         'text' => @$text,
         'image' => @$image,
-        'alt' => @$image_alt,
+        'image_alt' => @$image_alt,
+        'category' => @$category,
       );
 
-      $link = $title = $text = $image_id = $image = $image_alt = '';
+      $link = $title = $text = $image_id = $image = $image_alt = $category = '';
     }
 
     // Parse the twig template with the shortcode's attributes and content.

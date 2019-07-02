@@ -135,20 +135,23 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
 
     // Loop over nested/multi-instance items
     $container = !empty( $rltd_hero_container ) ? vc_param_group_parse_atts( $rltd_hero_container ) : array();
+
     foreach ( $container as $post ) {
       // Get the permalink
-      $link = @$post['rltd_hero_item_external_link'] === 'yes' && !empty( $post['rltd_hero_item_link'] ) ? esc_url( $post['rltd_hero_item_link'] ) : @get_permalink( $post['rltd_hero_item_reference'] );
+      $link = $post['rltd_hero_item_external_link'] === 'yes' && !empty( $post['rltd_hero_item_link'] ) ? esc_url( $post['rltd_hero_item_link'] ) : get_permalink( $post['rltd_hero_item_reference'] );
 
       // Get the page title
-      $title = !empty( $post['rltd_hero_item_title'] ) ? $post['rltd_hero_item_title'] : ( !empty( $post['rltd_hero_item_reference'] ) ? @get_the_title( $post['rltd_hero_item_reference'] ) : '' );
+      $title = !empty( $post['rltd_hero_item_title'] ) ? $post['rltd_hero_item_title'] : ( !empty( $post['rltd_hero_item_reference'] ) ? get_the_title( $post['rltd_hero_item_reference'] ) : '' );
 
       // Get the excerpt text
-      $text = !empty( $post['rltd_hero_item_text'] ) ? $post['rltd_hero_item_text'] : ( !empty( $post['rltd_hero_item_reference'] ) ? @get_the_excerpt( $post['rltd_hero_item_reference'] ) : '' );
+      $text = !empty( $post['rltd_hero_item_text'] ) ? $post['rltd_hero_item_text'] : ( !empty( $post['rltd_hero_item_reference'] ) ? get_the_excerpt( $post['rltd_hero_item_reference'] ) : '' );
 
-      // Get image
+      // Get image and alt tag
       if ( !empty( $post['rltd_hero_item_image'] ) ) {
         $image_id = $post['rltd_hero_item_image'];
-        $image = @wp_get_attachment_image_src( $image_id, 'full' )[0];
+        $image = wp_get_attachment_image_src( $image_id, 'full' )[0];
+
+        $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
       } else {
         $args = array(
           'type' => 'image_advanced',
@@ -156,10 +159,13 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
         );
         $hero_image_imgadv = rwmb_meta( 'hero_image_imgadv' , $args, $post['rltd_hero_item_reference'] );
         $image = reset( $hero_image_imgadv )['full_url'];
-     }
 
-      // Get image alt tag
-      $image_alt = @get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+        $image_id = reset( $hero_image_imgadv )['ID'];
+        $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+      }
+
+      // Get the category
+      $category = !empty( $post['rltd_hero_item_reference'] ) ? @get_the_category( $post['rltd_hero_item_reference'] )[0]->name : '';
 
       // Build nested items array for rendering
       $items[] = array(
@@ -167,10 +173,11 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
         'title' => @$title,
         'text' => @$text,
         'image' => @$image,
-        'alt' => @$image_alt,
+        'image_alt' => @$image_alt,
+        'category' => @$category,
       );
 
-      $link = $title = $text = $image_id = $image = $image_alt = '';
+      $link = $title = $text = $image_id = $image = $image_alt = $category = '';
     }
 
     $compile = Timber::compile(

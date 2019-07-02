@@ -6,13 +6,17 @@
 
   {% if first.image is defined and first.image is not empty %}
   <figure>
-    <a href="{{ first.link }}"><img src="{{ first.image }}" alt="{{ first.alt }}"></a>
+    <a href="{{ first.link }}"><img src="{{ first.image }}" alt="{{ first.image_alt }}"></a>
   </figure>
   {% endif %}
 
-  <div class="internal-hero__content">
+  <div class="hero__content">
     {% if first.title is defined and first.title is not empty %}
-    <a href="{{ first.link }}"><h1 class="hero__title">{{ first.title }}</h1></a>
+    <a href="{{ first.link }}"><h2 class="hero__title">{{ first.title }}</h2></a>
+    {% endif %}
+
+    {% if first.category is defined and first.category is not empty %}
+    <p class="hero__category">{{ first.category }}</p>
     {% endif %}
 
     {% if first.text is defined and first.text is not empty %}

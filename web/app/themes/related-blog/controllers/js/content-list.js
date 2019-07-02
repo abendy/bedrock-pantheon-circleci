@@ -30,3 +30,22 @@ function rltd_content_list_custom_title_template_callback() {
 
   masterEl.trigger('change');
 }
+
+// eslint-disable-next-line camelcase, no-unused-vars
+function rltd_content_list_source_template_callback() {
+  const masterEl = jQuery('select[name=rltd_content_list_source]', this.$content);
+  const dependentEl = jQuery('input[name=rltd_content_list_title]', this.$content);
+
+  masterEl.on('change', () => {
+    const readonly = dependentEl.attr('readonly');
+    if (readonly === 'readonly') {
+      const selectedValue = masterEl[0].value.toUpperCase();
+      const title = dependentEl.val();
+      if (!title.toUpperCase().endsWith(`${selectedValue}S`)) {
+        dependentEl.val(`${title} ${selectedValue.substr(0, 1).toUpperCase()}${selectedValue.toLowerCase().substr(1)}s`);
+      }
+    }
+  });
+
+  masterEl.trigger('change');
+}
