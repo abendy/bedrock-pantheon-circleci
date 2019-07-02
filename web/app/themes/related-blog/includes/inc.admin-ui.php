@@ -57,3 +57,50 @@ function rltd_register_taxonomy() {
   }
 }
 add_action( 'init', 'rltd_register_taxonomy' );
+
+// Set RTE buttons
+function rltd_mce_buttons_1( $buttons ) {
+  $buttons = array(
+    'bold', 'italic', 'underline',
+    '|',
+    'bullist', 'numlist', 'blockquote',
+    '|',
+    'alignleft', 'aligncenter', 'alignright',
+    '|',
+    'link', 'unlink',
+    '|',
+    'wp_more',
+    '|',
+    'spellchecker',
+    '|',
+    'table',
+    '|',
+    'wp_adv'
+  );
+
+  return $buttons;
+}
+add_filter( 'mce_buttons', 'rltd_mce_buttons_1' );
+
+function rltd_mce_buttons_2( $buttons ) {
+  $buttons = array(
+    'formatselect',
+    '|',
+    'undo', 'redo',
+    '|',
+    'outdent', 'indent',
+    '|',
+    'cut', 'copy', 'pastetext', 'removeformat',
+    '|',
+    'subscript', 'superscript',
+    '|',
+    'charmap',
+    '|',
+    'fullscreen',
+    '|',
+    'wp_help',
+  );
+
+  return $buttons;
+}
+add_filter( 'mce_buttons_2', 'rltd_mce_buttons_2' );
