@@ -4,6 +4,7 @@ const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackShellPlugin = require('webpack-shell-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const { WP_ENV = 'development' } = process.env;
 
@@ -91,6 +92,9 @@ const base = {
       minimize: process.env.WP_ENV === 'production',
       debug: process.env.WP_ENV !== 'production',
     }),
+    new CopyPlugin([
+      { from: `./${THEME_DIR}/src/images`, to: '../images' },
+    ]),
   ],
 };
 
