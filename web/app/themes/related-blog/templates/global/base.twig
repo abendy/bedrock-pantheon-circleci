@@ -39,11 +39,12 @@
   </main>
 
   {% block footer %}
+  <script src="{{ site.theme.link }}/build/assets/scripts/main.js"></script>
+
   <footer id="footer" class="module footer" data-name="footer">
     {% include 'global/footer.twig' %}
   </footer>
 
-  <script src="{{ site.theme.link }}/build/assets/scripts/main.js"></script>
   {{ function('wp_footer') }}
   {% endblock %}
 </body>
