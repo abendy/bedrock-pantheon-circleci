@@ -1,4 +1,9 @@
-<p>&copy; Copyright {{"now"|date('Y')}}</p>
 <nav id="nav-footer" class="nav-footer" role="navigation">
   {% include "global/menu.twig" with {'menu': footer_menu.get_items} %}
 </nav><!-- #nav-footer -->
+
+<a href="{{site.url}}" rel="home">
+  {{function('the_custom_logo')}}
+</a>
+
+<p>&copy; {{"now"|date('Y')}} Related Companies</p>
