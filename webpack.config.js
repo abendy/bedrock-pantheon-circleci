@@ -91,7 +91,7 @@ const base = {
     new Dotenv(),
     new WebpackShellPlugin({
       onBuildStart: [
-        'rm -f web/app/themes/related-blog/build/assets/**/*.*',
+        'rm -f ./web/app/themes/related-blog/build/assets/**/*.*',
       ],
     }),
     new MiniCssExtractPlugin({
