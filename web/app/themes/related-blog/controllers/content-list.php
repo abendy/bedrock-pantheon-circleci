@@ -166,7 +166,7 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
       'posts_per_page' => !empty( $rltd_content_list_limit ) ? $rltd_content_list_limit : '-1',
       'post_status' => 'publish',
       'post_type' => $rltd_content_list_source,
-      $args['meta_key'] =  $rltd_content_list_sort === 'popular' ? 'post_views_count' : null,
+      'meta_key' =>  $rltd_content_list_sort === 'popular' ? 'post_views_count' : null,
     );
 
     // Filter by taxonomy
