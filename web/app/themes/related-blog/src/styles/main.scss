@@ -5,7 +5,6 @@
 @import '~bulma/bulma';
 
 // Utilities
-@import 'utilities/fonts';
 @import 'utilities/functions';
 @import 'utilities/media-queries';
 @import 'utilities/mixins';
@@ -14,6 +13,7 @@
 @import 'variables';
 @import 'colors';
 @import 'typography';
+@import 'utilities/fonts';
 @import 'base';
 
 // Layout
