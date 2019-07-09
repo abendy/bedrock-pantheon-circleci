@@ -1,0 +1,10 @@
+// Media
+
+img {
+  height: auto;
+  max-width: 100%;
+
+  &[src$='.svg'] {
+    display: block;
+  }
+}

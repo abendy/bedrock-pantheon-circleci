@@ -1,0 +1,22 @@
+// Hero module
+
+.module.hero {
+  position: relative;
+}
+
+.module.hero figure {
+  margin: 0;
+}
+
+.hero__content {
+  background-color: $white;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+h2.hero__title {
+  color: $related-midgrey;
+  font-family: $font-family-playfair;
+  font-size: rem(38);
+}

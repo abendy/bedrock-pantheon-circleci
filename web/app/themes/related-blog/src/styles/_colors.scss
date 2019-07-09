@@ -5,10 +5,8 @@ $white:                   #fff;
 $black:                   #000;
 
 // Client colors
-$related-black:             #111;
-$related-darkgrey:          #404040;
-$related-midgrey:           #7a7a7a;
-$related-lightgrey:         #ccc;
+$related-black:             #1c1a1a;
+$related-midgrey:           #514c48;
 
 // Main color palette
 $color-primary:             $related-black;
@@ -25,9 +23,3 @@ $color-text-invert:         $white;
 $color-link:                $related-black;
 $color-link-hover:          $color-link;
 $color-link-visited:        $color-link;
-
-// Styles
-body {
-  background-color: $color-background;
-  color: $color-text;
-}

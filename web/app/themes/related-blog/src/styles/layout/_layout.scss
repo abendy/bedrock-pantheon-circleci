@@ -1,24 +1,8 @@
-* {
+// Main layout
 
-  &:before,
-  &:after {
-    box-sizing: inherit;
-  }
-}
-
-html {
-  box-sizing: border-box;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-#main {
+main {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 70vw;
 }

@@ -1,37 +1,31 @@
 <section class="module content-list">
   {% if title is defined and title is not empty %}
   <div class="content-list__top">
-    <div class="container">
-      <h2>{{ title }}</h2>
-    </div>
+    <h2 class="content-list__title">{{ title }}</h2>
   </div>
   {% endif %}
 
   {% if items is defined and items is not empty %}
 	<div class="content-list__items">
-		<div class="container">
+    {% for item in items %}
+    <div class="content-list__item vc_col-sm-6">
+      {% if item.image is defined and item.image is not empty %}
+      <a href="{{ item.link }}"><img src="{{ item.image }}" alt="{{ item.image_alt|e }}"></a>
+      {% endif %}
 
-      {% for item in items %}
-      <div class="content-list__item">
-        {% if item.image is defined and item.image is not empty %}
-        <a href="{{ item.link }}"><img src="{{ item.image }}" alt="{{ item.image_alt|e }}"></a>
-        {% endif %}
+      {% if item.category is defined and item.category is not empty %}
+      <p class="content-list__item__category">{{ item.category }}</p>
+      {% endif %}
 
-        {% if item.category is defined and item.category is not empty %}
-        <p class="content-list__item__category">{{ item.category }}</p>
-        {% endif %}
+      {% if item.title is defined and item.title is not empty %}
+      <a href="{{ item.link }}"><h3 class="content-list__item__title">{{ item.title }}</h3></a>
+      {% endif %}
 
-        {% if item.title is defined and item.title is not empty %}
-        <a href="{{ item.link }}"><h3 class="content-list__item__title">{{ item.title }}</h3></a>
-        {% endif %}
-
-        {% if item.text is defined and item.text is not empty %}
-        <p class="content-list__item__desc">{{ item.text }}</p>
-        {% endif %}
-      </div>
-      {% endfor %}
-
-		</div>
+      {% if item.text is defined and item.text is not empty %}
+      <p class="content-list__item__desc">{{ item.text }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
 	</div>
 
   {% if pagination is defined and pagination is not empty %}

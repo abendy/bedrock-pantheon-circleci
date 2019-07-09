@@ -1,10 +1,10 @@
 // Typography
 
 // $base-font-size
-$base-font-size: 14;
+$base-font-size: 15;
 
 // $base-line-height
-$base-line-height: 1.5;
+$base-line-height: 1;
 
 // Font Stacks
 
@@ -17,19 +17,21 @@ $base-line-height: 1.5;
 // @weight - {integer} or {keyword} i.e. 800, bold
 // @style - {keyword} i.e. normal, italic
 
-//$typefaces: (
-//  'FILENAME': (
-//    family: 'fontname',
-//    weight: 100,
-//    style: normal,
-//  ),
-//);
+$typefaces: (
+  'PlayfairDisplay-Regular': (
+    family: 'PlayfairDisplay',
+    weight: 100,
+    style: normal,
+  ),
+  'ProximaNova-Regular': (
+    family: 'ProximaNova',
+    weight: 100,
+    style: normal,
+  ),
+);
 
 // External fonts
 $external-fonts: ();
-
-// $font-custom
-// $font-custom: '';
 
 // $font-family-sans
 $font-family-sans: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -40,15 +42,22 @@ $font-family-serif: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
 // $font-family-monospace
 $font-family-monospace: 'Inconsolata', 'Menlo', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier', monospace;
 
+// $font-family-playfair
+$font-family-playfair: 'PlayfairDisplay', 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+
+// $font-family-playfair
+$font-family-proxima: 'ProximaNova', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
 // $font-family-default
-$font-family-default: $font-family-sans;
+$font-family-default: $font-family-proxima;
 
 // Styles
 
-html,
 body {
+  background-color: $color-background;
+  color: $color-text;
   font-family: $font-family-default;
-  font-size: rem(20, $base-font-size);
+  font-size: rem(15);
   -webkit-font-smoothing: antialiased;
   line-height: $base-line-height;
   text-rendering: optimizeLegibility;
@@ -60,12 +69,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-family-default;
   font-weight: normal;
 }
 
 h1 {
-  font-size: rem(30);
+  color: $related-midgrey;
+  font-family: $font-family-playfair;
+  font-size: rem(60);
+  text-align: center;
 }
 
 a {
@@ -76,17 +87,10 @@ a {
   transition: color .2s;
 
   &:visited {
-    color: $color-link-hover;
+    color: $color-link-visited;
   }
 
   @include hover {
     color: $color-link-hover;
   }
-}
-
-p,
-li,
-span {
-  font-size: $base-font-size;
-  line-height: $base-line-height;
 }

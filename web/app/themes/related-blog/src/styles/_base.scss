@@ -8,11 +8,23 @@
   display: none;
 }
 
-img {
-  height: auto;
-  max-width: 100%;
+* {
 
-  &[src$='.svg'] {
-    display: block;
+  &:before,
+  &:after {
+    box-sizing: inherit;
   }
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }

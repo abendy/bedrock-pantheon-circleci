@@ -1,0 +1,38 @@
+// Footer
+
+#footer {
+  background-color: $related-midgrey;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  span,
+  p {
+    color: $white;
+  }
+
+  a {
+    color: $white;
+
+    &:visited {
+      color: $white;
+    }
+
+    @include hover {
+      color: $white;
+    }
+  }
+}
+
+#nav-footer {
+  ul {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  li {
+    list-style: none;
+  }
+}
