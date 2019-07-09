@@ -1,1 +1,4 @@
 <p>&copy; Copyright {{"now"|date('Y')}}</p>
+<nav id="nav-footer" class="nav-footer" role="navigation">
+  {% include "global/menu.twig" with {'menu': footer_menu.get_items} %}
+</nav><!-- #nav-footer -->

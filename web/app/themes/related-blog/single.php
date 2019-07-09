@@ -9,6 +9,7 @@ $context['page'] = Timber::get_post();
 $context['password_required'] = post_password_required( $context['page']->ID );
 
 $context['menu'] = new \Timber\Menu( 'main' );
+$context['footer_menu'] = new \Timber\Menu( 'footer' );
 
 if ( post_password_required( $context['page']->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
