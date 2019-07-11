@@ -164,9 +164,6 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
         $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
       }
 
-      // Get the category
-      $category = !empty( $post['rltd_hero_item_reference'] ) ? @get_the_category( $post['rltd_hero_item_reference'] )[0]->name : '';
-
       // Build nested items array for rendering
       $items[] = array(
         'link' => @$link,
@@ -174,10 +171,9 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
         'text' => @$text,
         'image' => @$image,
         'image_alt' => @$image_alt,
-        'category' => @$category,
       );
 
-      $link = $title = $text = $image_id = $image = $image_alt = $category = '';
+      $link = $title = $text = $image_id = $image = $image_alt = '';
     }
 
     $compile = Timber::compile(
