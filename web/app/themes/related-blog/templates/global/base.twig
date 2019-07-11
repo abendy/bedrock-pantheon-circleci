@@ -14,6 +14,13 @@
       <nav id="nav-main" class="nav-main" role="navigation">
         {% include "global/menu.twig" with {'menu': menu.get_items} %}
       </nav><!-- #nav-main -->
+
+      <form method="get" action="{{ site.url }}" role="search">
+        <div class="" data-name="">
+          <input type="text" name="s" value="" placeholder="" autocomplete="off"/>
+          <button type="submit" class="">Search</button>
+        </div>
+      </form>
     </div>
     {% endblock %}
   </header>
