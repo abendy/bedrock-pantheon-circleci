@@ -1,9 +1,11 @@
-<nav id="nav-footer" class="nav-footer" role="navigation">
-  {% include "global/menu.twig" with {'menu': footer_menu.get_items} %}
-</nav><!-- #nav-footer -->
+<div class="column is-6">
+  <nav id="nav-footer" class="nav-footer" role="navigation">
+    {% include "global/menu.twig" with {'menu': footer_menu.get_items} %}
+  </nav><!-- #nav-footer -->
+</div>
 
-<a href="{{site.url}}" rel="home">
-  {{function('the_custom_logo')}}
-</a>
+<div class="column is-6">
+  {{ function('the_custom_logo') }}
 
-<p>&copy; {{"now"|date('Y')}} Related Companies</p>
+  <p>&copy; {{ "now"|date('Y') }} Related Companies</p>
+</div>
