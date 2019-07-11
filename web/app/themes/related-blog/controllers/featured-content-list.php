@@ -72,13 +72,13 @@ vc_map(
             'type'            => 'dropdown',
             'holder'          => '',
             'class'           => '',
-            'heading'         => __( 'Choose the type of content this module will display', 'js_composer' ),
+            'heading'         => __( 'Choose the type of content this module will display', 'related-blog' ),
             'param_name'      => 'rltd_featured_content_list_item_external_link',
             'description'     => '',
             'value'           => array(
-              __( 'Internal page reference', 'js_composer' ) => 'internal',
-              __( 'Static content', 'js_composer' )          => 'static',
-              __( 'External link', 'js_composer' )           => 'yes',
+              __( 'Internal page reference', 'related-blog' ) => 'internal',
+              __( 'Static content', 'related-blog' )          => 'static',
+              __( 'External link', 'related-blog' )           => 'yes',
             ),
             'admin_label'     => false,
             'save_always'     => true,
@@ -222,7 +222,7 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
 
     // Parse the twig template with the shortcode's attributes and content.
     $compile = Timber::compile(
-      'content-list.twig',
+      'featured-content-list.twig',
       array(
         'title' => @$rltd_featured_content_list_title,
         'columns' => @$columns,

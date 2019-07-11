@@ -31,7 +31,7 @@ if ( class_exists( 'Timber' ) ) {
   $timber = new \Timber\Timber();
 
   // Sets the directories (inside your theme) to find .twig files
-  Timber::$dirname = array( 'templates', 'templates/modules' );
+  Timber::$dirname = array( 'templates', 'templates/global', 'templates/modules', 'templates/partial' );
 
   new RelatedTimberSite();
 }

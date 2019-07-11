@@ -2,7 +2,7 @@
 {% include 'global/html-header.twig' %}
 {% endblock %}
 
-<body id="root" class="{{body_class}}" data-theme="" data-template="base.twig">
+<body id="root" class="{{ body_class }}" data-theme="" data-template="base.twig">
   <a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
 
   <header id="header" class="module header" data-name="header">
@@ -21,7 +21,7 @@
   <main id="main" class="main" data-default="" role="main">
     <section id="content" role="main" class="content-wrapper">
       {% if title %}
-      <h1>{{title}}</h1>
+      <h1>{{ title }}</h1>
       {% endif %}
 
       <div class="wrapper {{sidebar_class}}">
