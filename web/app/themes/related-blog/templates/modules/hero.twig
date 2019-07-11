@@ -6,7 +6,15 @@
 
   {% if first.image is defined and first.image is not empty %}
   <figure>
-    <a href="{{ first.link }}"><img src="{{ first.image }}" alt="{{ first.image_alt }}"></a>
+    {% if first.link is defined and first.link is not empty %}
+    <a href="{{ first.link }}">
+    {% endif %}
+
+      <img src="{{ first.image }}" alt="{{ first.image_alt }}">
+
+    {% if first.link is defined and first.link is not empty %}
+    </a>
+    {% endif %}
   </figure>
   {% endif %}
 
