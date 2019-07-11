@@ -1,0 +1,38 @@
+{% extends "global/base.twig" %}
+
+{% block content %}
+  {% if password_required is defined and password_required is not empty %}
+  <form class="password-form" action="{{ site.site_url }}/wp-login.php?action=postpass" method="post">
+    <label for="pwbox-{{ page.ID }}">Password:</label>
+    <input class="password-box" name="post_password" id="pwbox-{{ page.ID }}" type="password" placeholder="Password" size="20" maxlength="20" />
+    <input class="password-btn" type="submit" name="Submit" value="Submit" />
+  </form>
+  {% else %}
+  {# <div class="content-wrapper"> #}
+    <article class="post-type-{{ page.post_type }}" id="post-{{ page.ID }}">
+      {# <section class="article-content"> #}
+        {% if is_front_page is defined and is_front_page is empty %}
+        <h1>{{ page.title }}</h1>
+        {% endif %}
+
+        {% set items = [] %}
+        {% set items = items|merge([{ image: page.hero_image, title: page.title, text: page.post_excerpt }]) %}
+
+        {% block hero %}
+        {% include 'modules/hero.twig' %}
+        {% endblock %}
+
+        {% if page.post_type == 'post' %}
+        <p class="blog-author">
+          {{ page.date }}. By {{ page.author.name }}
+        </p>
+        {% endif %}
+
+        <div class="article-body">
+          {{ page.post_content|shortcodes }}
+        </div>
+      {# </section> #}
+    </article>
+  {# </div><!-- /content-wrapper --> #}
+  {% endif %}
+{% endblock %}
