@@ -15,10 +15,6 @@
     <a href="{{ first.link }}"><h2 class="hero__title">{{ first.title }}</h2></a>
     {% endif %}
 
-    {% if first.category is defined and first.category is not empty %}
-    <p class="hero__category">{{ first.category }}</p>
-    {% endif %}
-
     {% if first.text is defined and first.text is not empty %}
     <p class="hero__desc">{{ first.text }}</p>
     {% endif %}

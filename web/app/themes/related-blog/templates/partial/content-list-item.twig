@@ -1,0 +1,23 @@
+<div class="content-list__items columns">
+  {% for item in items %}
+  <div class="content-list__item column is-{{ columns }}">
+    {% if item.image is defined and item.image is not empty %}
+    <a href="{{ item.link }}"><img src="{{ item.image }}" alt="{{ item.image_alt|e }}"></a>
+    {% endif %}
+
+    <div class="content-list__content">
+      {% if item.meta is defined and item.meta is not empty %}
+      <p class="content-list__item__meta">{{ item.meta }}</p>
+      {% endif %}
+
+      {% if item.title is defined and item.title is not empty %}
+      <a href="{{ item.link }}"><h3 class="content-list__item__title">{{ item.title }}</h3></a>
+      {% endif %}
+
+      {% if item.text is defined and item.text is not empty %}
+      <p class="content-list__item__desc">{{ item.text }}</p>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>

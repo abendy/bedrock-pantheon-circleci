@@ -185,7 +185,7 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
       $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 
       // Get the category
-      $category = !empty( $post['rltd_featured_content_list_item_reference'] ) ? @get_the_category( $post['rltd_featured_content_list_item_reference'] )[0]->name : '';
+      $meta = !empty( $post['rltd_featured_content_list_item_reference'] ) ? @get_the_category( $post['rltd_featured_content_list_item_reference'] )[0]->name : '';
 
       // Build nested items array for rendering
       $items[] = array(
@@ -194,10 +194,10 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
         'text' => @$text,
         'image' => @$image,
         'image_alt' => @$image_alt,
-        'category' => @$category,
+        'meta' => @$meta,
       );
 
-      $link = $title = $text = $image_id = $image = $image_alt = $category = '';
+      $link = $title = $text = $image_id = $image = $image_alt = $meta = '';
     }
 
     // Parse the twig template with the shortcode's attributes and content.
