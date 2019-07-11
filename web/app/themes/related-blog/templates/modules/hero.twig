@@ -12,7 +12,7 @@
 
   <div class="hero__content">
     {% if first.title is defined and first.title is not empty %}
-    <a href="{{ first.link }}"><{{ h_tag|default(h2) }} class="hero__title">{{ first.title }}</{{ h_tag|default(h2) }}></a>
+    <a href="{{ first.link }}"><{{ h_tag|default('h2') }} class="hero__title">{{ first.title }}</{{ h_tag|default('h2') }}></a>
     {% endif %}
 
     {% if first.text is defined and first.text is not empty %}
