@@ -77,6 +77,10 @@ h1 {
   font-family: $font-family-playfair;
   font-size: rem(60);
   text-align: center;
+
+  &:not(.hero__title) {
+    margin: 2rem 0 3rem;
+  }
 }
 
 a {

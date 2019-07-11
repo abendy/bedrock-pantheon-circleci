@@ -1,5 +1,9 @@
 // Content list module
 
+.module.content-list {
+  padding: 0 .8rem;
+}
+
 .content-list__items {
   display: flex;
   flex-wrap: wrap;
@@ -7,6 +11,10 @@
 
 .content-list__item {
   padding: .6em;
+
+  img {
+    width: 100%;
+  }
 }
 
 .content-list__content {
