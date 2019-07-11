@@ -1,5 +1,10 @@
 // Social share module
 
-li.social-share__link {
+.social-share__list {
+  display: flex;
+  flex-direction: row;
+}
+
+.social-share__link {
   list-style: none;
 }
