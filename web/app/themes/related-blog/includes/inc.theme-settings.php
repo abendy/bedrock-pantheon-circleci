@@ -29,7 +29,7 @@ function rltd_setup_theme() {
   // add_theme_support( 'automatic-feed-links' );
 
   // Add custom image sizes
-  add_image_size( 'rltd_thumbnail', 225, 225, true );
+  add_image_size( 'rltd_thumbnail', 370, 248, true );
   add_image_size( 'hero_small', 1155, 450, true );
   add_image_size( 'hero_medium', 1600, 500, true );
   add_image_size( 'hero_large', 1600, 555, true );
