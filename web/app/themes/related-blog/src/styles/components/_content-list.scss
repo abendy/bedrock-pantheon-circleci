@@ -1,6 +1,19 @@
 // Content list module
 
-h2.content-list__title {
+.content-list__items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content-list__item {
+  padding: .6em;
+}
+
+.content-list__content {
+  padding: .5em;
+}
+
+.content-list__title {
   color: $related-black;
   font-family: $font-family-proxima;
   font-size: rem(15);
@@ -19,10 +32,11 @@ h2.content-list__title {
   text-transform: uppercase;
 }
 
-h3.content-list__item__title {
+.content-list__item__title {
   color: $related-midgrey;
   font-family: $font-family-playfair;
   font-size: rem(24);
+  margin-bottom: 1rem;
 }
 
 .content-list__item__desc {
