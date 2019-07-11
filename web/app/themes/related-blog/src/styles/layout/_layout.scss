@@ -6,3 +6,7 @@ main {
   flex-direction: column;
   width: 70vw;
 }
+
+.module {
+  @include clearfix;
+}
