@@ -94,6 +94,22 @@ vc_map(
         ),
       ),
       array(
+        'type'            => 'dropdown',
+        'holder'          => '',
+        'class'           => '',
+        'heading'         => __( 'How many grid columns should the content organize?', 'related-blog' ),
+        'param_name'      => 'rltd_content_list_columns',
+        'description'     => '',
+        'value'           => array(
+          __( 1, 'related-blog' ) => '1',
+          __( 2, 'related-blog' ) => '2',
+          __( 3, 'related-blog' ) => '3',
+        ),
+        'std'             => 2,
+        'admin_label'     => false,
+        'save_always'     => true,
+      ),
+      array(
         'type'            => 'checkbox',
         'holder'          => '',
         'class'           => '',
@@ -151,12 +167,16 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
           'rltd_content_list_title' => '',
           'rltd_content_list_source' => '',
           'rltd_content_list_limit' => '',
+          'rltd_content_list_columns' => '',
           'rltd_content_list_pagination' => '',
           'rltd_content_list_taxonomies' => '',
         ),
         $atts
       )
     );
+
+    // Set the columns in Bootstrap style class numbers
+    $columns = !empty( $rltd_content_list_columns ) ? 12 / $rltd_content_list_columns : 6;
 
     // Set default args for posts query
     $args = array(
@@ -244,6 +264,7 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
       'content-list.twig',
       array(
         'title' => @$rltd_content_list_title,
+        'columns' => @$columns,
         'items' => @$items,
         'pagination' => @$pagination,
       )

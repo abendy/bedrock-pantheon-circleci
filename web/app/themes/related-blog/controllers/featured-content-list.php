@@ -46,6 +46,22 @@ vc_map(
         ),
       ),
       array(
+        'type'            => 'dropdown',
+        'holder'          => '',
+        'class'           => '',
+        'heading'         => __( 'How many grid columns should the content organize?', 'related-blog' ),
+        'param_name'      => 'rltd_featured_content_list_columns',
+        'description'     => '',
+        'value'           => array(
+          __( 1, 'related-blog' ) => '1',
+          __( 2, 'related-blog' ) => '2',
+          __( 3, 'related-blog' ) => '3',
+        ),
+        'std'             => 2,
+        'admin_label'     => false,
+        'save_always'     => true,
+      ),
+      array(
         'type'            => 'param_group',
         'heading'         => __( 'Featured Item', 'related-blog' ),
         'param_name'      => 'rltd_featured_content_list_container',
@@ -158,11 +174,15 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
       shortcode_atts(
         array(
           'rltd_featured_content_list_title' => '',
+          'rltd_featured_content_list_columns' => '',
           'rltd_featured_content_list_container' => '',
         ),
         $atts
       )
     );
+
+    // Set the columns in Bootstrap style class numbers
+    $columns = !empty( $rltd_featured_content_list_columns ) ? 12 / $rltd_featured_content_list_columns : 6;
 
     // Loop over nested/multi-instance items
     $container = !empty( $rltd_featured_content_list_container ) ? vc_param_group_parse_atts( $rltd_featured_content_list_container ) : array();
@@ -205,6 +225,7 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
       'content-list.twig',
       array(
         'title' => @$rltd_featured_content_list_title,
+        'columns' => @$columns,
         'items' => @$items,
       )
     );
