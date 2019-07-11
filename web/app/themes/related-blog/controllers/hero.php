@@ -149,7 +149,7 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
       // Get image and alt tag
       if ( !empty( $post['rltd_hero_item_image'] ) ) {
         $image_id = $post['rltd_hero_item_image'];
-        $image = wp_get_attachment_image_src( $image_id, 'full' )[0];
+        $image = wp_get_attachment_image_src( $image_id, 'hero_full' )[0];
 
         $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
       } else {

@@ -33,7 +33,7 @@ function rltd_setup_theme() {
   add_image_size( 'hero_small', 1155, 450, true );
   add_image_size( 'hero_medium', 1600, 500, true );
   add_image_size( 'hero_large', 1600, 555, true );
-  add_image_size( 'hero_full', 1600, 720, true );
+  add_image_size( 'hero_full', 1200, 540, true );
 
   function rltd_hero_images( $sizes ) {
     return array_merge(
