@@ -157,10 +157,13 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
           'type' => 'image_advanced',
           'multiple' => true
         );
+
         $hero_image_imgadv = rwmb_meta( 'hero_image_imgadv' , $args, $post['rltd_hero_item_reference'] );
-        $image = reset( $hero_image_imgadv )['full_url'];
 
         $image_id = reset( $hero_image_imgadv )['ID'];
+
+        $image = wp_get_attachment_image_src( $image_id, 'hero_full' )[0];
+
         $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
       }
 

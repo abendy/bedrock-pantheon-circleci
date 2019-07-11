@@ -15,12 +15,6 @@
         <h1>{{ page.title }}</h1>
         {% endif %}
 
-        {% if page.post_type == 'post' %}
-        <p class="blog-author">
-          {{ page.date }}. By {{ page.author.name }}
-        </p>
-        {% endif %}
-
         <div class="article-body">
           {% if page.hero_image is defined and page.hero_image is not empty %}
 
@@ -39,6 +33,12 @@
               </div>
             </div>
           </div>
+          {% endif %}
+
+          {% if page.post_type == 'post' %}
+          <p class="blog-author">
+            {{ page.date }}. By {{ page.author.name }}
+          </p>
           {% endif %}
 
           {{ page.post_content|shortcodes }}
