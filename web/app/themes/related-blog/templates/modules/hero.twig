@@ -1,6 +1,6 @@
 {% set first = items|first %}
 
-<section class="module hero wpb_animate_when_almost_visible wpb_fadeIn fadeIn wpb_start_animation animated"
+<section class="module hero"
   data-name="hero"
   data-type="hero">
 
@@ -19,12 +19,16 @@
   {% endif %}
 
   <div class="hero__content">
-    {% if first.title is defined and first.title is not empty %}
-    <a href="{{ first.link }}"><{{ h_tag|default('h2') }} class="hero__title">{{ first.title }}</{{ h_tag|default('h2') }}></a>
-    {% endif %}
+    <div class="columns">
+      <div class="column {{ (post_type == 'post') ? 'is-11 is-offset-1' : 'is-10 is-offset-2' }}">
+        {% if first.title is defined and first.title is not empty %}
+        <a href="{{ first.link }}"><{{ h_tag|default('h2') }} class="hero__title">{{ first.title }}</{{ h_tag|default('h2') }}></a>
+        {% endif %}
 
-    {% if first.text is defined and first.text is not empty %}
-    <p class="hero__desc">{{ first.text }}</p>
-    {% endif %}
+        {% if first.text is defined and first.text is not empty %}
+        <p class="hero__desc">{{ first.text }}</p>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </section>

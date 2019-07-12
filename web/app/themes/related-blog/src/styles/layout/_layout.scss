@@ -1,12 +1,5 @@
 // Main layout
 
-main {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  width: 70vw;
-}
-
 .module {
   @include clearfix;
 }

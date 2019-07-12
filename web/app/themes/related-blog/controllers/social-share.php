@@ -20,6 +20,9 @@ vc_map(
 
 if ( !function_exists( 'rltd_social_share_render' ) ) {
   function rltd_social_share_render( $atts, $content = null ) {
+    // Get current post
+    $post_type = @get_post()->post_type;
+
     // Construct share URL for current page
     global $wp;
     $current_url = esc_url( home_url( add_query_arg( array(), $wp->request ) ) );
@@ -27,6 +30,7 @@ if ( !function_exists( 'rltd_social_share_render' ) ) {
     $compile = Timber::compile(
       'social-share.twig',
       array(
+        'post_type' => $post_type,
         'current_url' => $current_url,
       )
     );

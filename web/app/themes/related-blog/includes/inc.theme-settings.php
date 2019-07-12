@@ -50,3 +50,17 @@ function rltd_setup_theme() {
   add_filter( 'image_size_names_choose', 'rltd_hero_images' );
 }
 add_action( 'after_setup_theme', 'rltd_setup_theme' );
+
+// Add animate style
+add_action( 'wp_enqueue_scripts', function () {
+  wp_register_style( 'animate-css', vc_asset_url( 'lib/bower/animate-css/animate.min.css' ), array(), WPB_VC_VERSION );
+  wp_enqueue_style( 'animate-css' );
+} );
+
+// Force city post types to use the index template
+add_filter( 'template_include', function ( $template ) {
+  $city = get_query_var( 'city' );
+  $new_tpl = locate_template( 'index.php' );
+
+  return ( !empty( $city ) && !empty( $new_tpl ) ) ? $new_tpl : $template ;
+} );

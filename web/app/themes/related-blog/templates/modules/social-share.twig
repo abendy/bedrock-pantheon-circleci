@@ -1,26 +1,33 @@
-<section class="module social-share wpb_animate_when_almost_visible wpb_fadeIn fadeIn wpb_start_animation animated"
+<section class="module social-share"
   data-name="social-share"
   data-type="social-share">
 
-  <div class="social-share__links">
-    <ul class="social-share__list">
-      <li class="social-share__link">
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ current_url }}" class="ui-social" target="_blank">
-          <i class="icon-font">facebook</i>
-        </a>
-      </li>
+  <div class="columns">
+    <div class="column {{ (post_type == 'post') ? 'is-8 is-offset-2' : 'is-10 is-offset-2' }}">
 
-      <li class="social-share__link">
-        <a href="https://twitter.com/home?status={{ current_url }}" class="ui-social" target="_blank">
-          <i class="icon-font">twitter</i>
-        </a>
-      </li>
+      <div class="social-share__links">
+        <ul class="social-share__list">
+          <li class="social-share__link">
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ current_url }}" class="ui-social" target="_blank">
+              <i class="icon-font">facebook</i>
+            </a>
+          </li>
 
-      <li class="social-share__link">
-        <a href="mailto:?body={{ current_url }}" class="ui-social">
-          <i class="icon-font">email</i>
-        </a>
-      </li>
-    </ul>
+          <li class="social-share__link">
+            <a href="https://twitter.com/home?status={{ current_url }}" class="ui-social" target="_blank">
+              <i class="icon-font">twitter</i>
+            </a>
+          </li>
+
+          <li class="social-share__link">
+            <a href="mailto:?body={{ current_url }}" class="ui-social">
+              <i class="icon-font">email</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
   </div>
+
 </section>

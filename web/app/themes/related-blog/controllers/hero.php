@@ -133,6 +133,9 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
       )
     );
 
+    // Get current post
+    $post_type = @get_post()->post_type;
+
     // Loop over nested/multi-instance items
     $container = !empty( $rltd_hero_container ) ? vc_param_group_parse_atts( $rltd_hero_container ) : array();
 
@@ -182,6 +185,7 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
     $compile = Timber::compile(
       'hero.twig',
       array(
+        'post_type' => $post_type,
         'items' => @$items,
       )
     );

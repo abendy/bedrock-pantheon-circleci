@@ -75,6 +75,7 @@ if ( class_exists( 'Vc_Manager' ) ) {
     include_once $controllers_dir . 'gallery.php';
     include_once $controllers_dir . 'hero.php';
     include_once $controllers_dir . 'social-share.php';
+    include_once $controllers_dir . 'textarea.php';
   }
   add_action( 'vc_before_init', 'rltd_include_modules' );
 
