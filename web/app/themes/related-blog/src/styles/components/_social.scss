@@ -1,10 +1,42 @@
 // Social share module
 
-.social-share__list {
-  display: flex;
-  flex-direction: row;
+.social-share__links {
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  li {
+    list-style: none;
+  }
 }
 
 .social-share__link {
-  list-style: none;
+  border-radius: 50%;
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity .2s;
+
+  i,
+  [class^='icon-'] {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 40px;
+    // pointer-events: none;
+    transition: color .2s;
+    // will-change: color;
+  }
+
+  &:hover,
+  &:active {
+    opacity: .75;
+  }
+
+  &.inactive {
+    opacity: .25;
+    // pointer-events: none;
+  }
 }
