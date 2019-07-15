@@ -30,32 +30,18 @@ function rltd_setup_theme() {
 
   // Add custom image sizes
   add_image_size( 'rltd_thumbnail', 370, 248, true );
-  add_image_size( 'hero_small', 1155, 450, true );
-  add_image_size( 'hero_medium', 1600, 500, true );
-  add_image_size( 'hero_large', 1600, 555, true );
-  add_image_size( 'hero_full', 1200, 540, true );
 
   function rltd_hero_images( $sizes ) {
     return array_merge(
       $sizes,
       array(
         'rltd_thumbnail' => __( 'Content List Thumbnail' ),
-        'hero_small'     => __( 'Hero Image 1155x450' ),
-        'hero_medium'    => __( 'Hero Image 1600x500' ),
-        'hero_large'     => __( 'Hero Image 1600x555' ),
-        'hero_full'      => __( 'Hero Image 1600x720' ),
       )
     );
   }
   add_filter( 'image_size_names_choose', 'rltd_hero_images' );
 }
 add_action( 'after_setup_theme', 'rltd_setup_theme' );
-
-// Add animate style
-add_action( 'wp_enqueue_scripts', function () {
-  wp_register_style( 'animate-css', vc_asset_url( 'lib/bower/animate-css/animate.min.css' ), array(), WPB_VC_VERSION );
-  wp_enqueue_style( 'animate-css' );
-} );
 
 // Force city post types to use the index template
 add_filter( 'template_include', function ( $template ) {

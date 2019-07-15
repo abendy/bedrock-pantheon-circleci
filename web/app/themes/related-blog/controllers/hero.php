@@ -62,7 +62,7 @@ vc_map(
             'value'           => '',
             'admin_label'     => false,
             'dependency'      => array(
-              'element'            => 'rltd_hero_item_external_link',
+              'element'         => 'rltd_hero_item_external_link',
               'value'           => array( 'internal' ),
             ),
             'settings'        => array(

@@ -8,6 +8,7 @@
     <input class="password-btn" type="submit" name="Submit" value="Submit" />
   </form>
   {% else %}
+  <!-- start unique single tpl -->
   <article class="post-type-{{ page.post_type }}" id="post-{{ page.ID }}">
     {% if page is defined and page.hero_image is empty %}
     <h1>{{ page.title }}</h1>
@@ -23,14 +24,15 @@
     }]) %}
     {% set h_tag = 'h1' %}
 
-    <div class="vc_row wpb_animate_when_almost_visible wpb_fadeIn fadeIn wpb_start_animation animated">
       <div class="vc_column_container vc_col-sm-12">
+    <div class="columns">
         {% block hero %}
         {% include 'modules/hero.twig' %}
         {% endblock %}
       </div>
-    </div>
+    </div><!-- /.columns -->
     {% endif %}
+  <!-- end unique single tpl -->
 
     {{ page.post_content|shortcodes }}
   </article>
