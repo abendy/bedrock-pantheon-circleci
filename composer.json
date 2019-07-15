@@ -19,12 +19,12 @@
     }
   ],
   "require": {
-    "php": ">=7.3",
+    "php": "^7.1",
     "composer/installers": "^1.4",
     "hellonico/timber-dump-extension": "^1.0",
     "oscarotero/env": "^1.1.0",
     "pantheon-systems/terminus": "^2.0",
-    "roots/wordpress": "5.2.2",
+    "roots/wordpress": "^4.8",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "timber/timber": "^1.10",
@@ -35,6 +35,7 @@
     "wpackagist-plugin/pantheon-advanced-page-cache": "^0.1.2",
     "wpackagist-plugin/really-simple-ssl": "^3.2",
     "wpackagist-plugin/redirection": "^4.3",
+    "wpackagist-plugin/regenerate-thumbnails": "^3.1",
     "wpackagist-plugin/timber-library": "^1.10",
     "wpackagist-plugin/tinymce-advanced": "^5.2",
     "wpackagist-plugin/vc-shortcodes": "^2.4",
@@ -44,6 +45,7 @@
     "wpackagist-plugin/wp-native-php-sessions": "^0.6.0",
     "wpackagist-plugin/wp-optimize": "^2.3",
     "wpackagist-plugin/wp-super-cache": "^1.6",
+    "wpackagist-plugin/yith-infinite-scrolling": "^1.1",
     "wp-cli/wp-cli": "^2.2"
   },
   "require-dev": {
@@ -56,12 +58,16 @@
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
       "web/app/plugins/{$name}/": [
         "wpackagist-plugin/*",
         "type:wordpress-plugin"
       ],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
     "wordpress-install-dir": "web/wp"
   },
@@ -70,7 +76,9 @@
       "php -r \"copy('.env.example', '.env');\""
     ],
     "test": [
-      "phpcs -n web/app/themes"
+      "phplint",
+      "phpcs -n web/app/themes",
+      "phpcs -n web/app/**/custom/"
     ]
   }
 }

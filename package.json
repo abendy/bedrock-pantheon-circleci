@@ -5,9 +5,8 @@
   "scripts": {
     "dev": "WP_ENV=development webpack --mode=development",
     "build": "WP_ENV=production webpack --mode=production",
-    "serve": "php -S 0.0.0.0:8000 -t web",
-    "clean": "rm -f web/app/themes/related-blog/build/assets/**/*.*",
-    "test": "phplint './web/app/themes/**/*.php'",
+    "clean": "rm -rf web/app/themes/related-blog/build",
+    "test": "eslint './**/*.js' --fix && phplint './web/app/themes/**/*.php' && sass-lint",
     "upgrade": "composer update && yarn upgrade",
   },
   "author": "Allan Bendy <allan.bendy@gmail.com>",
