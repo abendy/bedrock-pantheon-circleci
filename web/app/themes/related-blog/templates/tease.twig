@@ -1,0 +1,18 @@
+{% block content %}
+<div class="content-list__item column is-12-mobile is-4-tablet is-4-desktop">
+
+  {% if (post.link is defined and post.link is not empty) and (post.thumbnail.src is defined and post.thumbnail.src is not empty) %}
+  <a href="{{ post.link }}"><img src="{{ post.thumbnail.src('rltd_thumbnail') }}"></a>
+  {% endif %}
+
+  <div class="content-list__content">
+    {% if post.title is defined and post.title is not empty %}
+    <a href="{{ post.link }}"><h3 class="content-list__item__title">{{ post.title }}</h3></a>
+    {% endif %}
+
+    {% if post.preview is defined and post.preview is not empty %}
+    <p class="content-list__item__desc">{{ post.preview.length(25) }}</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
