@@ -141,7 +141,7 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
 
     foreach ( $container as $post ) {
       // Get the permalink
-      $link = $post['rltd_hero_item_external_link'] === 'yes' && !empty( $post['rltd_hero_item_link'] ) ? esc_url( $post['rltd_hero_item_link'] ) : get_permalink( $post['rltd_hero_item_reference'] );
+      $link = $post['rltd_hero_item_external_link'] === 'yes' && !empty( $post['rltd_hero_item_link'] ) ? esc_url( $post['rltd_hero_item_link'] ) : ( !empty( $post['rltd_hero_item_reference'] ) ? get_permalink( $post['rltd_hero_item_reference'] ) : '' );
 
       // Get the page title
       $title = !empty( $post['rltd_hero_item_title'] ) ? $post['rltd_hero_item_title'] : ( !empty( $post['rltd_hero_item_reference'] ) ? get_the_title( $post['rltd_hero_item_reference'] ) : '' );
