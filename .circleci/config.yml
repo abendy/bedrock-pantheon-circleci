@@ -23,6 +23,8 @@ jobs:
       - run:
           name: Install dependencies
           command: composer install -n -o
+      - run:
+          name: Build theme
           command: yarn run build
       - persist_to_workspace:
           root: .
