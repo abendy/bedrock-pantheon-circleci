@@ -22,6 +22,9 @@
     <div class="columns">
       <div class="column {{ (post_type == 'post') ? 'is-11 is-offset-1' : 'is-10 is-offset-2' }}">
         {% if first.title is defined and first.title is not empty %}
+        {% if h_tag is empty %}
+        {% set h_tag = first.h_tag %}
+        {% endif %}
         <a href="{{ first.link }}"><{{ h_tag|default('h2') }} class="hero__title">{{ first.title }}</{{ h_tag|default('h2') }}></a>
         {% endif %}
 

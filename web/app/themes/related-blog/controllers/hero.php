@@ -89,6 +89,20 @@ vc_map(
             'admin_label'     => false,
           ),
           array(
+            'type'            => 'checkbox',
+            'holder'          => '',
+            'class'           => '',
+            // 'heading'         => __( '', 'related-blog' ),
+            'param_name'      => 'rltd_hero_item_use_as_header',
+            'description'     => __( 'Use hero title as the page title.', 'related-blog' ),
+            'value'           => array( __( 'Use as page title', 'related-blog' ) => 'yes' ),
+            'admin_label'     => false,
+            'dependency'      => array(
+              'element'         => 'rltd_hero_item_external_link',
+              'value'           => array( 'static' ),
+            ),
+          ),
+          array(
             'type'            => 'textfield',
             'holder'          => 'p',
             'class'           => '',
@@ -146,6 +160,9 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
       // Get the page title
       $title = !empty( $post['rltd_hero_item_title'] ) ? $post['rltd_hero_item_title'] : ( !empty( $post['rltd_hero_item_reference'] ) ? get_the_title( $post['rltd_hero_item_reference'] ) : '' );
 
+      // Should we use this as the page title?
+      $h_tag = $post['rltd_hero_item_external_link'] === 'static' && isset( $post['rltd_hero_item_use_as_header'] ) && $post['rltd_hero_item_use_as_header'] === 'yes' ? 'h1' : 'h2';
+
       // Get the excerpt text
       $text = !empty( $post['rltd_hero_item_text'] ) ? $post['rltd_hero_item_text'] : ( !empty( $post['rltd_hero_item_reference'] ) ? get_the_excerpt( $post['rltd_hero_item_reference'] ) : '' );
 
@@ -174,6 +191,7 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
       $items[] = array(
         'link' => @$link,
         'title' => @$title,
+        'h_tag' => @$h_tag,
         'text' => @$text,
         'image' => @$image,
         'image_alt' => @$image_alt,
