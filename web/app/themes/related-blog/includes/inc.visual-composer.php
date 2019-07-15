@@ -152,9 +152,9 @@ if ( class_exists( 'Vc_Manager' ) ) {
   // Set RTE field width when textarea field present.
   function rltd_set_rte_width() {
     if ( 'vc_edit_form' === vc_post_param( 'action' )
-      && ( 'rltd_content' === $_REQUEST['tag'] || 'rltd_content' === $_REQUEST['tag'] || 'rltd_natural_language_processing' === $_REQUEST['tag'] || 'rltd_tables' === $_REQUEST['tag'] )
+      && ( 'rltd_hero' === $_REQUEST['tag'] )
     ) {
-      echo '<style> #vc_ui-panel-edit-element, *[data-vc-ui-element="panel-edit-element"] { left: 50% !important; width: 60% !important; } .vc_ui-panel-window-inner { position: relative !important; left: -50% !important; } </style>';
+      echo '<style> #vc_ui-panel-edit-element, *[data-vc-ui-element="panel-edit-element"] { left: 50% !important; width: 80% !important; } .vc_ui-panel-window-inner { position: relative !important; left: -50% !important; } </style>';
     }
   }
   add_action( 'init', 'rltd_set_rte_width' );
