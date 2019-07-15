@@ -233,7 +233,11 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
       $image_alt = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
 
       // Get the category
-      $meta = @get_the_category( $post->ID )[0]->name;
+      $category = @get_the_category( $post->ID )[0];
+      if ( !empty( $category ) ) {
+        $meta = $category->name;
+        $meta_link = @get_category_link( $category->term_id );
+      }
 
       // Build nested items array for rendering
       $items[] = array(
@@ -243,6 +247,7 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
         'image' => @$image,
         'image_alt' => @$image_alt,
         'meta' => @$meta,
+        'meta_link' => @$meta_link,
       );
 
       $link = $title = $text = $image = $image_alt = $meta = '';

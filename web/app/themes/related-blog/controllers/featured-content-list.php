@@ -205,7 +205,11 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
       $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 
       // Get the category
-      $meta = !empty( $post['rltd_featured_content_list_item_reference'] ) ? @get_the_category( $post['rltd_featured_content_list_item_reference'] )[0]->name : '';
+      $category = !empty( $post['rltd_featured_content_list_item_reference'] ) ? @get_the_category( $post['rltd_featured_content_list_item_reference'] )[0] : '';
+      if (!empty($category)) {
+          $meta = $category->name;
+          $meta_link = @get_category_link($category->term_id);
+      }
 
       // Build nested items array for rendering
       $items[] = array(
@@ -215,6 +219,7 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
         'image' => @$image,
         'image_alt' => @$image_alt,
         'meta' => @$meta,
+        'meta_link' => @$meta_link,
       );
 
       $link = $title = $text = $image_id = $image = $image_alt = $meta = '';
