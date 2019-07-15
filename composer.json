@@ -23,6 +23,7 @@
     "composer/installers": "^1.4",
     "hellonico/timber-dump-extension": "^1.0",
     "oscarotero/env": "^1.1.0",
+    "overtrue/phplint": "^1.1",
     "pantheon-systems/terminus": "^2.0",
     "roots/wordpress": "^4.8",
     "roots/wp-config": "1.0.0",
@@ -76,9 +77,6 @@
       "php -r \"copy('.env.example', '.env');\""
     ],
     "test": [
-      "phplint",
-      "phpcs -n web/app/themes",
-      "phpcs -n web/app/**/custom/"
     ]
   }
 }
