@@ -1,6 +1,7 @@
 # Application
 web/app/cache
 web/app/mu-plugins/*/
+!web/app/mu-plugins/js_composer
 web/app/plugins/*
 !web/app/plugins/custom/
 web/app/upgrade
