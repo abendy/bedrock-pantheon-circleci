@@ -13,7 +13,7 @@ const THEME_DIR = 'web/app/themes/related-blog';
 const base = {
   entry: {
     main: [
-      `./${THEME_DIR}/src/scripts/main.js`,
+      // `./${THEME_DIR}/src/scripts/main.js`,
       `./${THEME_DIR}/src/styles/main.scss`,
     ],
   },
