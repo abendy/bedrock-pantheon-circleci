@@ -24,6 +24,9 @@ jobs:
           name: Install dependencies
           command: composer install -n -o
       - run:
+          name: Install Yarn
+          command: curl -o- -L https://yarnpkg.com/install.sh | bash
+      - run:
           name: Build theme
           command: yarn run build
       - persist_to_workspace:
