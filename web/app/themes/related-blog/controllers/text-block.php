@@ -7,8 +7,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 // VC field mapping.
 vc_map(
   array(
-    'name'                    => __( 'Textarea', 'related-blog' ),
-    'base'                    => 'rltd_textarea',
+    'name'                    => __( 'Text Block', 'related-blog' ),
+    'base'                    => 'rltd_text_block',
     'description'             => __( '', 'related-blog' ),
     'class'                   => '',
     'show_settings_on_create' => true,
@@ -30,11 +30,11 @@ vc_map(
   )
 );
 
-if ( !function_exists( 'rltd_textarea_render' ) ) {
-  function rltd_textarea_render( $atts, $content = null ) {
+if ( !function_exists( 'rltd_text_block_render' ) ) {
+  function rltd_text_block_render( $atts, $content = null ) {
     // Parse the twig template with the shortcode's attributes and content.
     $compile = Timber::compile(
-      'textarea.twig',
+      'text-block.twig',
       array(
         'content' => @$content,
       )
@@ -43,5 +43,6 @@ if ( !function_exists( 'rltd_textarea_render' ) ) {
     return $compile;
   }
 
-  add_shortcode( 'rltd_textarea', 'rltd_textarea_render' );
+  add_shortcode( 'rltd_textarea', 'rltd_text_block_render' );
+  add_shortcode( 'rltd_text_block', 'rltd_text_block_render' );
 }
