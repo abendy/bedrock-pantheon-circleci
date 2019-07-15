@@ -1,10 +1,14 @@
 # Application
-web/app/plugins/*
-!web/app/plugins/.gitkeep
+web/app/cache
 web/app/mu-plugins/*/
+web/app/plugins/*
+!web/app/plugins/custom/
 web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
+web/app/wflogs/
+web/app/advanced-cache.php
+web/app/wp-cache-config.php
 
 # WordPress
 web/wp
