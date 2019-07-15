@@ -8,7 +8,7 @@ references:
   #
   container_config: &container_config
     docker:
-      - image: circleci/node
+      - image: circleci/php:7.1
     working_directory: *working_directory
 
   attach_workspace: &attach_workspace
@@ -27,8 +27,11 @@ jobs:
           name: Install Yarn
           command: curl -o- -L https://yarnpkg.com/install.sh | bash
       - run:
+          name: Install Node
+          command: curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
+      - run:
           name: Build theme
-          command: yarn run build
+          command: yarn install && yarn run build
       - persist_to_workspace:
           root: .
           paths:
