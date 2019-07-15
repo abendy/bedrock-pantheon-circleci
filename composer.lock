@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55770f6cec2f7153c0475f5d3bb12ae2",
+    "content-hash": "6d2060720e8c01cbb481c48fb5873c3f",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -3418,6 +3418,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/debug-bar-timber/"
+        },
+        {
+            "name": "wpackagist-plugin/meta-box",
+            "version": "4.18.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/meta-box/",
+                "reference": "tags/4.18.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/meta-box.4.18.4.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/meta-box/"
         },
         {
             "name": "wpackagist-plugin/pantheon-advanced-page-cache",
