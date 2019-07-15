@@ -7,7 +7,7 @@
     "build": "WP_ENV=production webpack --mode=production",
     "clean": "rm -rf web/app/themes/related-blog/build",
     "test": "eslint './**/*.js' --fix && phplint './web/app/themes/**/*.php' && sass-lint",
-    "upgrade": "composer update && yarn upgrade",
+    "upgrade": "composer update && yarn upgrade"
   },
   "author": "Allan Bendy <allan.bendy@gmail.com>",
   "repository": {
