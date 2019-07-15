@@ -40,9 +40,7 @@
   </section>
 
   {% block footer %}
-  <footer id="footer" class="module footer" data-name="footer">
-    {% include 'global/footer.twig' %}
-  </footer>
+  {% include 'global/footer.twig' %}
 
   <script src="{{ site.theme.link }}/build/assets/scripts/main.js"></script>
   {{ function('wp_footer') }}
