@@ -14,13 +14,5 @@
   {% include 'partial/content-list-item.twig' %}
   {% endblock %}
 
-  {% if pagination is defined and pagination is not empty %}
-  <nav class="navigation pagination" role="navigation">
-    <div class="nav-links">
-    {{ pagination }}
-    </div>
-  </nav>
-  {% endif %}
-
   {% endif %}
 </section>

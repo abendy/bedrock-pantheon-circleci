@@ -195,36 +195,25 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
       $args = rltd_tax_query( $args, $rltd_content_list_taxonomies );
     }
 
-    // Get current page and append to custom query parameters array
-    // https://wordpress.stackexchange.com/a/120408/126589
+    // Filter by pagination
     if ( $rltd_content_list_pagination === 'yes' ) {
-      $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+      global $paged;
+
+      if (!isset($paged) || !$paged){
+          $paged = 1;
+      }
+
+      $args['paged'] = $paged;
     }
 
-    // instantiate new query obj.
-    $query = new WP_Query( $args );
+    $context = Timber::get_context();
 
     // Execute the query
-    $post_data = $query->get_posts();
+    $post_data = new \Timber\PostQuery( $args );
 
-    // Custom query loop pagination
-    // https://wordpress.stackexchange.com/a/254200/126589
     if ( $rltd_content_list_pagination === 'yes' ) {
-      $pagination = paginate_links(
-        array(
-          'total'        => $query->max_num_pages,
-          'current'      => max( 1, get_query_var( 'paged' ) ),
-          'format'       => 'page/%#%',
-          'show_all'     => false,
-          'end_size'     => 2,
-          'prev_text'    => sprintf( '<i></i> %1$s', __( 'Previous', 'related-blog' ) ),
-          'next_text'    => sprintf( '%1$s <i></i>', __( 'Next ', 'related-blog' ) ),
-        )
-      );
+      $pagination = $post_data->pagination();
     }
-
-    // Reset postdata
-    wp_reset_postdata();
 
     // Loop over query response
     foreach ( $post_data as $post ) {

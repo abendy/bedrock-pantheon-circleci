@@ -12,15 +12,11 @@
 
   {% block content_list_item %}
   {% include 'partial/content-list-item.twig' %}
-  {% endblock %}
 
-  {% if pagination is defined and pagination is not empty %}
-  <nav class="navigation pagination" role="navigation">
-    <div class="nav-links">
-    {{ pagination }}
-    </div>
-  </nav>
-  {% endif %}
+  {% include 'partial/pagination.twig' %}
+  {# {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %} #}
+
+  {% endblock %}
 
   {% endif %}
 </section>
