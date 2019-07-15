@@ -1,10 +1,19 @@
 {% if menu %}
-	<ul>
 	{% for item in menu %}
-		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-			{% include "global/menu.twig" with {'menu': item.children} %}
-		</li>
+
+    {% if item.children is defined and item.children is not empty %}
+		<div class="navbar-item has-dropdown is-hoverable {{ item.classes | join(' ') }}">
+    {% endif %}
+			<a class="{{ (item.children is defined and item.children is not empty) ? 'navbar-link' : 'navbar-item' }}" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+
+      {% if item.children is defined and item.children is not empty %}
+      <div class="navbar-dropdown">
+  			{% include "global/menu.twig" with {'menu': item.children} %}
+      </div>
+      {% endif %}
+    {% if item.children is defined and item.children is not empty %}
+		</div>
+    {% endif %}
+
 	{% endfor %}
-	</ul>
 {% endif %}
