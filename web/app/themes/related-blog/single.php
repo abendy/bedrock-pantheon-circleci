@@ -20,13 +20,13 @@ if ( !$has_hero ) {
     $image_id = reset( $hero_image_imgadv )['ID'];
 
     // Get image
-    $context['page']->hero_image = wp_get_attachment_image_src( $image_id, 'hero_full' )[0];
+    $context['page']->hero_image = wp_get_attachment_image_src( $image_id, 'rltd_hero_full' )[0];
 
     // Get image alt tag
     $context['page']->hero_image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
   } else {
     // Get image
-    $context['page']->hero_image = wp_get_attachment_image_src( get_post_thumbnail_id( $context['page']->ID ), 'hero_full' )[0];
+    $context['page']->hero_image = wp_get_attachment_image_src( get_post_thumbnail_id( $context['page']->ID ), 'rltd_hero_full' )[0];
 
     // Get image alt tag
     $context['page']->hero_image_alt = get_post_meta( get_post_thumbnail_id( $context['page']->ID ), '_wp_attachment_image_alt', true );

@@ -30,18 +30,28 @@ function rltd_setup_theme() {
 
   // Add custom image sizes
   add_image_size( 'rltd_thumbnail', 370, 248, true );
+  add_image_size( 'rltd_hero_full', 1200, 540, true );
 
   function rltd_hero_images( $sizes ) {
     return array_merge(
       $sizes,
       array(
         'rltd_thumbnail' => __( 'Content List Thumbnail' ),
+        'rltd_hero_full'      => __( 'Hero Image 1600x720' ),
       )
     );
   }
   add_filter( 'image_size_names_choose', 'rltd_hero_images' );
 }
 add_action( 'after_setup_theme', 'rltd_setup_theme' );
+
+// Remove default image sizes
+add_action( 'init', function () {
+  remove_image_size( 'thumbnail' );
+  remove_image_size( 'medium' );
+  remove_image_size( 'medium_large' );
+  remove_image_size( 'large' );
+} );
 
 // Force city post types to use the index template
 add_filter( 'template_include', function ( $template ) {
