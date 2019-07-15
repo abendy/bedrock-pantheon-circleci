@@ -2,6 +2,7 @@
 web/app/cache
 web/app/mu-plugins/*/
 !web/app/mu-plugins/js_composer
+!web/app/mu-plugins/advanced-custom-fields-pro
 web/app/plugins/*
 !web/app/plugins/custom/
 web/app/upgrade
