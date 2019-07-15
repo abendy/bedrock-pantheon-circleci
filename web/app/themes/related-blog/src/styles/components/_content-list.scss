@@ -3,6 +3,10 @@
 .module.content-list {
   margin-top: 2rem;
   padding: 0 .8rem;
+
+  .column + .column & {
+    padding-left: 2.25rem;
+  }
 }
 
 .content-list__items {
@@ -33,7 +37,7 @@
 }
 
 .content-list__item {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .content-list__item__meta {

@@ -24,8 +24,8 @@
     }]) %}
     {% set h_tag = 'h1' %}
 
-      <div class="vc_column_container vc_col-sm-12">
     <div class="columns">
+      <div class="column is-paddingless is-12">
         {% block hero %}
         {% include 'modules/hero.twig' %}
         {% endblock %}
@@ -38,3 +38,4 @@
   </article>
   {% endif %}
 {% endblock %}
+

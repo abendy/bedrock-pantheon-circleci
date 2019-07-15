@@ -7,8 +7,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 $output = '';
 
 $css_classes = array(
-  'vc_row',
   'wpb_animate_when_almost_visible wpb_fadeIn fadeIn wpb_start_animation animated',
+  'columns',
 );
 
 $wrapper_attributes = array();

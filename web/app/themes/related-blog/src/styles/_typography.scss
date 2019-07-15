@@ -58,9 +58,10 @@ body {
   color: $color-text;
   font-family: $font-family-default;
   font-size: rem(15);
-  -webkit-font-smoothing: antialiased;
+  // -moz-font-smoothing: antialiased;
+  // -webkit-font-smoothing: antialiased;
   line-height: $base-line-height;
-  text-rendering: optimizeLegibility;
+  // text-rendering: optimizeLegibility;
 }
 
 h1,
@@ -79,7 +80,7 @@ h1 {
   text-align: center;
 
   &:not(.hero__title) {
-    margin: 2rem 0 3rem;
+    margin: 0 0 3rem;
   }
 }
 

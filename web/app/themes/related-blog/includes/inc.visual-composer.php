@@ -87,6 +87,30 @@ if ( class_exists( 'Vc_Manager' ) ) {
   }
   add_action( 'vc_before_init', 'rltd_vc_set_shortcodes_templates_dir' );
 
+  // Convert to Bulma responsive classes
+  function rltd_wpb_translateColumnWidthToSpan( $width ) {
+    preg_match( '/(\d+)\/(\d+)/', $width, $matches );
+
+    if ( ! empty( $matches ) ) {
+      $part_x = (int) $matches[1];
+      $part_y = (int) $matches[2];
+      if ( $part_x > 0 && $part_y > 0 ) {
+        $value = ceil( $part_x / $part_y * 12 );
+        if ( $value > 0 && $value <= 12 ) {
+          $width = 'is-' . $value;
+        }
+      }
+    }
+
+    return $width;
+  }
+
+  // Add animate style
+  add_action( 'wp_enqueue_scripts', function () {
+    wp_register_style( 'animate-css', vc_asset_url( 'lib/bower/animate-css/animate.min.css' ), array(), WPB_VC_VERSION );
+    wp_enqueue_style( 'animate-css' );
+  } );
+
   // Set VC as default editor for all content types.
   function rltd_vc_set_default_editor_post_types() {
     $post_types = rltd_get_post_types( 'names' );

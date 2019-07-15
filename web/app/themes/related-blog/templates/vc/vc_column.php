@@ -9,12 +9,13 @@ $output = $width = $offset = '';
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
 extract( $atts );
 
-$width = wpb_translateColumnWidthToSpan( $width );
+$width = rltd_wpb_translateColumnWidthToSpan( $width );
 $width = vc_column_offset_class_merge( $offset, $width );
 
 $css_classes = array(
-	'vc_column_container',
-	$width,
+  'column',
+  'is-paddingless',
+  $width,
 );
 
 $wrapper_attributes = array();
