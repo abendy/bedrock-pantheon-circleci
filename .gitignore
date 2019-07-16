@@ -31,7 +31,10 @@ wp-cli.local.yml
 node_modules
 
 # Databases
-/database
+/database/**/*
+!/database
+!/database/localhost_backups
+!/database/migration
 
 # Keys
 /private
