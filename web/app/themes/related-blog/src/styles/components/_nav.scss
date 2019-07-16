@@ -1,14 +1,32 @@
 // Nav
 
 .navbar {
+  background-color: transparent;
 
-  a:visited {
+  .navbar-link,
+  .navbar-link:visited,
+  .navbar-item,
+  .navbar-item:visited {
     color: white;
   }
 
-  .navbar-dropdown a:visited,
-  .navbar-dropdown a:hover {
-    color: black !important;
+  .navbar-dropdown .navbar-item,
+  .navbar-dropdown .navbar-item:visited {
+    color: black;
+  }
+
+  .navbar-item:hover,
+  .navbar-item.has-dropdown:hover .navbar-link {
+    background-color: transparent;
+    color: white;
+  }
+
+  .navbar-link:not(.is-arrowless)::after {
+    border: 0 none;
+    font-family: 'Font Awesome 5 Free';
+    content: "\f0dd";
+    margin-top: -1rem;
+    transform: rotate(0deg);
   }
 
   #footer & .navbar-menu {
