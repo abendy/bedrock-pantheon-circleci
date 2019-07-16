@@ -2,14 +2,18 @@
 
 #header {
   background-color: $related-black;
+  position: relative;
   width: 100%;
+  z-index: 1;
 
   .custom-logo {
     height: 80px;
+    margin-right: 2rem;
     width: auto;
   }
 
   .social-media__links {
+    margin-bottom: .5rem;
     text-align: right;
 
     a {
