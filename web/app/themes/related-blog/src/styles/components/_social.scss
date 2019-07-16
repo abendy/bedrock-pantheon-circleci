@@ -16,28 +16,11 @@
 
   li {
     list-style: none;
+    padding-right: 1rem;
   }
 }
 
 .social-share__link {
-  border-radius: 50%;
-  display: inline-block;
-  height: 45px;
-  width: 45px;
-  text-align: center;
-  text-decoration: none;
-  transition: opacity .2s;
-
-  i,
-  [class^='icon-'] {
-    display: inline-block;
-    font-size: 14px;
-    line-height: 40px;
-    // pointer-events: none;
-    transition: color .2s;
-    // will-change: color;
-  }
-
   &:hover,
   &:active {
     opacity: .75;
@@ -45,6 +28,5 @@
 
   &.inactive {
     opacity: .25;
-    // pointer-events: none;
   }
 }
