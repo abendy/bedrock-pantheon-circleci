@@ -20,7 +20,12 @@ $navbar-dropdown-item-hover-background-color: transparent;
 @import 'variables';
 @import 'colors';
 @import 'typography';
-@import 'icon';
+
+$fa-font-path: '../fonts/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+
 @import 'utilities/fonts';
 @import 'base';
 @import 'media';

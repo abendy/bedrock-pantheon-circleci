@@ -6,22 +6,23 @@
     <div class="column {{ (post_type == 'post') ? 'is-8 is-offset-2' : 'is-10 is-offset-2' }}">
 
       <div class="social-share__links">
+
         <ul>
           <li>
             <a href="https://www.facebook.com/sharer/sharer.php?u={{ current_url }}" class="social-share__link" target="_blank">
-              <i class="icon-font">facebook</i>
+              <i class="fab fa-facebook"></i>
             </a>
           </li>
 
           <li>
             <a href="https://twitter.com/home?status={{ current_url }}" class="social-share__link" target="_blank">
-              <i class="icon-font">twitter</i>
+              <i class="fab fa-twitter"></i>
             </a>
           </li>
 
           <li>
-            <a href="mailto:?body={{ current_url }}" class="social-share__link">
-              <i class="icon-font">email</i>
+            <a href="mailto:?body={{ current_url }}" class="social-share__link" target="_blank">
+              <i class="fas fa-envelope"></i>
             </a>
           </li>
         </ul>
