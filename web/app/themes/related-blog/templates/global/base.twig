@@ -14,14 +14,14 @@
           {{ function('the_custom_logo') }}
         </a><!-- /.navbar-item -->
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarRelated">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div><!-- /.navbar-brand -->
 
-      <div class="navbar-menu">
+      <div id="navbarRelated" class="navbar-menu">
         <div class="navbar-start">
           {% include "global/menu.twig" with {'menu': menu.get_items} %}
         </div><!-- /.navbar-start -->
