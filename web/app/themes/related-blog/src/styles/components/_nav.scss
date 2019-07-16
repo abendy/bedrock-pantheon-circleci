@@ -40,13 +40,13 @@
     transform: rotate(0deg);
   }
 
+  // Footer navigation
+
   #footer & .navbar-menu {
     background-color: transparent;
     column-count: 2;
     column-gap: 1rem;
     display: block;
-    // flex-direction: column;
-    // flex-wrap: wrap;
     height: 100px;
 
     a.navbar-item {

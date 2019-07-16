@@ -1,37 +1,8 @@
-// Base variables
-$base-font-size: 10px;
-$base-line-height: 1.57em;
+// Variables
 
-// Font sizes - Desktop
-$font-size-h-level-1: 3.6rem;
-$font-size-h-level-2: 2.5rem;
-$font-size-h-level-3: 2rem;
-$font-size-body: 1.4rem;
-$font-size-cta: 1.4rem;
-$font-size-caption: 1.1rem;
+// Base
 
-// Font sizes - Mobile
-$font-size-h-level-1-mobile: 2.5rem;
-
-// Line heights
-$line-height-h-level-1: 1.25em;
-$line-height-h-level-2: 1.6em;
-$line-height-h-level-3: 1.5em;
-$line-height-body: 1.78em;
-$line-height-cta: 1.53em;
-$line-height-caption: 1.36em;
-
-// Spacing
-$spacing-module-mobile: 70px;
-$spacing-module-tablet: 90px;
-$spacing-module-desktop: 180px;
-$spacing-title-mobile: 50px;
-$spacing-title-tablet: 80px;
-$spacing-title-desktop: 80px;
-$spacing-default-mobile: 30px;
-$spacing-default-tablet: 40px;
-$spacing-default-desktop: 40px;
-
+// Layout
 // Breakpoints (default is same as Bootstrap 3)
 $bp-mobile: 480px;
 $bp-tablet: 768px;
@@ -42,18 +13,17 @@ $bp-desktop-xlarge: 1600px;
 $header-height: 90px;
 $header-sm-height: 50px;
 
-// Z index
-$page-index: 10;
-$content-teaser-index: 200;
-$content-module-index: 200;
-$content-aggregate-index: 200;
-$event-aggregate-index: 200;
-$footer-index: 700;
-$header-index: 900;
-$modal-index: 1000;
-$overlay-index: 1100;
-$sidebar-index: 1200;
-$cookie-index: 1201;
+// Libs
+// Font Awesome
+$fa-font-path: '../fonts/fontawesome';
+
+// Font sizes - Desktop
+
+// Font sizes - Devices
+
+// Line heights
+
+// Spacing
 
 // Animation streamlining
 $transition-dur: 500ms;
@@ -62,3 +32,5 @@ $ui-transition-dur: 250ms;
 $ui-easing: cubic-bezier(.15, .67, .67, 1);
 $slider-transition-dur: 600ms;
 $slider-easing: cubic-bezier(.15, .67, .67, 1);
+
+// Z index

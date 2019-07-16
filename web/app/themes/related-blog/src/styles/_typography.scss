@@ -4,7 +4,7 @@
 $base-font-size: 15;
 
 // $base-line-height
-$base-line-height: 1.5;
+$base-line-height: 1.7;
 
 // Font Stacks
 
@@ -58,10 +58,7 @@ body {
   color: $color-text;
   font-family: $font-family-default;
   font-size: rem(15);
-  // -moz-font-smoothing: antialiased;
-  // -webkit-font-smoothing: antialiased;
   line-height: $base-line-height;
-  // text-rendering: optimizeLegibility;
 }
 
 h1,

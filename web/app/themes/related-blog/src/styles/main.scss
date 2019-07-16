@@ -1,9 +1,7 @@
 @charset 'UTF-8';
 
-// Libs
-@import '~bulma/bulma';
-
 // Utilities
+@import 'utilities/fonts';
 @import 'utilities/functions';
 @import 'utilities/media-queries';
 @import 'utilities/mixins';
@@ -12,13 +10,14 @@
 @import 'variables';
 @import 'colors';
 @import 'typography';
-$fa-font-path: '../fonts/fontawesome';
+@import 'base';
+@import 'media';
+
+// Libs
+@import '~bulma/bulma';
 @import 'libs/fontawesome/fontawesome.scss';
 @import 'libs/fontawesome/brands.scss';
 @import 'libs/fontawesome/solid.scss';
-@import 'utilities/fonts';
-@import 'base';
-@import 'media';
 
 // Layout
 @import 'layout/layout';
