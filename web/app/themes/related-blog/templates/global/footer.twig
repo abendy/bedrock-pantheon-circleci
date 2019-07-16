@@ -1,17 +1,17 @@
 <footer id="footer" class="module footer" data-name="footer">
   <div class="container">
-      <div class="is-pulled-left">
-        <nav class="navbar is-transparent" role="navigation" aria-label="footer navigation">
-          <div class="navbar-menu is-shadowless">
-            {% include "global/menu.twig" with {'menu': footer_menu.get_items} %}
-          </div><!-- /.navbar-menu -->
-        </nav>
-      </div>
+    <div class="is-pulled-left">
+      <nav class="navbar is-transparent" role="navigation" aria-label="footer navigation">
+        <div class="navbar-menu is-shadowless">
+          {% include "global/menu.twig" with {'menu': footer_menu.get_items} %}
+        </div><!-- /.navbar-menu -->
+      </nav>
+    </div>
 
-      <div class="is-pulled-right has-text-right">
-        <img src="{{ function( 'get_theme_mod', 'rltd_footer_logo' ) }}">
+    <div class="is-pulled-right has-text-right">
+      <img src="{{ function( 'get_theme_mod', 'rltd_footer_logo' ) }}">
 
-        <p>&copy; {{ "now"|date('Y') }} Related Companies</p>
-      </div>
+      <p>&copy; {{ "now"|date('Y') }} Related Companies</p>
+    </div>
   </div>
 </footer>
