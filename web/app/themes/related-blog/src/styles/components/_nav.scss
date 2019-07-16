@@ -10,15 +10,26 @@
     color: white;
   }
 
+  .navbar-dropdown {
+    border-top: 0 none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 0;
+  }
+
   .navbar-dropdown .navbar-item,
   .navbar-dropdown .navbar-item:visited {
+    background-color: #f6f2ef;
     color: black;
   }
 
   .navbar-item:hover,
   .navbar-item.has-dropdown:hover .navbar-link {
-    background-color: transparent;
     color: white;
+  }
+
+  .navbar-item.has-dropdown:hover .navbar-link {
+    background-color: #645f5b;
   }
 
   .navbar-link:not(.is-arrowless)::after {
