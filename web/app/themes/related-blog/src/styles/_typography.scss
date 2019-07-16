@@ -1,12 +1,11 @@
 // Typography
 
-// $base-font-size
-$base-font-size: 15;
+//* Base
 
-// $base-line-height
+$base-font-size: 15;
 $base-line-height: 1.7;
 
-// Font Stacks
+//* Font families
 
 // $typefaces
 //
@@ -30,28 +29,29 @@ $typefaces: (
   ),
 );
 
-// External fonts
 $external-fonts: ();
 
-// $font-family-sans
 $font-family-sans: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
-// $font-family-serif
 $font-family-serif: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
 
-// $font-family-monospace
 $font-family-monospace: 'Inconsolata', 'Menlo', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier', monospace;
 
-// $font-family-playfair
 $font-family-playfair: 'PlayfairDisplay', 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
 
-// $font-family-playfair
 $font-family-proxima: 'ProximaNova', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
-// $font-family-default
 $font-family-default: $font-family-proxima;
 
-// Styles
+//* Font sizes
+
+// Desktop
+
+// Devices
+
+//* Line heights
+
+//* Styles
 
 body {
   background-color: $color-background;

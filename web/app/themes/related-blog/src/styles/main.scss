@@ -1,31 +1,35 @@
 @charset 'UTF-8';
 
 // Utilities
+
 @import 'utilities/fonts';
 @import 'utilities/functions';
 @import 'utilities/media-queries';
 @import 'utilities/mixins';
 
 // Base
+
 @import 'variables';
-@import 'colors';
 @import 'typography';
 @import 'base';
 @import 'media';
 
 // Libs
+
 @import '~bulma/bulma';
 @import 'libs/fontawesome/fontawesome.scss';
 @import 'libs/fontawesome/brands.scss';
 @import 'libs/fontawesome/solid.scss';
 
 // Layout
+
 @import 'layout/layout';
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/sidebar';
 
 // Components
+
 @import 'components/abstract';
 @import 'components/nav';
 @import 'components/hero';
@@ -36,4 +40,5 @@
 @import 'components/text-block';
 
 // Shame
+
 @import 'shame';

@@ -1,9 +1,11 @@
 // Variables
 
-// Base
+//* Base
 
-// Layout
-// Breakpoints (default is same as Bootstrap 3)
+//* Layout
+
+// Breakpoints
+
 $bp-mobile: 480px;
 $bp-tablet: 768px;
 $bp-desktop-small: 1024px;
@@ -13,24 +15,51 @@ $bp-desktop-xlarge: 1600px;
 $header-height: 90px;
 $header-sm-height: 50px;
 
-// Libs
+//* Spacing
+
+//* Z index
+
+//* Libs
+
 // Font Awesome
 $fa-font-path: '../fonts/fontawesome';
 
-// Font sizes - Desktop
+//* Colors
 
-// Font sizes - Devices
+// Descriptive colors
 
-// Line heights
+$white:                     #fff;
+$black:                     #000;
 
-// Spacing
+// Client colors
 
-// Animation streamlining
+$related-black:             #1c1a1a;
+$related-midgrey:           #514c48;
+
+// Main color palette
+
+$color-primary:             $related-black;
+$color-secondary:           $related-midgrey;
+
+// Common colors
+
+$color-background:          $white;
+$color-text:                $related-black;
+$color-text-strong:         $related-black;
+$color-text-heading:        $related-black;
+$color-text-invert:         $white;
+
+// Links
+
+$color-link:                $related-black;
+$color-link-hover:          $color-link;
+$color-link-visited:        $color-link;
+
+//* Animation
+
 $transition-dur: 500ms;
 $easing: cubic-bezier(.57, .32, .81, .65);
 $ui-transition-dur: 250ms;
 $ui-easing: cubic-bezier(.15, .67, .67, 1);
 $slider-transition-dur: 600ms;
 $slider-easing: cubic-bezier(.15, .67, .67, 1);
-
-// Z index
