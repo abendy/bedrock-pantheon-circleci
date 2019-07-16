@@ -1,30 +1,31 @@
 <?php
 
 class RelatedTimberSite extends Timber\Site {
-	/** Add timber support. */
-	public function __construct() {
-		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
-		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
-		parent::__construct();
-	}
+  // Add timber support
+  public function __construct() {
+    add_filter( 'timber/context', array( $this, 'add_to_context' ) );
+    add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
+    parent::__construct();
+  }
 
-	/** This is where you add some context
-	 *
-	 * @param string $context context['this'] Being the Twig's {{ this }}.
-	 */
-	public function add_to_context( $context ) {
-		$context['menu'] = new Timber\Menu();
-		$context['site'] = $this;
-		return $context;
-	}
+  // Add some context
+  public function add_to_context( $context ) {
+    $context['menu'] = new \Timber\Menu( 'main' );
+    $context['footer_menu'] = new \Timber\Menu( 'footer' );
 
-	/** This is where you can add your own functions to twig.
-	 *
-	 * @param string $twig get extension.
-	 */
-	public function add_to_twig( $twig ) {
-		return $twig;
-	}
+    $context['password_required'] = post_password_required( $context['page']->ID );
+
+    $context['is_front_page'] = is_front_page();
+
+    $context['site'] = $this;
+
+    return $context;
+  }
+
+	// Add your own functions to twig
+  public function add_to_twig( $twig ) {
+    return $twig;
+  }
 }
 
 if ( class_exists( 'Timber' ) ) {

@@ -33,11 +33,4 @@ if ( !$has_hero ) {
   }
 }
 
-$context['password_required'] = post_password_required( $context['page']->ID );
-
-$context['menu'] = new \Timber\Menu( 'main' );
-$context['footer_menu'] = new \Timber\Menu( 'footer' );
-
-$context['is_front_page'] = is_front_page();
-
 Timber::render( 'single.twig', $context );
