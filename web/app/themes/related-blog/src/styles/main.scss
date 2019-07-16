@@ -12,12 +12,10 @@
 @import 'variables';
 @import 'colors';
 @import 'typography';
-
 $fa-font-path: '../fonts/fontawesome';
-@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
-@import '@fortawesome/fontawesome-free/scss/brands.scss';
-@import '@fortawesome/fontawesome-free/scss/solid.scss';
-
+@import 'libs/fontawesome/fontawesome.scss';
+@import 'libs/fontawesome/brands.scss';
+@import 'libs/fontawesome/solid.scss';
 @import 'utilities/fonts';
 @import 'base';
 @import 'media';
