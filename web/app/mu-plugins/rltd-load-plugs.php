@@ -7,7 +7,7 @@ Version:     2019.0.1
 */
 
 if (!is_blog_installed()) {
-    return;
+  return;
 }
 
 // require_once WPMU_PLUGIN_DIR . '/advanced-custom-fields/acf.php';
@@ -17,7 +17,7 @@ if (!is_blog_installed()) {
 // }
 
 if (!class_exists('Timber')) {
-    require_once WP_PLUGIN_DIR . '/timber-library/timber.php';
+  require_once WP_PLUGIN_DIR . '/timber-library/timber.php';
 }
 
 // if (!class_exists('Options_Framework') and !function_exists('optionsframework_init')) {

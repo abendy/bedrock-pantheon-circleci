@@ -2,7 +2,7 @@
 
 //* Base
 
-$base-font-size: 15;
+$base-font-size:   15;
 $base-line-height: 1.7;
 
 //* Font families
@@ -31,17 +31,17 @@ $typefaces: (
 
 $external-fonts: ();
 
-$font-family-sans: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$font-family-sans:      'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
-$font-family-serif: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+$font-family-serif:     'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
 
 $font-family-monospace: 'Inconsolata', 'Menlo', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier', monospace;
 
-$font-family-playfair: 'PlayfairDisplay', 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+$font-family-playfair:  'PlayfairDisplay', 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
 
-$font-family-proxima: 'ProximaNova', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$font-family-proxima:   'ProximaNova', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
-$font-family-default: $font-family-proxima;
+$font-family-default:   $font-family-proxima;
 
 //* Font sizes
 
