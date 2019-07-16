@@ -8,4 +8,12 @@
     height: 80px;
     width: auto;
   }
+
+  .social-media__links {
+    text-align: right;
+
+    a {
+      padding-left: 1rem;
+    }
+  }
 }
