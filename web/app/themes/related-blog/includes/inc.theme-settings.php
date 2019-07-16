@@ -45,6 +45,20 @@ function rltd_setup_theme() {
 }
 add_action( 'after_setup_theme', 'rltd_setup_theme' );
 
+// Create footer logo setting
+function your_theme_new_customizer_settings( $wp_customize ) {
+  // Add WP setting
+  $wp_customize->add_setting( 'rltd_footer_logo' );
+
+  // Add control
+  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'rltd_footer_logo', array(
+    'label' => 'Footer Logo',
+    'section' => 'title_tagline',
+    'settings' => 'rltd_footer_logo',
+  ) ) );
+}
+add_action( 'customize_register', 'your_theme_new_customizer_settings' );
+
 // Remove default image sizes
 add_action( 'init', function () {
   remove_image_size( 'thumbnail' );

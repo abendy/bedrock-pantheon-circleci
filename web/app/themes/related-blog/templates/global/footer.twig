@@ -1,6 +1,5 @@
 <footer id="footer" class="module footer" data-name="footer">
   <div class="container">
-
       <div class="is-pulled-left">
         <nav class="navbar is-transparent" role="navigation" aria-label="footer navigation">
           <div class="navbar-menu is-shadowless">
@@ -10,10 +9,9 @@
       </div>
 
       <div class="is-pulled-right has-text-right">
-        {{ function('the_custom_logo') }}
+        <img src="{{ function( 'get_theme_mod', 'rltd_footer_logo' ) }}">
 
         <p>&copy; {{ "now"|date('Y') }} Related Companies</p>
       </div>
-
   </div>
 </footer>

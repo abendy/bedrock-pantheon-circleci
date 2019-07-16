@@ -13,4 +13,3 @@ require_once get_template_directory() . '/includes/inc.visual-composer.templates
 require_once get_template_directory() . '/includes/inc.twig.php';
 
 require_once get_template_directory() . '/includes/inc.meta-box.php';
-
