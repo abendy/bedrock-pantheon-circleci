@@ -72,7 +72,7 @@ if ( class_exists( 'Vc_Manager' ) ) {
     include_once $controllers_dir . 'content-list.php';
     include_once $controllers_dir . 'featured-content-list.php';
     include_once $controllers_dir . 'grouped-content-list.php';
-    include_once $controllers_dir . 'gallery.php';
+    // include_once $controllers_dir . 'gallery.php';
     include_once $controllers_dir . 'hero.php';
     include_once $controllers_dir . 'social-share.php';
     include_once $controllers_dir . 'text-block.php';
