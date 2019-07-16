@@ -140,9 +140,13 @@ if ( !function_exists( 'rltd_grouped_content_list_render' ) ) {
       $neighborhood_city = @get_post_meta( @get_post( $property_neighborhood )->ID, 'neighborhood_city' )[0];
 
       // Get city name
-      $city = @get_post( $neighborhood_city )->post_name;
+      $neighborhood_city_value = @get_post( $neighborhood_city )->post_name;
 
-      if ( $city === get_post()->post_name ) {
+      // Compare current page's ID to the page ID in the relationship field
+      $neighborhood_city_id = @get_post( $neighborhood_city )->ID;
+      $current_id = @get_post()->ID;
+
+      if ( $neighborhood_city_id === $current_id ) {
         // Build nested items array for rendering
         $items[@$neighborhood][] = array(
           'link' => @$link,
