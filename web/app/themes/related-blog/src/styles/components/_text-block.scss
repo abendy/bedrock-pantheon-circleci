@@ -8,22 +8,22 @@
   img {
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
+  }
 
-    &.alignleft {
-      margin-right: 1.5em;
-      display: inline;
-    }
+  .alignleft {
+    margin-right: 1.5em;
+    display: inline;
+  }
 
-    &.alignright {
-      margin-left: 1.5em;
-      display: inline;
-    }
+  .alignright {
+    margin-left: 1.5em;
+    display: inline;
+  }
 
-    &.aligncenter {
-      margin-right: auto !important;
-      margin-left: auto !important;
-      display: block;
-      clear: both;
-    }
+  .aligncenter {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    display: block;
+    clear: both;
   }
 }
