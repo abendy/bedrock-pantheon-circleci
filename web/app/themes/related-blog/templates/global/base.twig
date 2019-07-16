@@ -41,7 +41,14 @@
             </div><!-- /.social-media__links -->
 
             <form method="get" action="{{ site.url }}" role="search">
-              <input type="text" name="s" value="" placeholder="" autocomplete="off"/>
+              <div class="field">
+                <p class="control has-icons-left">
+                  <input type="text" class="input is-small" name="s" placeholder="Search" autocomplete="off"/>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-search"></i>
+                  </span>
+                </p>
+              </div>
               <button type="submit" class="is-sr-only">Search</button>
             </form>
           </div><!-- /.navbar-item -->
