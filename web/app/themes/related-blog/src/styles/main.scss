@@ -17,9 +17,11 @@
 // Libs
 
 @import '~bulma/bulma';
-@import 'libs/fontawesome/fontawesome.scss';
-@import 'libs/fontawesome/brands.scss';
-@import 'libs/fontawesome/solid.scss';
+
+$fa-font-path: '../fonts/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/brands.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
 
 // Layout
 
