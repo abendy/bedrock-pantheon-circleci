@@ -13,10 +13,6 @@ class RelatedTimberSite extends Timber\Site {
     $context['menu'] = new \Timber\Menu( 'main' );
     $context['footer_menu'] = new \Timber\Menu( 'footer' );
 
-    $context['password_required'] = post_password_required( $context['page']->ID );
-
-    $context['is_front_page'] = is_front_page();
-
     $context['site'] = $this;
 
     return $context;
