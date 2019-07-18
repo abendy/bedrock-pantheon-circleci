@@ -16,6 +16,17 @@
     margin-bottom: 1.25rem;
   }
 
+  .wp-caption {
+    margin-bottom: 1.25rem;
+    width: 100% !important;
+  }
+
+  .wp-caption-text {
+    color: $related-midgrey;
+    font-size: .8rem;
+    margin-top: -1.25rem;
+  }
+
   .alignleft {
     margin-right: 1.5em;
     display: inline;
