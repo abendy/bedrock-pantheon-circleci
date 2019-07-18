@@ -73,7 +73,7 @@ h6 {
 h1 {
   color: $related-midgrey;
   font-family: $font-family-playfair;
-  font-size: rem(60);
+  font-size: rem(60) !important;
   text-align: center;
 
   &:not(.hero__title) {
