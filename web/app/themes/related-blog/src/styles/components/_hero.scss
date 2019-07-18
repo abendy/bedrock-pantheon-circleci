@@ -14,16 +14,7 @@
 }
 
 .hero__content {
-  background-color: $white;
-  bottom: 0;
-  left: 0;
   padding: 1rem 0;
-  position: absolute;
-  width: 90%;
-
-  .post-type-page & {
-    width: 90%;
-  }
 }
 
 .hero__title {
