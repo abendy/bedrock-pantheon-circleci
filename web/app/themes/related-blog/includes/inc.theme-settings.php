@@ -50,18 +50,52 @@ function rltd_setup_theme() {
 add_action( 'after_setup_theme', 'rltd_setup_theme' );
 
 // Create footer logo setting
-function your_theme_new_customizer_settings( $wp_customize ) {
-  // Add WP setting
+function rltd_customize_settings( $wp_customize ) {
+  // Add WP settings
   $wp_customize->add_setting( 'rltd_footer_logo' );
+  $wp_customize->add_setting( 'rltd_social_media_facebook' );
+  $wp_customize->add_setting( 'rltd_social_media_twitter' );
+  $wp_customize->add_setting( 'rltd_social_media_instagram' );
 
-  // Add control
+  // Add controls
   $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'rltd_footer_logo', array(
-    'label' => 'Footer Logo',
+    'label' => __( 'Footer Logo', 'related-blog' ),
     'section' => 'title_tagline',
     'settings' => 'rltd_footer_logo',
   ) ) );
+
+	$wp_customize->add_panel( 'rltd_social_media', array(
+		'title'          => __( 'Social media', 'related-blog' ),
+		'description'    => __( 'Set social media links in site header.', 'related-blog' ),
+	) );
+
+  $wp_customize->add_section( 'rltd_social_media' , array(
+		'title'    => __( 'Social media', 'related-blog' ),
+		'panel'    => 'rltd_social_media',
+	) );
+
+  $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'rltd_social_media_facebook', array(
+    'label' => __( 'Facebook URL', 'related-blog' ),
+    'section' => 'rltd_social_media',
+    'settings' => 'rltd_social_media_facebook',
+    'type'     => 'text',
+  ) ) );
+
+  $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'rltd_social_media_twitter', array(
+    'label' => __( 'Twitter URL', 'related-blog' ),
+    'section' => 'rltd_social_media',
+    'settings' => 'rltd_social_media_twitter',
+    'type'     => 'text',
+  ) ) );
+
+  $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'rltd_social_media_instagram', array(
+    'label' => __( 'Instagram URL', 'related-blog' ),
+    'section' => 'rltd_social_media',
+    'settings' => 'rltd_social_media_instagram',
+    'type'     => 'text',
+  ) ) );
 }
-add_action( 'customize_register', 'your_theme_new_customizer_settings' );
+add_action( 'customize_register', 'rltd_customize_settings' );
 
 // Remove default image sizes
 add_action( 'init', function () {

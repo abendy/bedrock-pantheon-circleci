@@ -30,15 +30,26 @@
           <div class="navbar-end">
             <div class="navbar-item tile is-vertical">
               <div class="social-media__links">
-                <a href="https://www.facebook.com/" class="social-media__link" target="_blank">
+                {% set facebook_url = function( 'get_theme_mod', 'rltd_social_media_facebook' ) %}
+                {% if facebook_url %}
+                <a href="{{  }}" class="social-media__link" target="_blank">
                   <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://twitter.com/" class="social-media__link" target="_blank">
+                {% endif %}
+
+                {% set twitter_url = function( 'get_theme_mod', 'rltd_social_media_twitter' ) %}
+                {% if twitter_url %}
+                <a href="{{  }}" class="social-media__link" target="_blank">
                   <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://www.instagram.com/" class="social-media__link" target="_blank">
+                {% endif %}
+
+                {% set instagram_url = function( 'get_theme_mod', 'rltd_social_media_instagram' ) %}
+                {% if instagram_url %}
+                <a href="{{  }}" class="social-media__link" target="_blank">
                   <i class="fab fa-instagram"></i>
                 </a>
+                {% endif %}
               </div><!-- /.social-media__links -->
 
               <form method="get" action="{{ site.url }}" role="search">
