@@ -25,6 +25,9 @@ $fa-font-path: '../fonts/fontawesome';
 @import '@fortawesome/fontawesome-free/scss/brands.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
 
+// Animate
+@import '~animate.css/animate.min.css';
+
 //* Layout
 
 @import 'layout/layout';

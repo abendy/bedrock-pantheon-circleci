@@ -105,12 +105,6 @@ if ( class_exists( 'Vc_Manager' ) ) {
     return $width;
   }
 
-  // Add animate style
-  add_action( 'wp_enqueue_scripts', function () {
-    wp_register_style( 'animate-css', vc_asset_url( 'lib/bower/animate-css/animate.min.css' ), array(), WPB_VC_VERSION );
-    wp_enqueue_style( 'animate-css' );
-  } );
-
   // Set VC as default editor for all content types.
   function rltd_vc_set_default_editor_post_types() {
     $post_types = rltd_get_post_types( 'names' );
