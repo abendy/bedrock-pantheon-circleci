@@ -1,36 +1,38 @@
 @charset 'UTF-8';
 
-// Utilities
+//* Utilities
 
 @import 'utilities/fonts';
 @import 'utilities/functions';
 @import 'utilities/media-queries';
 @import 'utilities/mixins';
 
-// Base
+//* Base
 
 @import 'variables';
 @import 'typography';
 @import 'base';
 @import 'media';
 
-// Libs
+//* Libs
 
+// Bulma
 @import '~bulma/bulma';
 
+// Font Awesome
 $fa-font-path: '../fonts/fontawesome';
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/brands.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
 
-// Layout
+//* Layout
 
 @import 'layout/layout';
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/sidebar';
 
-// Components
+//* Components
 
 @import 'components/abstract';
 @import 'components/nav';
@@ -41,6 +43,6 @@ $fa-font-path: '../fonts/fontawesome';
 @import 'components/search';
 @import 'components/text-block';
 
-// Shame
+//* Shame
 
 @import 'shame';

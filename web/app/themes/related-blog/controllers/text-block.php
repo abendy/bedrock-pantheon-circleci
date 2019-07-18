@@ -36,7 +36,7 @@ if ( !function_exists( 'rltd_text_block_render' ) ) {
     $compile = Timber::compile(
       'text-block.twig',
       array(
-        'content' => @wpautop($content),
+        'content' => @wpautop( $content ),
       )
     );
 

@@ -206,9 +206,9 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
 
       // Get the category
       $category = !empty( $post['rltd_featured_content_list_item_reference'] ) ? @get_the_category( $post['rltd_featured_content_list_item_reference'] )[0] : '';
-      if (!empty($category)) {
+      if ( !empty( $category ) ) {
           $meta = $category->name;
-          $meta_link = @get_category_link($category->term_id);
+          $meta_link = @get_category_link( $category->term_id );
       }
 
       // Build nested items array for rendering
