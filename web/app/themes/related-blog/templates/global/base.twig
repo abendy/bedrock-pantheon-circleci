@@ -32,21 +32,21 @@
               <div class="social-media__links">
                 {% set facebook_url = function( 'get_theme_mod', 'rltd_social_media_facebook' ) %}
                 {% if facebook_url %}
-                <a href="{{  }}" class="social-media__link" target="_blank">
+                <a href="{{ facebook_url }}" class="social-media__link" target="_blank">
                   <i class="fab fa-facebook-f"></i>
                 </a>
                 {% endif %}
 
                 {% set twitter_url = function( 'get_theme_mod', 'rltd_social_media_twitter' ) %}
                 {% if twitter_url %}
-                <a href="{{  }}" class="social-media__link" target="_blank">
+                <a href="{{ twitter_url }}" class="social-media__link" target="_blank">
                   <i class="fab fa-twitter"></i>
                 </a>
                 {% endif %}
 
                 {% set instagram_url = function( 'get_theme_mod', 'rltd_social_media_instagram' ) %}
                 {% if instagram_url %}
-                <a href="{{  }}" class="social-media__link" target="_blank">
+                <a href="{{ instagram_url }}" class="social-media__link" target="_blank">
                   <i class="fab fa-instagram"></i>
                 </a>
                 {% endif %}
