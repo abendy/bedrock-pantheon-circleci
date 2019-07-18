@@ -227,7 +227,7 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
       $text = get_the_excerpt( $post->ID );
 
       // Get image
-      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'rltd_thumbnail' )[0];
+      $image = new Timber\Image( get_post_thumbnail_id( $post->ID ) );
 
       // Get image alt tag
       $image_alt = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );

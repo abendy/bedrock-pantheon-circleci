@@ -30,6 +30,8 @@ function rltd_setup_theme() {
 
   // Add custom image sizes
   add_image_size( 'rltd_thumbnail', 370, 248, true );
+  add_image_size( 'rltd_thumbnail_2_col', 659, 442, true );
+  add_image_size( 'rltd_thumbnail_1_col', 768, 514, true );
   add_image_size( 'rltd_hero_full', 1200, 540, true );
 
   function rltd_hero_images( $sizes ) {
@@ -37,7 +39,9 @@ function rltd_setup_theme() {
       $sizes,
       array(
         'rltd_thumbnail' => __( 'Content List Thumbnail' ),
-        'rltd_hero_full'      => __( 'Hero Image 1600x720' ),
+        'rltd_thumbnail_2_col' => __( 'Content List Thumbnail (2 column layout)' ),
+        'rltd_thumbnail_1_col' => __( 'Content List Thumbnail (1 column layout)' ),
+        'rltd_hero_full' => __( 'Hero Image 1600x720' ),
       )
     );
   }
