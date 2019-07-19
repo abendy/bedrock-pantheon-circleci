@@ -8,6 +8,7 @@
   .navbar-item,
   .navbar-item:visited {
     color: white;
+    text-decoration: none;
   }
 
   .navbar-dropdown {
@@ -21,6 +22,7 @@
   .navbar-dropdown .navbar-item:visited {
     background-color: #f6f2ef;
     color: black;
+    text-decoration: none;
   }
 
   .navbar-item:hover,

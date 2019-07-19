@@ -24,6 +24,10 @@
 
 .content-list__content {
   padding: .5em;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .content-list__title {

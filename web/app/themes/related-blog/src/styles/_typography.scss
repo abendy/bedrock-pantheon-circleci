@@ -85,7 +85,7 @@ a {
   background: transparent;
   color: $color-link;
   font-family: $font-family-default;
-  text-decoration: none;
+  text-decoration: underline;
   transition: color .2s;
 
   &:visited {
