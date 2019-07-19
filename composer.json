@@ -33,6 +33,7 @@
     "wpackagist-plugin/crop-thumbnails": "^1.2",
     "wpackagist-plugin/debug-bar": "^1.0",
     "wpackagist-plugin/debug-bar-timber": "^0.3.0",
+    "wpackagist-plugin/duracelltomi-google-tag-manager": "^1.9",
     "wpackagist-plugin/magic-meta-box": "^2.4",
     "wpackagist-plugin/meta-box": "^4.18",
     "wpackagist-plugin/pantheon-advanced-page-cache": "^0.1.2",
