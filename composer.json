@@ -30,7 +30,6 @@
     "roots/wp-password-bcrypt": "1.0.0",
     "timber/timber": "^1.10",
     "vlucas/phpdotenv": "^3.0.0",
-    "wpackagist-plugin/advanced-custom-fields": "^5.8",
     "wpackagist-plugin/crop-thumbnails": "^1.2",
     "wpackagist-plugin/debug-bar": "^1.0",
     "wpackagist-plugin/debug-bar-timber": "^0.3.0",
