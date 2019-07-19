@@ -199,8 +199,8 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
     if ( $rltd_content_list_pagination === 'yes' ) {
       global $paged;
 
-      if (!isset($paged) || !$paged){
-          $paged = 1;
+      if (!isset($paged) || !$paged) {
+        $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : ( ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1 );
       }
 
       $args['paged'] = $paged;
