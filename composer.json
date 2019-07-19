@@ -40,6 +40,7 @@
     "wpackagist-plugin/really-simple-ssl": "^3.2",
     "wpackagist-plugin/redirection": "^4.3",
     "wpackagist-plugin/regenerate-thumbnails": "^3.1",
+    "wpackagist-plugin/sendgrid-email-delivery-simplified": "^1.11",
     "wpackagist-plugin/svg-support": "^2.3",
     "wpackagist-plugin/timber-library": "^1.10",
     "wpackagist-plugin/tinymce-advanced": "^5.2",
