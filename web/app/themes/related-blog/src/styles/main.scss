@@ -7,13 +7,6 @@
 @import 'utilities/media-queries';
 @import 'utilities/mixins';
 
-//* Base
-
-@import 'variables';
-@import 'typography';
-@import 'base';
-@import 'media';
-
 //* Libs
 
 // Bulma
@@ -27,6 +20,13 @@ $fa-font-path: '../fonts/fontawesome';
 
 // Animate
 @import '~animate.css/animate.min.css';
+
+//* Base
+
+@import 'variables';
+@import 'typography';
+@import 'base';
+@import 'media';
 
 //* Layout
 
