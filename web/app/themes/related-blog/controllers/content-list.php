@@ -253,6 +253,13 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
       $link = $title = $text = $image = $image_alt = $meta = '';
     }
 
+    // If we have an uneven number of items for the column setting
+    // then we'll make a content item full width
+    $num_per_row = $rltd_content_list_limit / $rltd_content_list_columns;
+    if ( !is_int( $num_per_row ) ) {
+      $items[$rltd_content_list_columns]['wide'] = true;
+    }
+
     // Parse the twig template with the shortcode's attributes and content.
     $compile = Timber::compile(
       'content-list.twig',
