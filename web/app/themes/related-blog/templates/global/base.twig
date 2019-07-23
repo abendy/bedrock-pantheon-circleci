@@ -52,9 +52,7 @@
                 {% endif %}
               </div><!-- /.social-media__links -->
 
-              <div class="newsletter-signup">
-                <button class="modal-button" data-target="modal" aria-haspopup="true">Newsletter signup</button>
-              </div><!-- /.newsletter-signup -->
+              <div class="newsletter-signup"></div>
 
               <form method="get" action="{{ site.url }}" role="search">
                 <div class="field">
@@ -91,6 +89,7 @@
   {% block footer %}
   {% include 'global/footer.twig' %}
 
+  <div id="newsletterModal"></div>
   <script src="{{ site.theme.link }}/build/assets/scripts/modal.js"></script>
 
   {{ function('wp_footer') }}

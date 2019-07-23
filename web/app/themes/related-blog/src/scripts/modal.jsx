@@ -1,27 +1,21 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-class Modal extends Component {
+class NewsletterModal extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      isActive: '',
-    };
-  }
+    console.log(props);
 
-  componentDidMount() {
-    const openModal = () => {
-      this.setState({
-        isActive: 'is-active',
-      });
+    this.state = {
+      isActive: 'is-active',
     };
   }
 
   render() {
     return (
       <div
-        className={`modal${this.state.isActive}`}
+        className={`modal ${this.state.isActive}`}
       >
         <div className="modal-background"></div>
         <div className="modal-card">
@@ -38,8 +32,6 @@ class Modal extends Component {
             mollit anim id est laborum.</p>
           </section>
           <footer className="modal-card-foot">
-            <button className="button is-success">Save changes</button>
-            <button className="button">Cancel</button>
           </footer>
         </div>
       </div>
@@ -47,4 +39,36 @@ class Modal extends Component {
   }
 }
 
-ReactDOM.render(<Modal />, document.getElementById('root'));
+class NewsletterModalButton extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+
+    this.state = {
+      isActive: '',
+    };
+  }
+
+  handleClick() {
+    this.setState({
+      isActive: 'is-active',
+    });
+
+    ReactDOM.render(<NewsletterModal isActive={this.state.isActive} />, document.querySelector('#newsletterModal'));
+  }
+
+  render() {
+    return (
+      <button
+        className="modal-button"
+        data-target="modal"
+        aria-haspopup="true"
+        onClick={() => this.handleClick()}
+      >Newsletter signup
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(<NewsletterModalButton />, document.querySelector('.newsletter-signup'));
