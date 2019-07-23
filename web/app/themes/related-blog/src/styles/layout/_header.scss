@@ -16,4 +16,17 @@
   .navbar-end .navbar-item.tile {
     justify-content: center;
   }
+
+  .newsletter-signup button {
+    background-color: transparent;
+    border: 0 none;
+    color: $white;
+    cursor: pointer;
+    float: right;
+    font-family: $font-family-default;
+    font-size: rem(11);
+    margin-bottom: .5rem;
+    padding: 0;
+    text-transform: uppercase;
+  }
 }

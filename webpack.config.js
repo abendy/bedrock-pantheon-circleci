@@ -16,6 +16,9 @@ const base = {
       // `./${THEME_DIR}/src/scripts/main.js`,
       `./${THEME_DIR}/src/styles/main.scss`,
     ],
+    modal: [
+      `./${THEME_DIR}/src/scripts/modal.jsx`,
+    ],
   },
   output: {
     path: path.join(__dirname, `${THEME_DIR}/build/assets/scripts/`),
