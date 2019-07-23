@@ -33,7 +33,7 @@ function rltd_remove_meta_box() {
     // Slug Metabox
     // remove_meta_box( 'slugdiv', $post_type, 'normal' );
     // Tags Metabox
-    remove_meta_box( 'tagsdiv-post_tag', $post_type, 'normal' );
+    // remove_meta_box( 'tagsdiv-post_tag', $post_type, 'normal' );
     // Trackback Metabox
     remove_meta_box( 'trackbacksdiv', $post_type, 'normal' );
   }
@@ -53,7 +53,7 @@ function rltd_register_taxonomy() {
 
   foreach ( $post_types as $post_type ) {
     register_taxonomy_for_object_type( 'category', $post_type );
-    unregister_taxonomy_for_object_type( 'post_tag', $post_type );
+    register_taxonomy_for_object_type( 'post_tag', $post_type );
   }
 }
 add_action( 'init', 'rltd_register_taxonomy' );
