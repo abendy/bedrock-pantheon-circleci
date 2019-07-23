@@ -16,6 +16,9 @@ const base = {
       // `./${THEME_DIR}/src/scripts/main.js`,
       `./${THEME_DIR}/src/styles/main.scss`,
     ],
+    navbar: [
+      `./${THEME_DIR}/src/scripts/navbar.js`,
+    ],
     modal: [
       `./${THEME_DIR}/src/scripts/modal.jsx`,
     ],
