@@ -1,6 +1,6 @@
 {% set first = items|first %}
 
-<section class="module hero"
+<section class="module hero {{ first.wrapper_classes }}"
   data-name="hero"
   data-type="hero">
 
@@ -11,6 +11,15 @@
     {% endif %}
 
       <img src="{{ first.image }}" alt="{{ first.image_alt }}">
+
+      {% if first.has_video is defined and first.has_video %}
+      <!-- video -->
+      <div class="module video"
+        data-name="video"
+        data-type="video"
+        {{ first.wrapper_attributes }}>
+      </div>
+      {% endif %}
 
     {% if first.link is defined and first.link is not empty %}
     </a>

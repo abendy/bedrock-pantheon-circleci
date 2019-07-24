@@ -2,14 +2,21 @@
 
 .module.hero {
   position: relative;
-}
 
-.module.hero figure {
-  margin: 0;
+  figure {
+    border: 2px purple dashed;
+    margin: 0;
+    position: relative;
+  }
 
   img {
     display: block;
     width: 100%;
+
+    @at-root .hero--background-video#{&} {
+      position: relative;
+      z-index: 10;
+    }
   }
 }
 

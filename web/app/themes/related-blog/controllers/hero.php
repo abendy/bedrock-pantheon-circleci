@@ -154,6 +154,12 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
     $container = !empty( $rltd_hero_container ) ? vc_param_group_parse_atts( $rltd_hero_container ) : array();
 
     foreach ( $container as $post ) {
+      $has_video_bg = false;
+      $wrapper_attributes = array();
+      $wrapper_attributes_string = "";
+      $wrapper_classes = array();
+      $wrapper_classes_string = "";
+
       // Get the permalink
       $link = $post['rltd_hero_item_external_link'] === 'yes' && !empty( $post['rltd_hero_item_link'] ) ? esc_url( $post['rltd_hero_item_link'] ) : ( !empty( $post['rltd_hero_item_reference'] ) ? get_permalink( $post['rltd_hero_item_reference'] ) : '' );
 
@@ -187,6 +193,20 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
         $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
       }
 
+      // Test for valid background video
+      $has_video_bg = ( !empty( $post['rltd_hero_item_bg_video'] ) && vc_extract_youtube_id( $post['rltd_hero_item_bg_video'] ) );
+
+      // Create wrapper attrs for background video
+      if ( $has_video_bg ) {
+          wp_enqueue_script( 'vc_youtube_iframe_api_js' );
+
+          $wrapper_classes[] = 'hero--background-video';
+          $wrapper_classes_string = implode( ' ', $wrapper_classes );
+
+          $wrapper_attributes[] = 'data-video-id=' . vc_extract_youtube_id( $post['rltd_hero_item_bg_video'] ) . '';
+          $wrapper_attributes_string = implode( ' ', $wrapper_attributes );
+      }
+
       // Build nested items array for rendering
       $items[] = array(
         'link' => @$link,
@@ -195,6 +215,9 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
         'text' => @$text,
         'image' => @$image,
         'image_alt' => @$image_alt,
+        'wrapper_attributes' => @$wrapper_attributes_string,
+        'wrapper_classes' => @$wrapper_classes_string,
+        'has_video' => @$has_video_bg,
       );
 
       $link = $title = $text = $image_id = $image = $image_alt = '';

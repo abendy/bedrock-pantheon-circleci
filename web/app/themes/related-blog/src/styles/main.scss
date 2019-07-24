@@ -23,6 +23,9 @@ $fa-font-path: '../fonts/fontawesome';
 // Animate
 @import '~animate.css/animate.min.css';
 
+// Plyr
+@import '~plyr/src/sass/plyr';
+
 //* Base
 
 @import 'typography';
@@ -46,6 +49,7 @@ $fa-font-path: '../fonts/fontawesome';
 @import 'components/pagination';
 @import 'components/search';
 @import 'components/text-block';
+@import 'components/video';
 
 //* Shame
 
