@@ -122,6 +122,16 @@ vc_map(
             'description'     => __( '', 'related-blog' ),
             'admin_label'     => false,
           ),
+          array(
+            'type'            => 'textfield',
+            'holder'          => '',
+            'class'           => '',
+            'heading'         => __( 'Background Video', 'related-blog' ),
+            'param_name'      => 'rltd_hero_item_bg_video',
+            'value'           => '',
+            'description'     => __( '', 'related-blog' ),
+            'admin_label'     => false,
+          ),
         )
       ),
     )
