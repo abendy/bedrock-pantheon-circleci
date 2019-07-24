@@ -6,16 +6,7 @@
   <meta charset="{{ site.charset }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>
-    {% if wp_title %}
-      {{ wp_title }} - {{ site.name }}
-    {% else %}
-      {{ site.name }}
-    {% endif %}
-  </title>
-
+  {{ function('wp_head') }}
   <link rel="shortcut icon" href="{{ site.theme.link }}/build/assets/images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="{{ site.theme.link }}/build/assets/styles/main.css" type="text/css" media="screen">
-
-  {{ function('wp_head') }}
 </head>
