@@ -13,12 +13,13 @@
       <img src="{{ first.image }}" alt="{{ first.image_alt }}">
 
       {% if first.has_video is defined and first.has_video %}
-      <!-- video -->
+      <!-- .module.video -->
       <div class="module video"
         data-name="video"
         data-type="video"
         {{ first.wrapper_attributes }}>
       </div>
+      <!-- /.module.video -->
       {% endif %}
 
     {% if first.link is defined and first.link is not empty %}
@@ -38,7 +39,7 @@
     <a href="{{ first.link }}">
     {% endif %}
 
-    <{{ h_tag|default('h2') }} class="hero__title">{{ first.title }}</{{ h_tag|default('h2') }}>
+      <{{ h_tag|default('h2') }} class="hero__title">{{ first.title }}</{{ h_tag|default('h2') }}>
 
     {% if first.link is defined and first.link is not empty %}
     </a>
