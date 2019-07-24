@@ -4,6 +4,10 @@
 
 <body class="{{ body_class }}">
   <a class="skip-link is-sr-only" href="#main">{{ _e( 'Skip to content') }}</a>
+  {% set gtm_installed = function('function_exists', 'gtm4wp_the_gtm_tag') %}
+  {% if gtm_installed == 1 %}
+  {{ function('gtm4wp_the_gtm_tag') }}
+  {% endif %}
 
   <header id="header" class="module header" data-name="header">
     <div class="container">
