@@ -29,11 +29,21 @@
 
   <div class="hero__content">
     {% if first.title is defined and first.title is not empty %}
+
     {% if h_tag is empty %}
     {% set h_tag = first.h_tag %}
-
     {% endif %}
-    <a href="{{ first.link }}"><{{ h_tag|default('h2') }} class="hero__title">{{ first.title }}</{{ h_tag|default('h2') }}></a>
+
+    {% if first.link is defined and first.link is not empty %}
+    <a href="{{ first.link }}">
+    {% endif %}
+
+    <{{ h_tag|default('h2') }} class="hero__title">{{ first.title }}</{{ h_tag|default('h2') }}>
+
+    {% if first.link is defined and first.link is not empty %}
+    </a>
+    {% endif %}
+
     {% endif %}
 
     {% if first.text is defined and first.text is not empty %}
