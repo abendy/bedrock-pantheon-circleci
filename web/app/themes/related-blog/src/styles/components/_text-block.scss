@@ -2,4 +2,9 @@
 
 .module.text-block {
   margin-top: 2rem;
+
+  @include until($tablet) {
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
 }

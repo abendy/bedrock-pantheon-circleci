@@ -9,6 +9,7 @@ $output = '';
 $css_classes = array(
   'wpb_animate_when_almost_visible wpb_fadeIn fadeIn wpb_start_animation animated',
   'columns',
+  'is-marginless',
 );
 
 $wrapper_attributes = array();
