@@ -4,11 +4,14 @@
   <div class="content-list__item column is-12-mobile is-{{ width }}-tablet is-{{ width }}-desktop">
     {% if item.image is defined and item.image is not empty %}
     <a href="{{ item.link }}">
-      <img srcset="{{ item.image.srcset }}"
-        sizes="(max-width: 768px) 370w,
-              (max-width: 1024px) 768w,
-              1024w"
-        src="{{ item.image }}" alt="{{ item.image_alt|e }}">
+      <img
+        src="{{ item.image_sm }}"
+        srcset="
+          {{ item.image_md }} 769w,
+          {{ item.image_ld }} 1024w
+        "
+        alt="{{ item.image_alt|e }}"
+      >
     </a>
     {% endif %}
 
