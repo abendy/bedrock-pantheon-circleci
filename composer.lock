@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "60e44c1de4a60a891efb702090d7a763",
+    "content-hash": "f6e6d7a4ef41798de1797328f6e1a21d",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -1453,59 +1453,6 @@
                 "service"
             ],
             "time": "2017-05-10T09:20:27+00:00"
-        },
-        {
-            "name": "mindkomm/timmy",
-            "version": "0.14.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mindkomm/timmy.git",
-                "reference": "4792491e9fea9bc07351d0ca11903e19972db37b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mindkomm/timmy/zipball/4792491e9fea9bc07351d0ca11903e19972db37b",
-                "reference": "4792491e9fea9bc07351d0ca11903e19972db37b",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "php": ">=5.4.0",
-                "timber/timber": "^1.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Timmy\\": "lib/"
-                },
-                "files": [
-                    "functions-images.php",
-                    "functions-deprecated.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Lukas Gaechter",
-                    "email": "lukas.gaechter@mind.ch",
-                    "homepage": "https://www.mind.ch"
-                }
-            ],
-            "description": "Advanced image manipulation for Timber.",
-            "keywords": [
-                "images",
-                "responsive",
-                "timber",
-                "timmy",
-                "wordpress"
-            ],
-            "time": "2019-06-19T16:08:57+00:00"
         },
         {
             "name": "mustache/mustache",

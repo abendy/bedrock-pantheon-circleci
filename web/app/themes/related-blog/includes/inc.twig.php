@@ -27,9 +27,6 @@ class RelatedTimberSite extends Timber\Site {
 if ( class_exists( 'Timber' ) ) {
   $timber = new \Timber\Timber();
 
-  // Init Timmy responsive image helper
-  $timmy = new Timmy\Timmy();
-
   // Sets the directories (inside your theme) to find .twig files
   Timber::$dirname = array( 'templates', 'templates/global', 'templates/modules', 'templates/partial' );
 
