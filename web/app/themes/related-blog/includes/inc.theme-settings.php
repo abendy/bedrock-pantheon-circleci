@@ -28,19 +28,26 @@ function rltd_setup_theme() {
   // Add default posts and comments RSS feed links to head.
   // add_theme_support( 'automatic-feed-links' );
 
+  // Update default image dimensions
+  update_option( 'thumbnail_size_w', 370 );
+  update_option( 'thumbnail_size_h', 248 );
+  update_option( 'thumbnail_crop', 1 );
+
+  update_option( 'medium_size_w', 659 );
+  update_option( 'medium_size_h', 442 );
+  update_option( 'medium_crop', 1 );
+
+  update_option( 'large_size_w', 768 );
+  update_option( 'large_size_h', 514 );
+  update_option( 'large_crop', 1 );
+
   // Add custom image sizes
-  add_image_size( 'rltd_thumbnail', 370, 248, true );
-  add_image_size( 'rltd_thumbnail_2_col', 659, 442, true );
-  add_image_size( 'rltd_thumbnail_1_col', 768, 514, true );
   add_image_size( 'rltd_hero_full', 1200, 540, true );
 
   function rltd_hero_images( $sizes ) {
     return array_merge(
       $sizes,
       array(
-        'rltd_thumbnail' => __( 'Content List Thumbnail' ),
-        'rltd_thumbnail_2_col' => __( 'Content List Thumbnail (2 column layout)' ),
-        'rltd_thumbnail_1_col' => __( 'Content List Thumbnail (1 column layout)' ),
         'rltd_hero_full' => __( 'Hero Image 1600x720' ),
       )
     );

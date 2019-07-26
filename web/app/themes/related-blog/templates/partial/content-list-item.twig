@@ -5,13 +5,13 @@
     {% if item.image is defined and item.image is not empty %}
     <a href="{{ item.link }}">
       <img
-        src="{{ item.image_sm }}"
+        src="{{ item.image|resize(370, 248) }}"
         srcset="
-          {{ item.image_md }} 769w,
-          {{ item.image_lg }} 1024w
+          {{ item.image|resize(768, 514) }} 769w,
+          {{ item.image|resize(659, 442) }} 1024w
         "
         sizes="100vw"
-        alt="{{ item.image_alt|e }}"
+        {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }}
       >
     </a>
     {% endif %}

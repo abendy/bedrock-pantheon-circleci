@@ -226,14 +226,11 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
       // Get the excerpt text
       $text = get_the_excerpt( $post->ID );
 
-      // Get image
-      $image = new Timber\Image( get_post_thumbnail_id( $post->ID ) );
-
-      $upload_dir = wp_upload_dir()['url'];
-
-      $image_sm = !empty( $image->sizes['rltd_thumbnail'] ) ? $upload_dir . '/' . $image->sizes['rltd_thumbnail']['file'] : '';
-      $image_md = !empty( $image->sizes['rltd_thumbnail_2_col'] ) ? $upload_dir . '/' . $image->sizes['rltd_thumbnail_2_col']['file'] : '';
-      $image_lg = !empty( $image->sizes['rltd_thumbnail_1_col'] ) ? $upload_dir . '/' . $image->sizes['rltd_thumbnail_1_col']['file'] : '';
+      // Get images
+      $image_full = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0];
+      $image_lg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0];
+      $image_md = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+      $image_sm = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' )[0];
 
       // Get image alt tag
       $image_alt = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
@@ -251,9 +248,6 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
         'title' => @$title,
         'text' => @$text,
         'image' => @$image,
-        'image_sm' => @$image_sm,
-        'image_md' => @$image_md,
-        'image_lg' => @$image_lg,
         'image_alt' => @$image_alt,
         'meta' => @$meta,
         'meta_link' => @$meta_link,
