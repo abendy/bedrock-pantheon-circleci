@@ -1,7 +1,10 @@
 <div class="content-list__items columns is-variable is-3">
   {% for item in items %}
-  {% set width = (item.wide is defined) ? '12' : columns %}
-  <div class="content-list__item column is-12-mobile is-{{ width }}-tablet is-{{ width }}-desktop">
+  <div class="content-list__item column
+    is-12-mobile
+    is-6-tablet
+    is-{{ columns }}-desktop"
+  >
     {% if item.image is defined and item.image is not empty %}
     <a href="{{ item.link }}">
       <img
