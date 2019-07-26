@@ -227,10 +227,7 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
       $text = get_the_excerpt( $post->ID );
 
       // Get images
-      $image_full = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0];
-      $image_lg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0];
-      $image_md = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
-      $image_sm = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' )[0];
+      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0];
 
       // Get image alt tag
       $image_alt = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
