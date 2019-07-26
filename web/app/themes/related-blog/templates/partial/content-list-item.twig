@@ -8,8 +8,9 @@
         src="{{ item.image_sm }}"
         srcset="
           {{ item.image_md }} 769w,
-          {{ item.image_ld }} 1024w
+          {{ item.image_lg }} 1024w
         "
+        sizes="100vw"
         alt="{{ item.image_alt|e }}"
       >
     </a>
