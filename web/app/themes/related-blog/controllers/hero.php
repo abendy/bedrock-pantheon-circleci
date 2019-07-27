@@ -129,7 +129,7 @@ vc_map(
             'heading'         => __( 'Background Video', 'related-blog' ),
             'param_name'      => 'rltd_hero_item_bg_video',
             'value'           => '',
-            'description'     => __( '', 'related-blog' ),
+            'description'     => __( 'Full Vimeo or YouTube URL', 'related-blog' ),
             'admin_label'     => false,
           ),
         )

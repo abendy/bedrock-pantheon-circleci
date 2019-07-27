@@ -17,7 +17,12 @@ class Video extends Component {
 
   render() {
     return (
-      <ReactPlayer url={this.state.videoUrl} playing loop='true' volume='0' controls='false' />
+      <ReactPlayer
+        url={this.state.videoUrl}
+        controls='false'
+        loop='true'
+        playing
+        volume='0' />
     );
   }
 }
