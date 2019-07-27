@@ -1,17 +1,26 @@
-import React from 'react';
-import { render } from 'react-dom';
-import Plyr from 'react-plyr';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import ReactPlayer from 'react-player';
 
 const renderContainer = document.querySelector('.module.video');
-const { videoId } = renderContainer.dataset;
 
-const Video = () => (
-  <div>
-    <Plyr
-      type='youtube'
-      videoId={`${videoId}`}
-    />
-  </div>
-);
+class Video extends Component {
+  constructor(props) {
+    super(props);
 
-render(<Video />, renderContainer);
+    const { videoId } = renderContainer.dataset;
+
+    this.state = {
+      videoUrl: `https://www.youtube.com/watch?v=${videoId}`,
+    };
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  render() {
+    return (
+      <ReactPlayer url={this.state.videoUrl} playing volume='0' />
+    );
+  }
+}
+
+ReactDOM.render(<Video />, renderContainer);

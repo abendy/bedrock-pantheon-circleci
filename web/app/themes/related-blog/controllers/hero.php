@@ -227,6 +227,7 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
         'image_alt' => @$image_alt,
         'wrapper_attributes' => @$wrapper_attributes_string,
         'wrapper_classes' => @$wrapper_classes_string,
+        'has_video' => @$has_video_bg,
       );
 
       $link = $title = $text = $image_id = $image = $image_alt = '';
