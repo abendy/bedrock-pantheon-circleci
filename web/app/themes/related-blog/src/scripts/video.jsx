@@ -15,10 +15,9 @@ class Video extends Component {
     };
   }
 
-  // eslint-disable-next-line class-methods-use-this
   render() {
     return (
-      <ReactPlayer url={this.state.videoUrl} playing volume='0' />
+      <ReactPlayer url={this.state.videoUrl} playing loop='true' volume='0' controls='false' />
     );
   }
 }
