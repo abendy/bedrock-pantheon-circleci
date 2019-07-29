@@ -42,13 +42,13 @@ function rltd_setup_theme() {
   update_option( 'large_crop', 1 );
 
   // Add custom image sizes
-  add_image_size( 'rltd_hero_full', 1200, 540, true );
+  add_image_size( 'rltd_hero_full', 1330, 540, true );
 
   function rltd_hero_images( $sizes ) {
     return array_merge(
       $sizes,
       array(
-        'rltd_hero_full' => __( 'Hero Image 1600x720' ),
+        'rltd_hero_full' => __( 'Hero Image' ),
       )
     );
   }
