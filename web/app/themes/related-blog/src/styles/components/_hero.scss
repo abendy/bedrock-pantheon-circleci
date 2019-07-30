@@ -1,42 +1,43 @@
 // Hero module
 
 .module.hero {
-  // position: relative;
-
   figure {
     margin: 0;
     overflow: hidden;
     position: relative;
-  }
 
-  img {
-    display: block;
-    width: 100%;
+    img {
+      display: block;
+      width: 100%;
 
-    @at-root .hero--background-video#{&} {
-      position: relative;
-      z-index: 10;
+      @at-root .hero--background-video#{&} {
+        position: relative;
+        z-index: 10;
+      }
     }
   }
-}
 
-.hero__content {
-  padding: 1rem 0;
+  .hero {
+    &__content {
+      padding: 1rem 0;
 
-  @include until($tablet) {
-    padding-left: .75rem;
-    padding-right: .75rem;
+      @include until($tablet) {
+        padding-left: .75rem;
+        padding-right: .75rem;
+      }
+    }
+
+    &__title {
+      color: $related-midgrey;
+      font-family: $font-family-playfair;
+      font-size: rem(38);
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    &__desc {
+      margin-bottom: 0.5rem;
+    }
   }
-}
-
-.hero__title {
-  color: $related-midgrey;
-  font-family: $font-family-playfair;
-  font-size: rem(38);
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.hero__desc {
-  margin-bottom: 0.5rem;
 }
