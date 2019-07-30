@@ -119,7 +119,7 @@ if ( !function_exists( 'rltd_grouped_content_list_render' ) ) {
 
       // Get image
       $image_id = @get_post_meta( $post->ID, 'property_image' )[0];
-      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0];
+      $image = wp_get_attachment_image_src( $image_id, 'full' )[0];
 
       // Get image alt tag
       $image_alt = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
