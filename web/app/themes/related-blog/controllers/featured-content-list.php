@@ -187,6 +187,7 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
     // Loop over nested/multi-instance items
     $container = !empty( $rltd_featured_content_list_container ) ? vc_param_group_parse_atts( $rltd_featured_content_list_container ) : array();
 
+    $items = array();
     foreach ( $container as $post ) {
       // Get the permalink
       $link = $post['rltd_featured_content_list_item_external_link'] === 'yes' && !empty( $post['rltd_featured_content_list_item_link'] ) ? esc_url( $post['rltd_featured_content_list_item_link'] ) : ( !empty( $post['rltd_featured_content_list_item_reference'] ) ? get_permalink( $post['rltd_featured_content_list_item_reference'] ) : '' );
@@ -201,7 +202,7 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
       $image_id = !empty( $post['rltd_featured_content_list_item_image'] ) ? $post['rltd_featured_content_list_item_image'] : get_post_thumbnail_id( $post['rltd_featured_content_list_item_reference'] );
 
       // Get image
-      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0];
+      $image = wp_get_attachment_image_src( get_post_thumbnail_id( $image_id ), 'full' )[0];
 
       // Get image alt tag
       $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
@@ -224,7 +225,7 @@ if ( !function_exists( 'rltd_featured_content_list_render' ) ) {
         'meta_link' => @$meta_link,
       );
 
-      $link = $title = $text = $image_id = $image = $image_alt = $meta = '';
+      $link = $title = $text = $image_id = $image = $image_alt = $category = $meta = $meta_link = '';
     }
 
     // Parse the twig template with the shortcode's attributes and content.

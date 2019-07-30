@@ -216,6 +216,7 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
     }
 
     // Loop over query response
+    $items = array();
     foreach ( $post_data as $post ) {
       // Get the permalink
       $link = get_permalink( $post->ID );
@@ -250,7 +251,7 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
         'meta_link' => @$meta_link,
       );
 
-      $link = $title = $text = $image = $image_alt = $meta = '';
+      $link = $title = $text = $image_id = $image = $image_alt = $category = $meta = $meta_link = '';
     }
 
     // If we have an uneven number of items for the column setting
