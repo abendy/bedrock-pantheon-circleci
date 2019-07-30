@@ -1,6 +1,10 @@
 <footer id="footer" class="module footer" data-name="footer">
-  <div class="container">
-    <div class="is-pulled-left">
+  <div class="container is-flex">
+    <div>
+      <img src="{{ function( 'get_theme_mod', 'rltd_footer_logo' ) }}">
+    </div>
+
+    <div>
       <nav class="navbar" role="navigation" aria-label="footer navigation">
         <div class="navbar-menu is-shadowless">
           {% include "global/menu.twig" with {'menu': footer_menu.get_items} %}
@@ -8,9 +12,7 @@
       </nav>
     </div>
 
-    <div class="is-pulled-right has-text-right">
-      <img src="{{ function( 'get_theme_mod', 'rltd_footer_logo' ) }}">
-
+    <div>
       <p>&copy; {{ "now"|date('Y') }} Related Companies</p>
     </div>
   </div>

@@ -28,21 +28,19 @@
   // Footer navigation
 
   #footer & .navbar-menu {
-    display: block;
+    flex-shrink: 1;
+    flex-wrap: wrap;
 
-    @include from($tablet) {
-      column-count: 2;
-      column-gap: 1rem;
-    }
-
-    @include from($desktop) {
-      height: 100px;
+    @include until($desktop) {
+      display: block;
     }
 
     a.navbar-item {
-      min-width: 150px;
       padding: 0;
-      padding-right: 1rem;
+
+      @include from($desktop) {
+        padding-left: 1.5rem;
+      }
     }
   }
 }
