@@ -29,30 +29,26 @@
   {% endif %}
 
   <div class="hero__content">
-    <div class="columns">
-      <div class="column {{ (post_type == 'post') ? 'is-11 is-offset-1' : 'is-9 is-offset-2' }}">
-        {% if first.title is defined and first.title is not empty %}
+    {% if first.title is defined and first.title is not empty %}
 
-        {% if h_tag is empty %}
-        {% set h_tag = first.h_tag %}
-        {% endif %}
+    {% if h_tag is empty %}
+    {% set h_tag = first.h_tag %}
+    {% endif %}
 
-        {% if first.link is defined and first.link is not empty %}
-        <a href="{{ first.link }}">
-        {% endif %}
+    {% if first.link is defined and first.link is not empty %}
+    <a href="{{ first.link }}">
+    {% endif %}
 
-          <{{ h_tag|default('h2') }} class="hero__title">{{ first.title }}</{{ h_tag|default('h2') }}>
+      <{{ h_tag|default('h2') }} class="hero__title">{{ first.title }}</{{ h_tag|default('h2') }}>
 
-        {% if first.link is defined and first.link is not empty %}
-        </a>
-        {% endif %}
+    {% if first.link is defined and first.link is not empty %}
+    </a>
+    {% endif %}
 
-        {% endif %}
+    {% endif %}
 
-        {% if first.text is defined and first.text is not empty %}
-        <p class="hero__desc">{{ first.text }}</p>
-        {% endif %}
-      </div>
-    </div><!-- /.columns -->
+    {% if first.text is defined and first.text is not empty %}
+    <p class="hero__desc">{{ first.text }}</p>
+    {% endif %}
   </div>
 </section>
