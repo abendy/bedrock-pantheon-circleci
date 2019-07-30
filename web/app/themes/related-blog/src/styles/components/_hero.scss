@@ -34,6 +34,10 @@
       line-height: 1.4;
       margin-bottom: 1rem;
       text-align: left;
+
+      @include until($tablet) {
+        line-height: 1.2;
+      }
     }
 
     &__desc {
