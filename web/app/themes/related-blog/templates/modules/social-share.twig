@@ -2,26 +2,30 @@
   data-name="social-share"
   data-type="social-share">
 
-  <div class="social-share__links">
-    <ul>
-      <li>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ current_url }}" class="social-share__link icon is-medium" target="_blank">
-          <i class="fab fa-facebook-f fa-lg"></i>
-        </a>
-      </li>
+  <div class="columns is-paddingless">
+    <div class="column {{ (post_type == 'post') ? 'is-8 is-offset-2' : 'is-10 is-offset-2' }}">
+      <div class="social-share__links">
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ current_url }}" class="social-share__link icon is-medium" target="_blank">
+              <i class="fab fa-facebook-f fa-lg"></i>
+            </a>
+          </li>
 
-      <li>
-        <a href="https://twitter.com/home?status={{ current_url }}" class="social-share__link icon is-medium" target="_blank">
-          <i class="fab fa-twitter fa-lg"></i>
-        </a>
-      </li>
+          <li>
+            <a href="https://twitter.com/home?status={{ current_url }}" class="social-share__link icon is-medium" target="_blank">
+              <i class="fab fa-twitter fa-lg"></i>
+            </a>
+          </li>
 
-      <li>
-        <a href="mailto:?body={{ current_url }}" class="social-share__link icon is-medium" target="_blank">
-          <i class="fas fa-envelope fa-lg"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
+          <li>
+            <a href="mailto:?body={{ current_url }}" class="social-share__link icon is-medium" target="_blank">
+              <i class="fas fa-envelope fa-lg"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div><!-- /.columns -->
 
 </section>

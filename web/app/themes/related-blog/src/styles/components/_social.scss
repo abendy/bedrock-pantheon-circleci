@@ -14,6 +14,14 @@
 
 // Social share module
 
+.module.social-share {
+  width: 90%;
+
+  .post-type-page & {
+    width: 90%;
+  }
+}
+
 .social-share__links {
   ul {
     display: flex;
