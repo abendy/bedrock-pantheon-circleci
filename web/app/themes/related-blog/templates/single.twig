@@ -10,7 +10,7 @@
   {% else %}
   <!-- start unique single tpl -->
   <article class="post-type-{{ page.post_type }}" id="post-{{ page.ID }}">
-    {% if page is defined and page.hero_image is empty %}
+    {% if page.title is defined and page.title is not empty and page.hero_image is empty %}
     <h1>{{ page.title }}</h1>
     {% endif %}
 
