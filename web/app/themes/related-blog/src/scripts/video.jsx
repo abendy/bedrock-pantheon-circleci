@@ -25,6 +25,7 @@ class Video extends Component {
       volume: 0,
       muted: true,
       clickToPlay: true,
+      disableContextMenu: true,
       hideControls: true,
       resetOnEnd: true,
       displayDuration: false,
