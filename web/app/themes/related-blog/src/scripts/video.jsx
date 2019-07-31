@@ -30,7 +30,7 @@ class Video extends Component {
       resetOnEnd: true,
       displayDuration: false,
       fullscreen: { enabled: true, fallback: true, iosNative: false },
-      loop: { active: false },
+      loop: { active: true },
       vimeo: {
         byline: false, portrait: false, title: false, speed: true, transparent: false, gesture: 'media',
       },
