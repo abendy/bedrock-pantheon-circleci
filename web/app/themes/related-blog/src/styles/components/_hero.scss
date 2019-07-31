@@ -27,6 +27,10 @@
         padding-left: .75rem;
         padding-right: .75rem;
       }
+
+      .post-type-page & {
+        margin-left: 0 !important;
+      }
     }
 
     &__title {
