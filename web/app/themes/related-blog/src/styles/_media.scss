@@ -11,6 +11,8 @@ img {
 
 // RTE
 .module.text-block {
+  overflow-x: hidden;
+
   h2 {
     color: $related-midgrey;
     font-family: $font-family-playfair;
