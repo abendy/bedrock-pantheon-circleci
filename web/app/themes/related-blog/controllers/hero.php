@@ -207,20 +207,22 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
       if ( !empty( $post['rltd_hero_item_bg_video'] ) ) {
         parse_str( parse_url( $post['rltd_hero_item_bg_video'], PHP_URL_PATH ), $path );
 
-        $videoId = str_replace( '/', '', array_keys( $path )[0] );
+        $video_id = str_replace( '/', '', array_keys( $path )[0] );
 
-        $has_video_bg = true;
+        if ( !preg_match( '/[^\d]/', $video_id ) ) {
+          $has_video_bg = true;
+        }
       }
 
       // Create wrapper attrs for background video
-      if ( $has_video_bg ) {
-          wp_enqueue_script( 'vc_youtube_iframe_api_js' );
+      if ( $has_video_bg && isset( $video_id ) ) {
+        wp_enqueue_script( 'vc_youtube_iframe_api_js' );
 
-          $wrapper_classes[] = 'hero--background-video';
-          $wrapper_classes_string = implode( ' ', $wrapper_classes );
+        $wrapper_classes[] = 'hero--background-video';
+        $wrapper_classes_string = implode( ' ', $wrapper_classes );
 
-          $wrapper_attributes[] = "data-video-id='$videoId'";
-          $wrapper_attributes_string = implode( ' ', $wrapper_attributes );
+        $wrapper_attributes[] = "data-video-id='$video_id'";
+        $wrapper_attributes_string = implode( ' ', $wrapper_attributes );
       }
 
       // Build nested items array for rendering
@@ -231,9 +233,9 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
         'text' => @$text,
         'image' => @$image,
         'image_alt' => @$image_alt,
+        'video_id' => @$video_id,
         'wrapper_attributes' => @$wrapper_attributes_string,
         'wrapper_classes' => @$wrapper_classes_string,
-        'has_video_bg' => @$has_video_bg,
       );
 
       $link = $title = $text = $image_id = $image = $image_alt = '';

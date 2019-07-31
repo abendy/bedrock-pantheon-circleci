@@ -12,19 +12,20 @@
 
       <img src="{{ first.image|resize(1300, 445) }}" alt="{{ first.image_alt }}">
 
-      {% if first.has_video_bg is defined and first.has_video_bg %}
-      <!-- .module.video -->
-      <div class="module video"
-        data-name="video"
-        data-type="video"
-        {{ first.wrapper_attributes }}>
-      </div>
-      <!-- /.module.video -->
-      {% endif %}
-
     {% if first.link is defined and first.link is not empty %}
     </a>
     {% endif %}
+
+    {% if first.video_id is defined and first.video_id %}
+    <!-- .module.video -->
+    <div class="module video"
+      data-name="video"
+      data-type="video"
+      {{ first.wrapper_attributes }}>
+    </div>
+    <!-- /.module.video -->
+    {% endif %}
+
   </figure>
   {% endif %}
 
