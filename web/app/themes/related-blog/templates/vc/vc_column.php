@@ -13,6 +13,7 @@ $width = rltd_wpb_translateColumnWidthToSpan( $width );
 $width = vc_column_offset_class_merge( $offset, $width );
 
 $css_classes = array(
+  'main-col',
   'column',
   $width,
 );

@@ -1,31 +1,14 @@
 // Content list module
 
 .module.content-list {
-  margin-top: 2rem;
-  padding: 0 .8rem;
-
   .column + .column & {
     padding-left: 2.25rem;
   }
 }
 
 .content-list {
-  &__items {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  &__item {
-    margin-bottom: 2rem;
-    padding: .6em;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  &__content {
-    padding: .5em;
+  &__top {
+    height: 2rem;
   }
 
   &__title {
@@ -34,9 +17,25 @@
     font-size: rem(15);
     letter-spacing: .5rem;
     line-height: 1.4;
-    margin-bottom: 3rem;
     text-align: center;
     text-transform: uppercase;
+  }
+
+  &__items {
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+
+  &__item {
+    margin-bottom: 2rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    padding: .5em;
   }
 
   &__item__meta {

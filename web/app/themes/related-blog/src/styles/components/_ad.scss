@@ -1,6 +1,14 @@
 // Ad
 
 .module.ad {
+  .main-col + .main-col & {
+    margin-top: 2rem;
+  }
+
+  figure {
+    padding-top: 0.75rem;
+  }
+
   img {
     max-width: 100% !important;
     width: initial !important;
