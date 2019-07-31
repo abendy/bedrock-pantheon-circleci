@@ -207,7 +207,7 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
       if ( !empty( $post['rltd_hero_item_bg_video'] ) ) {
         parse_str( parse_url( $post['rltd_hero_item_bg_video'], PHP_URL_PATH ), $path );
 
-        $videoId = str_replace( '/', '', array_keys($path)[0] );
+        $videoId = str_replace( '/', '', array_keys( $path )[0] );
 
         $has_video_bg = true;
       }
