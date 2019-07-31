@@ -14,7 +14,6 @@ $width = vc_column_offset_class_merge( $offset, $width );
 
 $css_classes = array(
   'column',
-  'is-paddingless',
   $width,
 );
 

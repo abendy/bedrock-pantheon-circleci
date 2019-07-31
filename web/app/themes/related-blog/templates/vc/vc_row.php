@@ -17,7 +17,7 @@ $wrapper_attributes = array();
 $css_class = preg_replace( '/\s+/', ' ', implode( ' ', array_filter( array_unique( $css_classes ) ) ) );
 $wrapper_attributes[] = 'class="' . esc_attr( trim( $css_class ) ) . '"';
 
-$output .= '<div ' . implode( ' ', $wrapper_attributes ) . '>';
+$output .= '<div ' . implode( ' ', $wrapper_attributes ) . ' style="justify-content: space-between;">';
 $output .= wpb_js_remove_wpautop( $content );
 $output .= '</div>';
 
