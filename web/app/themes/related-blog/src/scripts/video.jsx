@@ -30,15 +30,18 @@ class Video extends Component {
       resetOnEnd: true,
       displayDuration: false,
       fullscreen: { enabled: true, fallback: true, iosNative: false },
+      loop: { active: false },
+      vimeo: {
+        byline: false, portrait: false, title: false, speed: true, transparent: false, gesture: 'media',
+      },
     });
-    console.log('player', this.player);
   }
 
   render() {
     return (
       <div className="plyr__video-embed" id="player">
         <iframe
-          src={`https://player.vimeo.com/video/${this.state.videoId}?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media`}
+          src={`https://player.vimeo.com/video/${this.state.videoId}`}
           allowfullscreen
           allowtransparency
           allow="autoplay; fullscreen"
