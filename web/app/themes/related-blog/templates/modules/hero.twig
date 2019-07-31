@@ -10,7 +10,7 @@
     <a href="{{ first.link }}">
     {% endif %}
 
-      <img src="{{ first.image }}" alt="{{ first.image_alt }}">
+      <img src="{{ first.image|resize(1300, 445) }}" alt="{{ first.image_alt }}">
 
       {% if first.has_video_bg is defined and first.has_video_bg %}
       <!-- .module.video -->
