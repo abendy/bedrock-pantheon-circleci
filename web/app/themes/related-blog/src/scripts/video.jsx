@@ -11,7 +11,7 @@ class Video extends Component {
     const { videoId } = renderContainer.dataset;
 
     this.state = {
-      videoUrl: `https://www.youtube.com/watch?v=${videoId}`,
+      videoUrl: `https://vimeo.com/${videoId}`,
     };
   }
 

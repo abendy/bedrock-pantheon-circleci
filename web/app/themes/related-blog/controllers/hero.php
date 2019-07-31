@@ -204,7 +204,13 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
       }
 
       // Test for valid background video
-      $has_video_bg = ( !empty( $post['rltd_hero_item_bg_video'] ) && vc_extract_youtube_id( $post['rltd_hero_item_bg_video'] ) );
+      if ( !empty( $post['rltd_hero_item_bg_video'] ) ) {
+        parse_str( parse_url( $post['rltd_hero_item_bg_video'], PHP_URL_PATH ), $path );
+
+        $videoId = str_replace( '/', '', array_keys($path)[0] );
+
+        $has_video_bg = true;
+      }
 
       // Create wrapper attrs for background video
       if ( $has_video_bg ) {
@@ -213,7 +219,7 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
           $wrapper_classes[] = 'hero--background-video';
           $wrapper_classes_string = implode( ' ', $wrapper_classes );
 
-          $wrapper_attributes[] = 'data-video-id=' . vc_extract_youtube_id( $post['rltd_hero_item_bg_video'] ) . '';
+          $wrapper_attributes[] = "data-video-id='$videoId'";
           $wrapper_attributes_string = implode( ' ', $wrapper_attributes );
       }
 
@@ -227,7 +233,7 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
         'image_alt' => @$image_alt,
         'wrapper_attributes' => @$wrapper_attributes_string,
         'wrapper_classes' => @$wrapper_classes_string,
-        'has_video' => @$has_video_bg,
+        'has_video_bg' => @$has_video_bg,
       );
 
       $link = $title = $text = $image_id = $image = $image_alt = '';
