@@ -141,6 +141,7 @@ if ( class_exists( 'Vc_Manager' ) ) {
       display: none !important;
     }
     </style>";
+    echo '<style> .wpb_element_wrapper img { height: auto !important; max-width: 100% !important; } </style>';
   }
   add_action( 'admin_head', 'rltd_hide_vc_options' );
 
