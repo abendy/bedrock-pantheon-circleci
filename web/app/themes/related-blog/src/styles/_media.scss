@@ -27,9 +27,12 @@ img {
   }
 
   iframe {
-    border: 0;
-    max-width: 100% !important;
-    user-select: none;
+    width: 1px;
+    min-width: 100%;
+    *width: 100%;
+    // border: 0;
+    // max-width: 100% !important;
+    // user-select: none;
   }
 
   .wp-caption {
