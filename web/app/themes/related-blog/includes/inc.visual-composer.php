@@ -69,6 +69,7 @@ if ( class_exists( 'Vc_Manager' ) ) {
   function rltd_include_modules() {
     $controllers_dir = get_template_directory() . '/controllers/';
 
+    include_once $controllers_dir . 'ad.php';
     include_once $controllers_dir . 'content-list.php';
     include_once $controllers_dir . 'featured-content-list.php';
     include_once $controllers_dir . 'grouped-content-list.php';
