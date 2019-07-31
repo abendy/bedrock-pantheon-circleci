@@ -4,9 +4,7 @@
 
 //* Utilities
 
-@import 'utilities/functions';
-@import 'utilities/media-queries';
-@import 'utilities/mixins';
+@import 'utilities/index';
 
 //* Libs
 
@@ -16,39 +14,10 @@
 @import '~minireset.css/minireset.sass';
 
 // Bulma
-@import '~bulma/sass/utilities/_all';
-
-@import '~bulma/sass/base/generic';
-@import '~bulma/sass/base/helpers';
-
-@import '~bulma/sass/elements/box';
-@import '~bulma/sass/elements/container';
-@import '~bulma/sass/elements/content';
-@import '~bulma/sass/elements/icon';
-@import '~bulma/sass/elements/image';
-@import '~bulma/sass/elements/tag';
-@import '~bulma/sass/elements/title';
-@import '~bulma/sass/elements/other';
-
-@import '~bulma/sass/form/_all';
-
-@import '~bulma/sass/components/card';
-@import '~bulma/sass/components/level';
-@import '~bulma/sass/components/list';
-@import '~bulma/sass/components/media';
-@import '~bulma/sass/components/modal';
-@import '~bulma/sass/components/navbar';
-@import '~bulma/sass/components/pagination';
-
-@import '~bulma/sass/grid/_all';
-
-@import '~bulma/sass/layout/_all';
+@import 'libs/bulma';
 
 // Font Awesome
-$fa-font-path: '../fonts/fontawesome';
-@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
-@import '@fortawesome/fontawesome-free/scss/brands.scss';
-@import '@fortawesome/fontawesome-free/scss/solid.scss';
+@import 'libs/fontawesome';
 
 // Animate
 @import '~animate.css/animate.min.css';
@@ -65,23 +34,11 @@ $fa-font-path: '../fonts/fontawesome';
 
 //* Layout
 
-@import 'layout/layout';
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/sidebar';
+@import 'layout/index';
 
 //* Components
 
-@import 'components/abstract';
-@import 'components/ad';
-@import 'components/nav';
-@import 'components/hero';
-@import 'components/social';
-@import 'components/content-list';
-@import 'components/pagination';
-@import 'components/search';
-@import 'components/text-block';
-@import 'components/video';
+@import 'components/index';
 
 //* Shame
 
