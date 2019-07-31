@@ -7,6 +7,10 @@
   }
 
   .navbar-dropdown {
+    @include until($desktop) {
+      display: none;
+    }
+
     a,
     a:visited {
       color: $navbar-dropdown-item-color;

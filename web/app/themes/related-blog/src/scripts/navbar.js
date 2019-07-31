@@ -20,6 +20,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Mobile click to expand nav
+  const $hasDropdowns = Array.prototype.slice.call(document.querySelectorAll('.navbar-item.has-dropdown'), 0);
+
+  if ($hasDropdowns.length > 0) {
+    // Add a click event on each of them
+    $hasDropdowns.forEach((el) => {
+      const childLinkSelector = `[data-item-id="${el.dataset.itemId}"] .navbar-link`;
+      const childLink = document.querySelectorAll(childLinkSelector)[0];
+
+      if (childLink) {
+        childLink.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          const dropdownSelector = `[data-item-id="${el.dataset.itemId}"] .navbar-dropdown`;
+
+          const dropdown = document.querySelectorAll(dropdownSelector)[0];
+
+          dropdown.classList.toggle('is-block');
+        });
+      }
+    });
+  }
+
   // Make iframe's scale again
   // eslint-disable-next-line no-undef
   iFrameResize({ log: true }, 'iframe');
