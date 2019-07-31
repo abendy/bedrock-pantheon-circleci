@@ -26,6 +26,13 @@ img {
     margin-bottom: 1.25rem;
   }
 
+  iframe {
+    border: 0;
+    height: auto !important;
+    max-width: 100% !important;
+    user-select: none;
+  }
+
   .wp-caption {
     margin-bottom: 1.25rem;
     max-width: 100% !important;
