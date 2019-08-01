@@ -8,7 +8,7 @@
       data-name="search-module"
       data-type="search-module">
 
-      <div class="content-list__items columns is-variable is-3">
+      <div class="content-list__items columns is-variable is-3 paginated">
         {% for post in posts %}
           {# {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %} #}
           {% include ['tease.twig'] %}
