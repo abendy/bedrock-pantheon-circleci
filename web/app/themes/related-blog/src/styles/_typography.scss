@@ -55,7 +55,10 @@ body {
   color: $color-text;
   font-family: $font-family-default;
   font-size: rem(15);
+  // -moz-font-smoothing: antialiased;
+  // -webkit-font-smoothing: antialiased;
   line-height: $base-line-height;
+  // text-rendering: optimizeLegibility;
 }
 
 h1,
@@ -72,6 +75,11 @@ h1 {
   font-family: $font-family-playfair;
   font-size: rem(60);
   text-align: center;
+
+  @include until($tablet) {
+    font-size: rem(26);
+    line-height: 1.2;
+  }
 
   &:not(.hero__title) {
     margin: 0 0 1.4rem;
