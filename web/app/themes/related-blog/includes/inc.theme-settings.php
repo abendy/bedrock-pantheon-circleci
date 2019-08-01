@@ -43,12 +43,14 @@ function rltd_setup_theme() {
 
   // Add custom image sizes
   add_image_size( 'rltd_hero_full', 1330, 445, true );
+  add_image_size( 'rltd_hero_mobile', 890, 445, true );
 
   function rltd_hero_images( $sizes ) {
     return array_merge(
       $sizes,
       array(
-        'rltd_hero_full' => __( 'Hero Image' ),
+        'rltd_hero_full' => __( 'Hero Image (Desktop)' ),
+        'rltd_hero_Mobile' => __( 'Hero Image (Mobile)' ),
       )
     );
   }
