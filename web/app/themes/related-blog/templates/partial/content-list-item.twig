@@ -1,11 +1,6 @@
 <div class="content-list__items columns is-variable is-3 {{ (pagination is defined and pagination is not empty) ? 'paginated' }}">
   {% for item in items %}
-  <div class="content-list__item column
-    is-12-mobile
-    is-6-tablet
-    is-{{ columns }}-desktop"
-  >
-    {% if item.image_s is defined and item.image_s is not empty %}
+  <div class="content-list__item column is-12-mobile is-6-tablet is-{{ columns }}-desktop">
     <a href="{{ item.link }}">
       <picture>
         <source media="(max-width: 768px)" srcset="{{ item.image_l|resize(768, 514) }}">
@@ -13,16 +8,13 @@
         <img src="{{ item.image_s|resize(370, 248) }}" {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }}>
       </picture>
     </a>
-    {% endif %}
 
     <div class="content-list__content">
       {% if item.meta is defined and item.meta is not empty %}
       <p class="content-list__item__meta">{{ item.meta }}</p>
       {% endif %}
 
-      {% if item.title is defined and item.title is not empty %}
       <a href="{{ item.link }}"><h3 class="content-list__item__title">{{ item.title }}</h3></a>
-      {% endif %}
 
       {% if item.text is defined and item.text is not empty %}
       <p class="content-list__item__desc">{{ item.text }}</p>
