@@ -27,10 +27,13 @@ img {
   }
 
   iframe {
-    height: auto;
     width: 1px;
     min-width: 100%;
     *width: 100%;
+
+    @include until($tablet) {
+      height: auto;
+    }
   }
 
   .wp-caption {
