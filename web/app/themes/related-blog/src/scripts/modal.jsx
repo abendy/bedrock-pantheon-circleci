@@ -58,13 +58,15 @@ class NewsletterModalButton extends Component {
 
   render() {
     return (
-      <button
-        className="modal-button"
-        data-target="modal"
-        aria-haspopup="true"
-        onClick={() => this.handleClick()}
-      >Newsletter signup
-      </button>
+      <div>
+        <button
+          className="modal-button"
+          data-target="modal"
+          aria-haspopup="true"
+          onClick={() => this.handleClick()}
+        >Newsletter signup
+        </button>
+      </div>
     );
   }
 }
