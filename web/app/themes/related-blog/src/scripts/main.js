@@ -1,4 +1,4 @@
 import './iframe';
 import './modal.jsx';
-import './navbar.jsx';
+import './navbar';
 import './video.jsx';
