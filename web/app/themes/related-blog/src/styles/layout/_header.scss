@@ -2,10 +2,14 @@
 
 #header {
   background-color: $related-midgrey;
-  margin-bottom: 1rem;
+  margin-bottom: .2rem;
   position: relative;
   width: 100%;
   z-index: 1;
+
+  @include from($tablet) {
+    margin-bottom: 1rem;
+  }
 
   .custom-logo {
     height: 80px;

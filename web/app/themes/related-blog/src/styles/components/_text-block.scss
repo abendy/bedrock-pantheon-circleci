@@ -1,10 +1,13 @@
 // Textarea module
 
 .module.text-block {
-  margin-top: 2rem;
-
   @include until($tablet) {
+    margin-top: 1rem;
     padding-left: .75rem;
     padding-right: .75rem;
+  }
+
+  @include from($tablet) {
+    margin-top: 2rem;
   }
 }

@@ -38,12 +38,15 @@
       font-family: $font-family-playfair;
       font-size: rem(38);
       line-height: 1.4;
-      margin-bottom: 1rem;
       text-align: left;
 
       @include until($tablet) {
         font-size: rem(26);
         line-height: 1.2;
+      }
+
+      @include from($tablet) {
+        margin-bottom: 1rem;
       }
     }
 
