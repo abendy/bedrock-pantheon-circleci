@@ -186,6 +186,7 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
       if ( !empty( $post['rltd_hero_item_image'] ) ) {
         $image_id = $post['rltd_hero_item_image'];
         $image = wp_get_attachment_image_src( $image_id, 'rltd_hero_full' )[0];
+        $image_m = wp_get_attachment_image_src( $image_id, 'rltd_hero_mobile' )[0];
 
         $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
       } else {
@@ -232,6 +233,7 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
         'h_tag' => @$h_tag,
         'text' => @$text,
         'image' => @$image,
+        'image_m' => @$image_m,
         'image_alt' => @$image_alt,
         'video_id' => @$video_id,
         'wrapper_attributes' => @$wrapper_attributes_string,
