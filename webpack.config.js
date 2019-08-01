@@ -13,16 +13,8 @@ const THEME_DIR = 'web/app/themes/related-blog';
 const base = {
   entry: {
     main: [
+      `./${THEME_DIR}/src/scripts/main.js`,
       `./${THEME_DIR}/src/styles/main.scss`,
-    ],
-    navbar: [
-      `./${THEME_DIR}/src/scripts/navbar.js`,
-    ],
-    video: [
-      `./${THEME_DIR}/src/scripts/video.jsx`,
-    ],
-    modal: [
-      `./${THEME_DIR}/src/scripts/modal.jsx`,
     ],
   },
   output: {

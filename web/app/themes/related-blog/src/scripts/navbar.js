@@ -45,5 +45,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Make iframe's scale again
   // eslint-disable-next-line no-undef
-  iFrameResize({ log: true }, 'iframe');
+  iFrameResize({}, 'iframe');
 });
