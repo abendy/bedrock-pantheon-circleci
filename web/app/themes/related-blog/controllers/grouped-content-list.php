@@ -117,12 +117,16 @@ if ( !function_exists( 'rltd_grouped_content_list_render' ) ) {
       // Get the excerpt text
       $text = get_the_excerpt( $post->ID );
 
-      // Get image
+      // Get image ID
       $image_id = @get_post_meta( $post->ID, 'property_image' )[0];
-      $image = wp_get_attachment_image_src( $image_id, 'full' )[0];
+
+      // Get images
+      $image_s = wp_get_attachment_image_src( $image_id, 'thumbnail' )[0];
+      $image_m = wp_get_attachment_image_src( $image_id, 'medium' )[0];
+      $image_l = wp_get_attachment_image_src( $image_id, 'large' )[0];
 
       // Get image alt tag
-      $image_alt = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
+      $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 
       // Get the address
       $meta = @get_post_meta( $post->ID, 'property_address' )[0];
@@ -152,7 +156,9 @@ if ( !function_exists( 'rltd_grouped_content_list_render' ) ) {
           'link' => @$link,
           'title' => @$title,
           'text' => @$text,
-          'image' => @$image,
+          'image_s' => @$image_s,
+          'image_m' => @$image_m,
+          'image_l' => @$image_l,
           'image_alt' => @$image_alt,
           'meta' => @$meta,
           'neighborhood' => @$neighborhood,
