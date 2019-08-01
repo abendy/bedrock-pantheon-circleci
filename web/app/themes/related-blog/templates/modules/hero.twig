@@ -9,17 +9,10 @@
     {% if first.link is defined and first.link is not empty %}
     <a href="{{ first.link }}">
     {% endif %}
-      <img
-        src="{{ first.image|resize(1300, 445) }}"
-        srcset="
-          {{ first.image_m|resize(890, 445) }} 890w
-        "
-        sizes="
-          (max-width: 768px) 890px,
-          (min-width: 769px) 1300px
-        "
-        {{ (first.image_alt is defined) ? 'alt="' ~ first.image_alt|e ~ '"' }}
-      >
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ first.image_m|resize(890, 445) }}">
+        <img src="{{ first.image|resize(1300, 445) }}" {{ (first.image_alt is defined) ? 'alt="' ~ first.image_alt|e ~ '"' }}>
+      </picture>
     {% if first.link is defined and first.link is not empty %}
     </a>
     {% endif %}

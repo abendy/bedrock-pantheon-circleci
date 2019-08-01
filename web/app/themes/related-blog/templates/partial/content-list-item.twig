@@ -5,17 +5,13 @@
     is-6-tablet
     is-{{ columns }}-desktop"
   >
-    {% if item.image is defined and item.image is not empty %}
+    {% if item.image_s is defined and item.image_s is not empty %}
     <a href="{{ item.link }}">
-      <img
-        src="{{ item.image|resize(370, 248) }}"
-        srcset="
-          {{ item.image|resize(768, 514) }} 769w,
-          {{ item.image|resize(659, 442) }} 1024w
-        "
-        sizes="100vw"
-        {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }}
-      >
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ item.image_l|resize(768, 514) }}">
+        <source media="(max-width: 1024px)" srcset="{{ item.image_m|resize(659, 442) }}">
+        <img src="{{ item.image_s|resize(370, 248) }}" {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }}>
+      </picture>
     </a>
     {% endif %}
 
