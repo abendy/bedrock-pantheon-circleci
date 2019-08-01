@@ -1,3 +1,4 @@
-exports.modal = require('./modal.jsx');
-exports.navbar = require('./navbar');
-exports.video = require('./video.jsx');
+import './iframe';
+import './modal.jsx';
+import './navbar';
+import './video.jsx';

@@ -1,5 +1,3 @@
-import 'iframe-resizer';
-
 document.addEventListener('DOMContentLoaded', () => {
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -42,8 +40,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
-  // Make iframe's scale again
-  // eslint-disable-next-line no-undef
-  iFrameResize({}, 'iframe');
 });
