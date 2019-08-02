@@ -34,17 +34,10 @@
   #footer & .navbar-menu {
     flex-shrink: 1;
     flex-wrap: wrap;
+    padding-left: 1rem;
 
     @include until($desktop) {
       display: block;
-    }
-
-    a.navbar-item {
-      padding: 0;
-
-      @include from($desktop) {
-        padding-left: 1.5rem;
-      }
     }
   }
 }
