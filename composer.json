@@ -45,6 +45,7 @@
     "wpackagist-plugin/wp-cfm": "^1.4.5",
     "wpackagist-plugin/wp-native-php-sessions": "^0.6.0",
     "wpackagist-plugin/wp-optimize": "^2.3",
+    "wpackagist-plugin/wp-redis": "^0.7.1",
     "wp-cli/wp-cli": "^2.2"
   },
   "require-dev": {
