@@ -1,6 +1,4 @@
-<section class="module content-list"
-  data-name="content-list"
-  data-type="content-list">
+<section class="module content-list {{ (pagination is defined and pagination is not empty) ? 'paginated' }}">
 
   {% if title is defined and title is not empty %}
   <div class="content-list__top">
