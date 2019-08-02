@@ -1,0 +1,107 @@
+// Typography
+
+//* Base
+
+$base-font-size:   15;
+$base-line-height: 1.5;
+
+//* Font families
+
+// $typefaces
+//
+// Configuration of webfonts imports.
+//
+// $typefaces - {map}
+// @family - {string}
+// @weight - {integer} or {keyword} i.e. 800, bold
+// @style - {keyword} i.e. normal, italic
+
+// $typefaces: (
+//   '<dir>': (
+//     family: '<name>',
+//     weight: 100,
+//     style: normal,
+//   ),
+// );
+
+$external-fonts: (
+  'https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap',
+);
+
+$font-family-sans:      'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+$font-family-serif:     'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+
+$font-family-monospace: 'Inconsolata', 'Menlo', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier', monospace;
+
+$font-family-playfair:  'Playfair Display', 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+
+$font-family-proxima:   'proxima-nova', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+$font-family-default:   $font-family-proxima;
+
+//* Font sizes
+
+// Desktop
+
+// Devices
+
+//* Line heights
+
+//* Styles
+
+body {
+  background-color: $color-background;
+  color: $color-text;
+  font-family: $font-family-default;
+  font-size: rem(15);
+  // -moz-font-smoothing: antialiased;
+  // -webkit-font-smoothing: antialiased;
+  line-height: $base-line-height;
+  // text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+h1 {
+  color: $related-midgrey;
+  font-family: $font-family-playfair;
+  font-size: rem(60);
+  text-align: center;
+
+  @include until($tablet) {
+    font-size: rem(26);
+    line-height: 1.2;
+  }
+
+  &:not(.hero__title) {
+    margin: 1rem 0 1.4rem;
+  }
+}
+
+a {
+  background: transparent;
+  color: $color-link;
+  font-family: $font-family-default;
+  text-decoration: none;
+  transition: color .2s;
+
+  &:visited {
+    color: $color-link-visited;
+  }
+
+  @include hover {
+    color: $color-link-hover;
+  }
+}
+
+p {
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,43 @@
+// Nav
+
+.navbar {
+  a,
+  a:visited {
+    color: $navbar-item-color;
+  }
+
+  .navbar-dropdown {
+    @include until($desktop) {
+      display: none;
+    }
+
+    a,
+    a:visited {
+      color: $navbar-dropdown-item-color;
+
+      @include until($desktop) {
+        color: $navbar-item-color;
+      }
+    }
+  }
+
+  .navbar-link:not(.is-arrowless)::after {
+    border: 0 none;
+    font-family: 'Font Awesome 5 Free';
+    content: "\f0dd";
+    margin-top: -1rem;
+    transform: rotate(0deg);
+  }
+
+  // Footer navigation
+
+  #footer & .navbar-menu {
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    padding-left: 1rem;
+
+    @include until($desktop) {
+      display: block;
+    }
+  }
+}

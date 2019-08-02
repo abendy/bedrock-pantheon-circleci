@@ -1,0 +1,68 @@
+// Media
+
+img {
+  height: auto;
+  max-width: 100%;
+
+  &[src$='.svg'] {
+    display: block;
+  }
+}
+
+// RTE
+.module.text-block {
+  h2 {
+    color: $related-midgrey;
+    font-family: $font-family-playfair;
+    font-size: rem(38);
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  img {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  iframe {
+    width: 1px;
+    min-width: 100%;
+    *width: 100%;
+
+    @include until($tablet) {
+      height: auto;
+    }
+  }
+
+  .wp-caption {
+    margin-bottom: 1.25rem;
+    max-width: 100% !important;
+  }
+
+  .wp-caption-text {
+    color: $related-midgrey;
+    font-size: .8rem;
+    margin-top: -1.25rem;
+  }
+
+  .alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+  }
+
+  .alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+  }
+
+  .aligncenter {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    display: block;
+    clear: both;
+  }
+}

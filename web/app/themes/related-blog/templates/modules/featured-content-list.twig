@@ -1,0 +1,16 @@
+<section class="module content-list featured-content-list">
+
+  {% if title is defined and title is not empty %}
+  <div class="content-list__top">
+    <h2 class="content-list__title">{{ title }}</h2>
+  </div>
+  {% endif %}
+
+  {% if items is defined and items is not empty %}
+
+  {% block content_list_item %}
+  {% include 'partial/content-list-item.twig' %}
+  {% endblock %}
+
+  {% endif %}
+</section>

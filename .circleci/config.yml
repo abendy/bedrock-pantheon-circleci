@@ -8,7 +8,7 @@ references:
   #
   container_config: &container_config
     docker:
-      - image: circleci/php:7.3
+      - image: circleci/php:7.1-node
     working_directory: *working_directory
 
   attach_workspace: &attach_workspace
@@ -23,6 +23,12 @@ jobs:
       - run:
           name: Install dependencies
           command: composer install -n -o
+      - run:
+          name: Install Yarn
+          command: curl -o- -L https://yarnpkg.com/install.sh | bash
+      - run:
+          name: Build theme
+          command: yarn install && yarn run build
       - persist_to_workspace:
           root: .
           paths:

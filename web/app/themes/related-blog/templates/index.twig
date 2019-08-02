@@ -1,0 +1,19 @@
+{% extends "global/base.twig" %}
+
+{% block content %}
+  {% if password_required is defined and password_required is not empty %}
+  <form class="password-form" action="{{ site.site_url }}/wp-login.php?action=postpass" method="post">
+    <label for="pwbox-{{ page.ID }}">Password:</label>
+    <input class="password-box" name="post_password" id="pwbox-{{ page.ID }}" type="password" placeholder="Password" size="20" maxlength="20" />
+    <input class="password-btn" type="submit" name="Submit" value="Submit" />
+  </form>
+  {% else %}
+  <article class="post-type-{{ page.post_type }}" id="page-{{ page.ID }}">
+    {% if is_front_page is defined and is_front_page is empty %}
+    <h1>{{ page.title }}</h1>
+    {% endif %}
+
+    {{ page.post_content|shortcodes }}
+  </article>
+  {% endif %}
+{% endblock %}

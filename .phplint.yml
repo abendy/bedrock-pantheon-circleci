@@ -1,0 +1,11 @@
+path: ./web/app/themes/related-blog
+jobs: 10
+cache: data/phplint.cache
+extensions:
+  - php
+exclude:
+  - node_modules
+  - vendor
+  - web/app/mu-plugins
+  - web/app/plugins
+  - web/wp

@@ -1,0 +1,57 @@
+// Hero module
+
+.module.hero {
+  figure {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      width: 100%;
+
+      @at-root .hero--background-video#{&} {
+        position: relative;
+        z-index: 10;
+      }
+    }
+  }
+
+  .hero {
+    &__content {
+      padding: 1rem 0;
+
+      @include until($tablet) {
+        padding-left: .75rem;
+        padding-right: .75rem;
+      }
+
+      .post-type-page & {
+        margin-left: 0 !important;
+      }
+    }
+
+    &__title {
+      color: $related-midgrey;
+      font-family: $font-family-playfair;
+      font-size: rem(38);
+      line-height: 1.4;
+      text-align: left;
+
+      @include until($tablet) {
+        font-size: rem(26);
+        line-height: 1.2;
+      }
+
+      @include from($tablet) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__desc {
+      margin-bottom: 0.5rem;
+    }
+  }
+}

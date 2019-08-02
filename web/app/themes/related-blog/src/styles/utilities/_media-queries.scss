@@ -1,0 +1,38 @@
+// Media query mixin for better breakpoint alignment, ported from Inuit CSS
+
+@mixin media($point, $max-width: false, $top-point: false, $ie10: false) {
+    $sizes: ( xl: $bp-desktop-xlarge, lg: $bp-desktop-large, md: $bp-desktop-small, sm: $bp-tablet, xs: $bp-mobile);
+    @if $point==print {
+        @media print {
+            @content;
+        }
+    }
+    @else if $point==retina {
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+            @content;
+        }
+    }
+    @else {
+        $top-define: '';
+        $width-define: if($max-width, max-width, min-width);
+        @if ($top-point) {
+            $width-reverse: if($max-width, min-width, max-width);
+            $top-size: if(map-has-key($sizes, $top-point), map-get($sizes, $top-point), $top-point);
+            $top-define: and (#{$width-reverse}: $top-size);
+        }
+        $size: if(map-has-key($sizes, $point), map-get($sizes, $point), $point);
+
+        @if ($ie10) {
+            @media screen and (#{$width-define}: $size - 1) #{$top-define} and (-ms-high-contrast: none),
+                   screen and (#{$width-define}: $size - 1) #{$top-define} and (-ms-high-contrast: active) {
+                @content;
+            }
+        }
+        @else {
+            @media screen and (#{$width-define}: $size - 1) #{$top-define} {
+                @content;
+            }
+        }
+    }
+}
+

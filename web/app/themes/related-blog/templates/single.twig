@@ -1,0 +1,40 @@
+{% extends "global/base.twig" %}
+
+{% block content %}
+  {% if password_required is defined and password_required is not empty %}
+  <form class="password-form" action="{{ site.site_url }}/wp-login.php?action=postpass" method="post">
+    <label for="pwbox-{{ page.ID }}">Password:</label>
+    <input class="password-box" name="post_password" id="pwbox-{{ page.ID }}" type="password" placeholder="Password" size="20" maxlength="20" />
+    <input class="password-btn" type="submit" name="Submit" value="Submit" />
+  </form>
+  {% else %}
+  <!-- start unique single tpl -->
+  <article class="post-type-{{ page.post_type }}" id="post-{{ page.ID }}">
+    {% if page.title is defined and page.title is not empty and page.hero_image is empty %}
+    <h1>{{ page.title }}</h1>
+    {% endif %}
+
+    {% if (page.post_type is defined and page.post_type == 'post') and (page.hero_image is defined and page.hero_image is not empty) %}
+
+    {% set items = [] %}
+    {% set items = items|merge([{
+      image: page.hero_image|resize(1300, 445),
+      title: page.title
+    }]) %}
+    {% set h_tag = 'h1' %}
+
+    <div class="wpb_animate_when_almost_visible wpb_fadeIn fadeIn wpb_start_animation animated columns is-marginless">
+      <div class="column is-paddingless is-12">
+        {% block hero %}
+        {% include 'modules/hero.twig' %}
+        {% endblock %}
+      </div>
+    </div><!-- /.columns -->
+    {% endif %}
+  <!-- end unique single tpl -->
+
+    {{ page.post_content|shortcodes }}
+  </article>
+  {% endif %}
+{% endblock %}
+

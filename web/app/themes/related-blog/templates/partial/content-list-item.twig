@@ -1,0 +1,25 @@
+<div class="content-list__items columns is-variable is-3">
+  {% for item in items %}
+  <div class="content-list__item column is-12-mobile is-6-tablet is-{{ columns }}-desktop">
+    <a href="{{ item.link }}">
+      <picture>
+        <source media="--medium" data-srcset="{{ item.image_l|resize(768, 514) }}" />
+        <source media="--large" data-srcset="{{ item.image_m|resize(659, 442) }}" />
+        <img class="lazyload" data-src="{{ item.image_s|resize(370, 248) }}" {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }} />
+      </picture>
+    </a>
+
+    <div class="content-list__content">
+      {% if item.meta is defined and item.meta is not empty %}
+      <p class="content-list__item__meta">{{ item.meta }}</p>
+      {% endif %}
+
+      <a href="{{ item.link }}"><h3 class="content-list__item__title">{{ item.title }}</h3></a>
+
+      {% if item.text is defined and item.text is not empty %}
+      <p class="content-list__item__desc">{{ item.text }}</p>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,52 @@
+// Footer
+
+#footer {
+  background-color: $related-midgrey;
+  display: flex;
+  flex-direction: row;
+  margin-top: 4rem;
+  width: 100%;
+
+  .container {
+    justify-content: space-between;
+
+    @include until($desktop) {
+      flex-direction: column;
+    }
+
+    & > * {
+      align-items: center;
+      display: flex;
+      min-height: $navbar-height;
+
+      &:nth-child(2) {
+        flex-grow: 1;
+      }
+
+      &:last-child() {
+        white-space: nowrap;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  span,
+  p {
+    color: $white;
+  }
+
+  a {
+    color: $white;
+
+    &:visited {
+      color: $white;
+    }
+
+    @include hover {
+      color: $white;
+    }
+  }
+}

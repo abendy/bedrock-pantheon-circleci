@@ -1,0 +1,16 @@
+<section class="module ad">
+
+  {% if image is defined and image is not empty %}
+  <figure>
+    {% if link is defined and link is not empty %}
+    <a href="{{ link }}" target="_blank">
+    {% endif %}
+
+      <img src="{{ image }}" alt="{{ image_alt }}">
+
+    {% if link is defined and link is not empty %}
+    </a>
+    {% endif %}
+  </figure>
+  {% endif %}
+</section>

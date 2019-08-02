@@ -1,0 +1,30 @@
+<section class="module gallery"
+  data-name="gallery"
+  data-type="gallery">
+
+  {% if title is defined and title is not empty %}
+  <div class="gallery__top">
+    <div class="container">
+      <h2>{{ title }}</h2>
+    </div><!-- /.container -->
+  </div>
+  {% endif %}
+
+	<div class="gallery__items">
+		<div class="container">
+
+      {% for item in items %}
+      <div class="gallery__item">
+
+        {% if item.image is defined and item.image is not empty %}
+        <figure>
+          <a href="{{ item.link }}"><img src="{{ item.image }}" alt="{{ item.image_alt }}"></a>
+        </figure>
+        {% endif %}
+
+      </div>
+      {% endfor %}
+
+    </div><!-- /.container -->
+  </div>
+</section>

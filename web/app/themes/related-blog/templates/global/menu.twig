@@ -1,0 +1,19 @@
+{% if menu %}
+	{% for item in menu %}
+
+    {% if item.children is defined and item.children is not empty %}
+		<div class="navbar-item has-dropdown is-hoverable" data-item-id="{{ item.id }}">
+    {% endif %}
+			<a class="{{ (item.children is defined and item.children is not empty) ? 'navbar-link' : 'navbar-item' }}" target="{{ item.is_external ? '_blank' }}" href="{{ item.link }}">{{ item.title }}</a>
+
+      {% if item.children is defined and item.children is not empty %}
+      <div class="navbar-dropdown">
+  			{% include "global/menu.twig" with {'menu': item.children} %}
+      </div>
+      {% endif %}
+    {% if item.children is defined and item.children is not empty %}
+		</div>
+    {% endif %}
+
+	{% endfor %}
+{% endif %}

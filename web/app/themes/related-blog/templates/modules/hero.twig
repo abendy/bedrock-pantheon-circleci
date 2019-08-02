@@ -1,0 +1,49 @@
+{% set first = items|first %}
+
+<section class="module hero {{ first.wrapper_classes }}">
+
+  {% if first.image is defined and first.image is not empty %}
+  <figure>
+    {% if first.link is defined and first.link is not empty %}
+    <a href="{{ first.link }}">
+    {% endif %}
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ first.image_m|resize(890, 445) }}">
+        <img src="{{ first.image|resize(1300, 445) }}" {{ (first.image_alt is defined) ? 'alt="' ~ first.image_alt|e ~ '"' }}>
+      </picture>
+    {% if first.link is defined and first.link is not empty %}
+    </a>
+    {% endif %}
+
+    {% if first.video_id is defined and first.video_id %}
+    <!-- .module.video -->
+    <div class="module video" {{ first.wrapper_attributes }}></div>
+    {% endif %}
+
+  </figure>
+  {% endif %}
+
+  <div class="hero__content column is-offset-1">
+    {% if first.title is defined and first.title is not empty %}
+
+    {% if h_tag is empty %}
+    {% set h_tag = first.h_tag %}
+    {% endif %}
+
+    {% if first.link is defined and first.link is not empty %}
+    <a href="{{ first.link }}">
+    {% endif %}
+
+      <{{ h_tag|default('h2') }} class="hero__title">{{ first.title }}</{{ h_tag|default('h2') }}>
+
+    {% if first.link is defined and first.link is not empty %}
+    </a>
+    {% endif %}
+
+    {% endif %}
+
+    {% if first.text is defined and first.text is not empty %}
+    <p class="hero__desc">{{ first.text }}</p>
+    {% endif %}
+  </div>
+</section>

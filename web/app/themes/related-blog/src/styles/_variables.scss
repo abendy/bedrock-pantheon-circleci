@@ -1,0 +1,71 @@
+// Variables
+
+//* Base
+
+
+//* Colors
+
+// Descriptive colors
+$white:                     #fff;
+$black:                     #000;
+
+// Client colors
+$related-black:             #1c1a1a;
+$related-midgrey:           #514c48;
+
+// Main color palette
+$color-primary:             $related-black;
+$color-secondary:           $related-midgrey;
+
+// Common colors
+$color-background:          $white;
+$color-text:                $related-black;
+$color-text-strong:         $related-black;
+$color-text-heading:        $related-black;
+$color-text-invert:         $white;
+
+// Links
+$color-link:                $related-black;
+$color-link-hover:          $color-link;
+$color-link-visited:        $color-link;
+
+//* Animation
+
+
+//* Layout
+
+// Breakpoints
+
+
+// Spacing
+
+
+// Z index
+
+
+//* Libs
+
+// Bulma
+
+// Disable the widescreen breakpoint
+// $widescreen-enabled: false;
+
+// Disable the fullhd breakpoint
+// $fullhd-enabled: false;
+
+// Navbar
+$navbar-background-color: transparent;
+$navbar-box-shadow-size: 0;
+$navbar-item-color: $white;
+$navbar-item-hover-color: $white;
+$navbar-item-hover-background-color: #645f5b;
+$navbar-item-active-color: $navbar-item-color;
+$navbar-dropdown-border-top: 0 none;
+$navbar-dropdown-item-color: $black; // custom
+$navbar-dropdown-item-hover-color: $black;
+$navbar-dropdown-item-hover-background-color: #f6f2ef;
+$navbar-dropdown-item-active-color: $navbar-dropdown-item-color;
+$navbar-dropdown-item-active-background-color: transparent;
+
+// Font Awesome
+$fa-font-path: '../fonts/fontawesome';

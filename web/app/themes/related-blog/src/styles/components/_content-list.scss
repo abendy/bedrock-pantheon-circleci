@@ -1,0 +1,50 @@
+// Content list module
+
+.content-list {
+  &__top {
+    height: 4rem;
+  }
+
+  &__title {
+    color: $related-black;
+    font-family: $font-family-proxima;
+    font-size: rem(15);
+    letter-spacing: .5rem;
+    line-height: 1.4;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__items {
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin-bottom: 2rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    padding: .5em;
+  }
+
+  &__item__meta {
+    font-size: rem(11);
+    margin-bottom: .3rem;
+    text-transform: uppercase;
+  }
+
+  &__item__title {
+    color: $related-midgrey;
+    font-family: $font-family-playfair;
+    font-size: rem(24);
+    margin-bottom: 1rem;
+  }
+
+  &__item__desc {
+    font-size: rem(14);
+  }
+}

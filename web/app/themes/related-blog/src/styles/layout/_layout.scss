@@ -1,0 +1,7 @@
+// Main layout
+
+.main-col + .main-col {
+  @include from($tablet) {
+    padding-left: 2.25rem;
+  }
+}

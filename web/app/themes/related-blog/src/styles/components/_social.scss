@@ -1,0 +1,42 @@
+// Social
+
+// Links to social networks
+
+.social-media__links {
+  margin-bottom: .5rem;
+  text-align: right;
+
+  a {
+    color: $white;
+    padding-left: 1rem;
+  }
+}
+
+// Social share module
+
+.social-share__links {
+  .post-type-page & {
+    margin-left: 0 !important;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  li {
+    list-style: none;
+    padding-right: 1rem;
+  }
+}
+
+.social-share__link {
+  &:hover,
+  &:active {
+    opacity: .75;
+  }
+
+  &.inactive {
+    opacity: .25;
+  }
+}
