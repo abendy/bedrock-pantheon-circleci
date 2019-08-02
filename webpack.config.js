@@ -105,6 +105,9 @@ const base = {
       { from: `./${THEME_DIR}/src/images`, to: '../images' },
     ]),
   ],
+  node: {
+    fs: 'empty', // avoids error messages
+  },
 };
 
 const development = {
