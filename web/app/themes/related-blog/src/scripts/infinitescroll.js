@@ -58,12 +58,9 @@ const initPagination = () => {
   const w = $(window);
   const elem = $(options.itemSelector).last();
 
-  if (typeof elem === 'undefined') {
-    return;
-  }
-
   if (
-    !loading
+    typeof elem !== 'undefined'
+    && !loading
     && !finished
     && (w.scrollTop() + w.height()) >= (elem.offset().top - (2 * elem.height()))
   ) {
@@ -71,10 +68,5 @@ const initPagination = () => {
   }
 };
 
-document.addEventListener('scroll', () => {
-  initPagination();
-});
-
-document.addEventListener('touchstart', () => {
-  initPagination();
-});
+document.addEventListener('scroll', () => initPagination());
+document.addEventListener('touchstart', () => initPagination());
