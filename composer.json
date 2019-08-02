@@ -51,7 +51,6 @@
     "wpackagist-plugin/wp-native-php-sessions": "^0.6.0",
     "wpackagist-plugin/wp-optimize": "^2.3",
     "wpackagist-plugin/wp-super-cache": "^1.6",
-    "wpackagist-plugin/yith-infinite-scrolling": "^1.1",
     "wp-cli/wp-cli": "^2.2"
   },
   "require-dev": {

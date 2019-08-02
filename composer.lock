@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6e6d7a4ef41798de1797328f6e1a21d",
+    "content-hash": "2075ce903aa91358e81f3c682fd3fc79",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -3742,24 +3742,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-super-cache/"
-        },
-        {
-            "name": "wpackagist-plugin/yith-infinite-scrolling",
-            "version": "1.1.8",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/yith-infinite-scrolling/",
-                "reference": "tags/1.1.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/yith-infinite-scrolling.1.1.8.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/yith-infinite-scrolling/"
         }
     ],
     "packages-dev": [
