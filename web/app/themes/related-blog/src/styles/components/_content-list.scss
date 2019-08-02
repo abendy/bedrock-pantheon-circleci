@@ -1,13 +1,16 @@
 // Content list module
 
 .content-list {
+  &__top {
+    height: 4rem;
+  }
+
   &__title {
     color: $related-black;
     font-family: $font-family-proxima;
     font-size: rem(15);
     letter-spacing: .5rem;
     line-height: 1.4;
-    margin-bottom: 3rem;
     text-align: center;
     text-transform: uppercase;
   }
