@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2075ce903aa91358e81f3c682fd3fc79",
+    "content-hash": "23d4776797b5c1d7a47a430ea8096112",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -3438,24 +3438,6 @@
             "homepage": "https://wordpress.org/plugins/duracelltomi-google-tag-manager/"
         },
         {
-            "name": "wpackagist-plugin/magic-meta-box",
-            "version": "2.4.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/magic-meta-box/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/magic-meta-box.zip?timestamp=1535205253"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/magic-meta-box/"
-        },
-        {
             "name": "wpackagist-plugin/meta-box",
             "version": "4.18.4",
             "source": {
@@ -3490,24 +3472,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/pantheon-advanced-page-cache/"
-        },
-        {
-            "name": "wpackagist-plugin/really-simple-ssl",
-            "version": "3.2.2",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/really-simple-ssl/",
-                "reference": "tags/3.2.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/really-simple-ssl.3.2.2.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/really-simple-ssl/"
         },
         {
             "name": "wpackagist-plugin/redirection",
@@ -3564,24 +3528,6 @@
             "homepage": "https://wordpress.org/plugins/sendgrid-email-delivery-simplified/"
         },
         {
-            "name": "wpackagist-plugin/svg-support",
-            "version": "2.3.15",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/svg-support/",
-                "reference": "tags/2.3.15"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/svg-support.2.3.15.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/svg-support/"
-        },
-        {
             "name": "wpackagist-plugin/timber-library",
             "version": "1.10.0",
             "source": {
@@ -3618,52 +3564,16 @@
             "homepage": "https://wordpress.org/plugins/tinymce-advanced/"
         },
         {
-            "name": "wpackagist-plugin/vc-shortcodes",
-            "version": "2.4.8",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/vc-shortcodes/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/vc-shortcodes.zip?timestamp=1561363987"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/vc-shortcodes/"
-        },
-        {
-            "name": "wpackagist-plugin/wordfence",
-            "version": "7.3.4",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wordfence/",
-                "reference": "tags/7.3.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordfence.7.3.4.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordfence/"
-        },
-        {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "11.5",
+            "version": "11.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/11.5"
+                "reference": "tags/11.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.11.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.11.7.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3724,24 +3634,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-optimize/"
-        },
-        {
-            "name": "wpackagist-plugin/wp-super-cache",
-            "version": "1.6.7",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wp-super-cache/",
-                "reference": "tags/1.6.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.6.7.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-super-cache/"
         }
     ],
     "packages-dev": [
