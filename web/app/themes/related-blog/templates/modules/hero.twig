@@ -17,12 +17,7 @@
 
     {% if first.video_id is defined and first.video_id %}
     <!-- .module.video -->
-    <div class="module video"
-      data-name="video"
-      data-type="video"
-      {{ first.wrapper_attributes }}>
-    </div>
-    <!-- /.module.video -->
+    <div class="module video" {{ first.wrapper_attributes }}></div>
     {% endif %}
 
   </figure>
