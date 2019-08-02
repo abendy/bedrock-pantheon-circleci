@@ -1,11 +1,5 @@
 // Content list module
 
-.module.content-list {
-  .column + .column & {
-    padding-left: 2.25rem;
-  }
-}
-
 .content-list {
   &__top {
     height: 2rem;
