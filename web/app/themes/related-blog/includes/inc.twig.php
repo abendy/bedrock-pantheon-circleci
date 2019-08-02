@@ -20,6 +20,16 @@ class RelatedTimberSite extends Timber\Site {
 
 	// Add your own functions to twig
   public function add_to_twig( $twig ) {
+    // Use PHP's preg_match in Twig tpls.
+    $twig->addFilter( new Timber\Twig_Filter( 'regex', function( $subject, $pattern, $matches ) {
+      return preg_match( $pattern, $subject, $matches );
+    } ) );
+
+    // Use PHP's preg_replace in Twig tpls.
+    $twig->addFilter( new Timber\Twig_Filter( 'regex_rplc', function( $subject, $pattern, $replacement ) {
+      return preg_replace( $pattern, $replacement, $subject );
+    } ) );
+
     return $twig;
   }
 }
