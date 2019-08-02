@@ -3,11 +3,7 @@
 {% block content %}
 <div class="wpb_animate_when_almost_visible wpb_fadeIn fadeIn wpb_start_animation animated columns">
   <div class="column is-paddingless is-12">
-
-    <section class="module search-module"
-      data-name="search-module"
-      data-type="search-module">
-
+    <section class="module search-module paginated">
       <div class="content-list__items columns is-variable is-3 paginated">
         {% for post in posts %}
           {# {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %} #}
@@ -16,9 +12,7 @@
       </div>
 
       {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-
     </section>
-
   </div>
 </div>
 {% endblock %}

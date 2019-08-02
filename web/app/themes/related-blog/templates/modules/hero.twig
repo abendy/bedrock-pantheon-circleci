@@ -1,8 +1,6 @@
 {% set first = items|first %}
 
-<section class="module hero {{ first.wrapper_classes }}"
-  data-name="hero"
-  data-type="hero">
+<section class="module hero {{ first.wrapper_classes }}">
 
   {% if first.image is defined and first.image is not empty %}
   <figure>
