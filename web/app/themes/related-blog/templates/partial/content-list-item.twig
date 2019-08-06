@@ -3,9 +3,15 @@
   <div class="content-list__item column is-12-mobile is-6-tablet is-{{ columns }}-desktop">
     <a href="{{ item.link }}">
       <picture>
-        <source media="--medium" data-srcset="{{ item.image_l|resize(768, 514) }}" />
-        <source media="--large" data-srcset="{{ item.image_m|resize(659, 442) }}" />
-        <img class="lazyload" data-src="{{ item.image_s|resize(370, 248) }}" {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }} />
+      	<!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source media="--medium" data-srcset="{{ item.image_l }}" />
+        <source media="--large" data-srcset="{{ item.image_m }}" />
+      	<!--[if IE 9]></video><![endif]-->
+        <img
+          class="lazyload"
+          data-src="{{ item.image_s }}"
+          {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }}
+        />
       </picture>
     </a>
 

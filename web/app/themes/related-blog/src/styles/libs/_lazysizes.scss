@@ -1,0 +1,27 @@
+// Lazysizes
+// https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/custommedia
+
+@mixin shareBreakpoints($map , $cssprop: content) {
+ $description: '';
+
+ @each $property, $value in $map {
+   @if $description !=  '' {
+     $description: $description + ' | ';
+   }
+   $description: $description + $property +': '+ inspect($value);
+ }
+
+ display: none;
+ #{$cssprop}: $description;
+}
+
+$breakpoints: (
+  --medium: (max-width: $tablet), //769
+  --large: (max-width: $desktop), //1024
+);
+
+html {
+  &:after {
+    @include shareBreakpoints($breakpoints);
+  }
+}
