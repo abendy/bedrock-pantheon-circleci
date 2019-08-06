@@ -1,7 +1,7 @@
 // Header
 
 #header {
-  background-color: $related-midgrey;
+  background-color: $white;
   margin-bottom: .2rem;
   position: relative;
   width: 100%;
@@ -20,6 +20,12 @@
 
   .navbar-end .navbar-item.tile {
     justify-content: center;
+  }
+
+  .search {
+    &::placeholder {
+      color: $black;
+    }
   }
 
   .newsletter-signup button {
