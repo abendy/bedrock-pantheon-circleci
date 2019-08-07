@@ -1,5 +1,9 @@
 // Main layout
 
+#main {
+  margin-top: 3.25rem;
+}
+
 .main-col + .main-col {
   @include from($tablet) {
     padding-left: 2.25rem;
