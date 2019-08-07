@@ -2,8 +2,11 @@
 
 #header {
   background-color: $white;
+  left: 0;
   margin-bottom: .2rem;
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
   width: 100%;
   z-index: 1;
 
