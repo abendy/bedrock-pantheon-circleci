@@ -2,16 +2,20 @@
 
 #header {
   background-color: $white;
-  left: 0;
   margin-bottom: .2rem;
-  position: fixed;
-  top: 0;
-  right: 0;
+  position: relative;
   width: 100%;
   z-index: 1;
 
   @include from($tablet) {
     margin-bottom: 1rem;
+  }
+
+  @include from($desktop) {
+    left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
   }
 
   .custom-logo {
