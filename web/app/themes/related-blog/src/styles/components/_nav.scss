@@ -1,16 +1,6 @@
 // Nav
 
 .navbar {
-  body.logged-in & {
-    margin-top: 32px;
-  }
-
-  @media screen and (max-width: 782px) {
-    body.logged-in & {
-      margin-top: 46px;
-    }
-  }
-
   a,
   a:visited {
     color: $navbar-item-color;
