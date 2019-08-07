@@ -29,16 +29,16 @@ function rltd_setup_theme() {
   // add_theme_support( 'automatic-feed-links' );
 
   // Update default image dimensions
-  update_option( 'thumbnail_size_w', 370 );
-  update_option( 'thumbnail_size_h', 248 );
+  update_option( 'thumbnail_size_w', 424 );
+  update_option( 'thumbnail_size_h', 284 );
   update_option( 'thumbnail_crop', 1 );
 
-  update_option( 'medium_size_w', 659 );
-  update_option( 'medium_size_h', 442 );
+  update_option( 'medium_size_w', 488 );
+  update_option( 'medium_size_h', 327 );
   update_option( 'medium_crop', 1 );
 
-  update_option( 'large_size_w', 768 );
-  update_option( 'large_size_h', 514 );
+  update_option( 'large_size_w', 744 );
+  update_option( 'large_size_h', 499 );
   update_option( 'large_crop', 1 );
 
   // Add custom image sizes
