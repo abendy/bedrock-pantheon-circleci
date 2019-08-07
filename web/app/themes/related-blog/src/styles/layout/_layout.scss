@@ -1,7 +1,9 @@
 // Main layout
 
 #main {
-  margin-top: 100px;
+  @include from($desktop) {
+    margin-top: 100px;
+  }
 }
 
 .main-col + .main-col {
