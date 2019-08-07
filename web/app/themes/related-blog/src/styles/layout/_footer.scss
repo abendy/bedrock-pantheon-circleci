@@ -1,7 +1,7 @@
 // Footer
 
 #footer {
-  background-color: $related-midgrey;
+  background-color: $white;
   display: flex;
   flex-direction: row;
   margin-top: 4rem;
@@ -35,18 +35,18 @@
 
   span,
   p {
-    color: $white;
+    color: $black;
   }
 
   a {
-    color: $white;
+    color: $black;
 
     &:visited {
-      color: $white;
+      color: $black;
     }
 
     @include hover {
-      color: $white;
+      color: $black;
     }
   }
 }
