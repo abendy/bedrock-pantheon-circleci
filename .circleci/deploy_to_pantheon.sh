@@ -55,6 +55,6 @@ elif [[ ! -z "$CIRCLE_PULL_REQUEST" ]]; then
 fi
 
 # Clean up unused PR environments (if GITHUB_TOKEN is set)
-if [[ ! -z "$GITHUB_TOKEN" ]]; then
-    terminus build:env:delete:pr -n "$TERMINUS_SITE" --yes
-fi
+# if [[ ! -z "$GITHUB_TOKEN" ]]; then
+#     terminus build:env:delete:pr -n "$TERMINUS_SITE" --yes
+# fi
