@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -x
+
 if [[ -z "$CIRCLECI" ]]; then
     echo "This script can only be run by CircleCI. Aborting." 1>&2
     exit 1
