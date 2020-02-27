@@ -35,6 +35,7 @@ rm -r web/app/uploads
 ln -s ../../../files web/app/uploads
 
 # Install Terminus globally
+composer global require phpspec/prophecy:1.10.1
 composer global require pantheon-systems/terminus:^2.0
 
 # Install Terminus plugins
