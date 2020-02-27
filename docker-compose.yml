@@ -47,12 +47,3 @@ services:
     links:
       - php
     restart: always
-
-  composer:
-    image: composer/composer
-    container_name: related_blog-composer
-    volumes:
-      - ${APP_DIR:-.}:/var/www/html:${VOLUME_FLAGS-rw,cached}
-    command: install
-    depends_on:
-      - php
