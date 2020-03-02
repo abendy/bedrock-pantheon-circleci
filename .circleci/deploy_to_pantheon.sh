@@ -35,11 +35,11 @@ rm -r web/app/uploads
 ln -s ../../../files web/app/uploads
 
 # Install Terminus globally
-composer global require pantheon-systems/terminus:^2.2
+composer global require pantheon-systems/terminus:^2.2 --no-dev --no-ansi --no-interaction
 
 # Install Terminus plugins
 mkdir -p $HOME/.terminus/plugins
-composer create-project -n -d $HOME/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:^2.0.0-beta18
+composer create-project --no-dev --no-ansi --no-interaction -d $HOME/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:^2.0.0-beta18
 
 # Updates composer packages
 composer update
