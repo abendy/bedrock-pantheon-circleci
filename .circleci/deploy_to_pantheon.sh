@@ -50,9 +50,9 @@ terminus env:wake -n "$TERMINUS_SITE.dev"
 
 # Push code to Pantheon
 if [[ ${CIRCLE_BRANCH} == "master" ]]; then
-    terminus build:env:push -vv --no-interaction "$TERMINUS_SITE.dev"
+    terminus -vv -n build:env:push "$TERMINUS_SITE.dev"
 elif [[ ! -z "$CIRCLE_PULL_REQUEST" ]]; then
-    terminus build:env:create -n "$TERMINUS_SITE.dev" "pr-${CIRCLE_PULL_REQUEST##*/}"
+    terminus -n build:env:create "$TERMINUS_SITE.dev" "pr-${CIRCLE_PULL_REQUEST##*/}"
 fi
 
 # Clean up unused PR environments (if GITHUB_TOKEN is set)
