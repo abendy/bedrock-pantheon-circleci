@@ -41,9 +41,6 @@ composer global require pantheon-systems/terminus:^2.2 --update-no-dev --no-inte
 mkdir -p $HOME/.terminus/plugins
 composer create-project --no-dev --no-interaction -d $HOME/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:^2.0.0-beta18
 
-# Updates composer packages
-composer update
-
 # Authenticate with Terminus
 terminus auth:login -n --machine-token="$TERMINUS_TOKEN"
 
@@ -58,6 +55,6 @@ elif [[ ! -z "$CIRCLE_PULL_REQUEST" ]]; then
 fi
 
 # Clean up unused PR environments (if GITHUB_TOKEN is set)
-# if [[ ! -z "$GITHUB_TOKEN" ]]; then
-#     terminus build:env:delete:pr -n "$TERMINUS_SITE" --yes
-# fi
+if [[ ! -z "$GITHUB_TOKEN" ]]; then
+    terminus build:env:delete:pr -n "$TERMINUS_SITE" --yes
+fi
