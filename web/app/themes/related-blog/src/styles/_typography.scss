@@ -86,6 +86,36 @@ h1 {
   }
 }
 
+h2 {
+  color: $related-midgrey;
+  font-family: $font-family-playfair;
+  font-size: rem(48);
+}
+
+h3 {
+  color: $related-midgrey;
+  font-family: $font-family-playfair;
+  font-size: rem(36);
+}
+
+h4 {
+  color: $related-midgrey;
+  font-family: $font-family-playfair;
+  font-size: 1rem;
+}
+
+h5 {
+  color: $related-midgrey;
+  font-family: $font-family-proxima;
+  font-size: rem(48);
+}
+
+h6 {
+  color: $related-midgrey;
+  font-family: $font-family-proxima;
+  font-size: rem(36);
+}
+
 a {
   background: transparent;
   color: $color-link;
