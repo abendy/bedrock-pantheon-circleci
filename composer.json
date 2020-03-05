@@ -45,7 +45,7 @@
     "wpackagist-plugin/simple-image-sizes": "^3.2",
     "wpackagist-plugin/simplejpegquality": "^1.0",
     "wpackagist-plugin/timber-library": "^1.10",
-    "wpackagist-plugin/tinymce-advanced": "^5.3",
+    "wpackagist-plugin/tinymce-advanced": "^4",
     "wpackagist-plugin/wordpress-seo": "^11.7",
     "wpackagist-plugin/wp-cfm": "^1.4.5",
     "wpackagist-plugin/wp-native-php-sessions": "^0.6.0",
