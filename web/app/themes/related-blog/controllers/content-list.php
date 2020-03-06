@@ -231,6 +231,8 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
       $image_s = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' )[0];
       $image_m = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
       $image_l = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0];
+      $image_xl_s = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'rltd_hero_mobile' )[0];
+      $image_xl_l = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'rltd_hero_full' )[0];
 
       // Get image alt tag
       $image_alt = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
@@ -250,12 +252,14 @@ if ( !function_exists( 'rltd_content_list_render' ) ) {
         'image_s' => @$image_s,
         'image_m' => @$image_m,
         'image_l' => @$image_l,
+        'image_xl_s' => @$image_xl_s,
+        'image_xl_l' => @$image_xl_l,
         'image_alt' => @$image_alt,
         'meta' => @$meta,
         'meta_link' => @$meta_link,
       );
 
-      $link = $title = $text = $image_id = $image = $image_alt = $category = $meta = $meta_link = '';
+      $link = $title = $text = $image_s = $image_m = $image_l = $image_xl = $image_xl_s = $image_xl_l = $image_alt = $category = $meta = $meta_link = '';
     }
 
     // If we have an uneven number of items for the column setting
