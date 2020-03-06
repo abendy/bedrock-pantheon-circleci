@@ -1,7 +1,15 @@
 <div class="content-list__items columns is-variable is-3">
   {% for item in items %}
-  <div class="content-list__item column is-12-mobile is-6-tablet is-{{ columns }}-desktop">
+  <div class="content-list__item column is-12-mobile is-{{ columns == 12 ? 12: 6 }}-tablet is-{{ columns }}-desktop">
     <a href="{{ item.link }}">
+      {% if columns == 12 %} {# single column #}
+      <picture>
+      	<!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source media="--medium" srcset="{{ item.image_xl_l }}">
+      	<!--[if IE 9]></video><![endif]-->
+        <img src="{{ item.image_xl_s }}" {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }}>
+      </picture>
+      {% else %}
       <picture>
       	<!--[if IE 9]><video style="display: none;"><![endif]-->
         <source media="--medium" data-srcset="{{ item.image_l }}" />
@@ -13,6 +21,7 @@
           {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }}
         />
       </picture>
+      {% endif %}
     </a>
 
     <div class="content-list__content">

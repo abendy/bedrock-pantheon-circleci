@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ce7584d12ccf15f6222d2c4bf3df463",
+    "content-hash": "627293381c14a3cc694dd4ba283f488a",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -3769,15 +3769,15 @@
         },
         {
             "name": "wpackagist-plugin/tinymce-advanced",
-            "version": "5.3.0",
+            "version": "4.8.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/tinymce-advanced/",
-                "reference": "trunk"
+                "reference": "tags/4.8.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.zip?timestamp=1581309812"
+                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.8.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"

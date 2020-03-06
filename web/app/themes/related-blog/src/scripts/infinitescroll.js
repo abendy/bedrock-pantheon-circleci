@@ -62,6 +62,7 @@ const initPagination = () => {
     typeof elem !== 'undefined'
     && !loading
     && !finished
+    && desturl
     && (w.scrollTop() + w.height()) >= (elem.offset().top - (2 * elem.height()))
   ) {
     mainAjax();
