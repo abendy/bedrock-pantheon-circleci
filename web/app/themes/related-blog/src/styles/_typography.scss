@@ -73,7 +73,7 @@ h6 {
 h1 {
   color: $related-midgrey;
   font-family: $font-family-playfair;
-  font-size: rem(60);
+  font-size: rem(38);
   text-align: center;
 
   @include until($tablet) {
@@ -89,13 +89,13 @@ h1 {
 h2 {
   color: $related-midgrey;
   font-family: $font-family-playfair;
-  font-size: rem(48);
+  font-size: rem(38);
 }
 
 h3 {
   color: $related-midgrey;
   font-family: $font-family-playfair;
-  font-size: rem(36);
+  font-size: rem(23);
 }
 
 h4 {
@@ -107,13 +107,13 @@ h4 {
 h5 {
   color: $related-midgrey;
   font-family: $font-family-proxima;
-  font-size: rem(48);
+  font-size: rem(38);
 }
 
 h6 {
   color: $related-midgrey;
   font-family: $font-family-proxima;
-  font-size: rem(36);
+  font-size: rem(23);
 }
 
 a {
