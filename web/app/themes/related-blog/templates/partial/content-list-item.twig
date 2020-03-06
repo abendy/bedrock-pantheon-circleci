@@ -5,19 +5,19 @@
       {% if columns == 12 %} {# single column #}
       <picture>
       	<!--[if IE 9]><video style="display: none;"><![endif]-->
-        <source media="--medium" srcset="{{ item.image_xl_l }}">
+        <source media="--medium" srcset="{{ item.image_xl_l|resize(1300, 445) }}">
       	<!--[if IE 9]></video><![endif]-->
-        <img src="{{ item.image_xl_s }}" {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }}>
+        <img src="{{ item.image_xl_s|resize(890, 445) }}" {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }}>
       </picture>
       {% else %}
       <picture>
       	<!--[if IE 9]><video style="display: none;"><![endif]-->
-        <source media="--medium" data-srcset="{{ item.image_l }}" />
-        <source media="--large" data-srcset="{{ item.image_m }}" />
+        <source media="--medium" data-srcset="{{ item.image_l|resize(744, 499) }}" />
+        <source media="--large" data-srcset="{{ item.image_m|resize(488, 327) }}" />
       	<!--[if IE 9]></video><![endif]-->
         <img
           class="lazyload"
-          data-src="{{ item.image_s }}"
+          data-src="{{ item.image_s|resize(424, 284) }}"
           {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }}
         />
       </picture>

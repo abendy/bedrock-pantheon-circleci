@@ -8,7 +8,9 @@
     <a href="{{ first.link }}">
     {% endif %}
       <picture>
+      	<!--[if IE 9]><video style="display: none;"><![endif]-->
         <source media="(max-width: 768px)" srcset="{{ first.image_m|resize(890, 445) }}">
+      	<!--[if IE 9]></video><![endif]-->
         <img src="{{ first.image|resize(1300, 445) }}" {{ (first.image_alt is defined) ? 'alt="' ~ first.image_alt|e ~ '"' }}>
       </picture>
     {% if first.link is defined and first.link is not empty %}
