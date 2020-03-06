@@ -5,9 +5,9 @@
       {% if columns == 12 %} {# single column #}
       <picture>
       	<!--[if IE 9]><video style="display: none;"><![endif]-->
-        <source media="--medium" srcset="{{ item.image_xl_l|resize(1300, 445) }}">
+        <source media="--medium" srcset="{{ item.image_xl_s|resize(890, 445) }}">
       	<!--[if IE 9]></video><![endif]-->
-        <img src="{{ item.image_xl_s|resize(890, 445) }}" {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }}>
+        <img src="{{ item.image_xl_l|resize(1300, 445) }}" {{ (item.image_alt is defined) ? 'alt="' ~ item.image_alt|e ~ '"' }}>
       </picture>
       {% else %}
       <picture>
