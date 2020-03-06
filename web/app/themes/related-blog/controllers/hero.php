@@ -166,9 +166,9 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
     foreach ( $container as $post ) {
       $has_video_bg = false;
       $wrapper_attributes = array();
-      $wrapper_attributes_string = "";
+      $wrapper_attributes_string = '';
       $wrapper_classes = array();
-      $wrapper_classes_string = "";
+      $wrapper_classes_string = '';
 
       // Get the permalink
       $link = $post['rltd_hero_item_external_link'] === 'yes' && !empty( $post['rltd_hero_item_link'] ) ? esc_url( $post['rltd_hero_item_link'] ) : ( !empty( $post['rltd_hero_item_reference'] ) ? get_permalink( $post['rltd_hero_item_reference'] ) : '' );
@@ -240,7 +240,8 @@ if ( !function_exists( 'rltd_hero_render' ) ) {
         'wrapper_classes' => @$wrapper_classes_string,
       );
 
-      $link = $title = $text = $image_id = $image = $image_alt = '';
+      $has_video_bg = $wrapper_attributes = $wrapper_attributes_string = $wrapper_classes = $wrapper_classes_string = '';
+      $link = $title = $htag = $text = $image_id = $image = $image_m = $image_alt = $hero_image_imgadv = $video_id = '';
     }
 
     $compile = Timber::compile(
