@@ -1,0 +1,50 @@
+#!/bin/bash
+
+set -euo pipefail
+
+# Go to project root
+cd /var/www/html
+
+# Configure site environment file
+if ! [ -e .env ]; then
+  cp -f .env.example .env
+
+  sed -i "/WP_HOME=/c\WP_HOME=http://${WP_HOST}:${WP_PORT}" .env
+  sed -i "/WP_HOST=/d" .env
+  sed -i "/WP_PORT=/d" .env
+  sed -i "/DB_NAME=/c\DB_NAME=${DB_NAME}" .env
+  sed -i "/DB_USER=/c\DB_USER=${DB_USER}" .env
+  sed -i "/DB_PASSWORD=/c\DB_PASSWORD=${DB_PASSWORD}" .env
+  sed -i "/DB_HOST=/c\DB_HOST=${DB_HOST}" .env
+  sed -i "/DB_PORT=/c\DB_PORT=${DB_PORT}" .env
+
+  # Remove Docker variables
+  sed -i "/Docker variables/d" .env
+  sed -i "/TZ=/d" .env
+  sed -i "/NGINX_VERSION=/d" .env
+  sed -i "/PHP_VERSION=/d" .env
+  sed -i "/MEMCACHED_EXT_VERSION=/d" .env
+  sed -i "/REDIS_EXT_VERSION=/d" .env
+  sed -i "/XDEBUG_EXT_VERSION=/d" .env
+  sed -i "/MYSQL_VERSION=/d" .env
+  sed -i "/REDIS_VERSION=/d" .env
+  sed -i "/MEMCACHED_VERSION=/d" .env
+
+  # Set salts
+  sed -i "/SECURE_AUTH_KEY/s/generateme/`pwgen -c -n -s -1 64`/
+    /AUTH_KEY/s/generateme/`pwgen -c -n -s -1 64`/
+    /LOGGED_IN_KEY/s/generateme/`pwgen -c -n -s -1 64`/
+    /NONCE_KEY/s/generateme/`pwgen -c -n -s -1 64`/
+    /SECURE_AUTH_SALT/s/generateme/`pwgen -c -n -s -1 64`/
+    /AUTH_SALT/s/generateme/`pwgen -c -n -s -1 64`/
+    /LOGGED_IN_SALT/s/generateme/`pwgen -c -n -s -1 64`/
+    /NONCE_SALT/s/generateme/`pwgen -c -n -s -1 64`/g" .env
+fi
+
+# Remove trailing whitespace
+sed -i -e :a -e '/^\n*$/{$d;N;};/\n$/ba' .env
+
+# Assign ownership to user nginx
+chown nginx:nginx .env
+
+exec "$@"
