@@ -36,12 +36,10 @@
     &__title {
       color: $related-midgrey;
       font-family: $font-family-playfair;
-      line-height: 1.4;
       text-align: left;
 
       @include until($tablet) {
         font-size: rem(26);
-        line-height: 1.2;
       }
 
       @include from($tablet) {

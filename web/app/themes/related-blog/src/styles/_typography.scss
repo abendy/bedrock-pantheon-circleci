@@ -3,7 +3,7 @@
 //* Base
 
 $base-font-size:   15;
-$base-line-height: 1.5;
+$base-line-height: 1.4;
 
 //* Font families
 
@@ -68,6 +68,10 @@ h4,
 h5,
 h6 {
   font-weight: normal;
+
+  @include until($tablet) {
+    line-height: 1.2;
+  }
 }
 
 h1 {
@@ -75,11 +79,6 @@ h1 {
   font-family: $font-family-playfair;
   font-size: rem(38);
   text-align: center;
-
-  @include until($tablet) {
-    font-size: rem(26);
-    line-height: 1.2;
-  }
 
   &:not(.hero__title) {
     margin: 1rem 0 1.4rem;
