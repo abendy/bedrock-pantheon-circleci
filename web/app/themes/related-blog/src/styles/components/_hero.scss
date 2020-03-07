@@ -34,8 +34,6 @@
     }
 
     &__title {
-      color: $related-midgrey;
-      font-family: $font-family-playfair;
       text-align: left;
 
       @include until($tablet) {
